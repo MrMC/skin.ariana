@@ -21,8 +21,8 @@
     <height>410</height>
   </include>
   <include name="RectangleLabelCommons">
-    <animation effect="fade" start="0" end="100" time="100" delay="170">Focus</animation>
-    <animation effect="fade" start="100" end="0" time="50" delay="0">UnFocus</animation>
+    <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
+    <animation effect="fade" start="100" end="0" time="0" delay="0">UnFocus</animation>
     <left>5</left>
     <top>324</top>
     <width>586</width>
@@ -32,23 +32,22 @@
     <label>$INFO[ListItem.Property(SeasonEpisode),, - ]$INFO[ListItem.Label]</label>
   </include>
   <include name="PosterLabelCommons">
-    <animation effect="fade" start="0" end="100" time="100" delay="170">Focus</animation>
-    <animation effect="fade" start="100" end="0" time="50" delay="0">UnFocus</animation>
+    <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
+    <animation effect="fade" start="100" end="0" time="0" delay="0">UnFocus</animation>
     <left>5</left>
     <top>408</top>
     <width>290</width>
     <height>45</height>
     <font>size19B</font>
     <align>center</align>
-    <label>$INFO[ListItem.Label]</label>
   </include>
   <include name="RectangleWatchedMarks">
     <control type="image">
       <visible>!IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
       <right>24</right>
-      <top>200</top>
-      <height>60</height>
-      <width>60</width>
+      <top>210</top>
+      <height>50</height>
+      <width>50</width>
       <texture>$VAR[Overlay,thumbs/]</texture>
       <bordertexture colordiffuse="$VAR[SelectedColor]">thumbs/OverlayUnwatched.png</bordertexture>
       <bordersize>1</bordersize>
@@ -71,9 +70,9 @@
       <control type="image">
         <visible>!IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
         <right>18</right>
-        <top>332</top>
-        <height>60</height>
-        <width>60</width>
+        <top>342</top>
+        <height>50</height>
+        <width>50</width>
         <texture>$VAR[Overlay,thumbs/]</texture>
         <bordertexture colordiffuse="$VAR[SelectedColor]">thumbs/OverlayUnwatched.png</bordertexture>
         <bordersize>1</bordersize>

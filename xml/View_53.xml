@@ -18,8 +18,8 @@
         <visible>!IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
         <right>24</right>
         <bottom>69</bottom>
-        <height>60</height>
-        <width>60</width>
+        <height>50</height>
+        <width>50</width>
         <texture>$VAR[Overlay,thumbs/]</texture>
         <bordertexture colordiffuse="$VAR[SelectedColor]">thumbs/OverlayUnwatched.png</bordertexture>
         <bordersize>1</bordersize>

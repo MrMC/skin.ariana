@@ -236,11 +236,17 @@
           <onback>9000</onback>
           <itemlayout width="290" height="410">
             <include>PostersShelfFO</include>
+            <control type="label">
+              <include>PosterLabelCommons</include>
+              <label>$INFO[ListItem.Property(SeasonEpisode)]</label>
+              <textcolor>$VAR[Label2Color]</textcolor>
+            </control>
           </itemlayout>
           <focusedlayout width="290" height="410">
             <include>PostersShelfFO</include>
             <control type="label">
               <include>PosterLabelCommons</include>
+              <label>$INFO[ListItem.Label]</label>
               <textcolor>$VAR[LabelNFColor]</textcolor>
             </control>
           </focusedlayout>
@@ -263,11 +269,17 @@
           <onback>9000</onback>
           <itemlayout width="290" height="410">
             <include>PostersShelfFO</include>
+            <control type="label">
+              <include>PosterLabelCommons</include>
+              <label>$INFO[ListItem.Property(SeasonEpisode)]</label>
+              <textcolor>$VAR[Label2Color]</textcolor>
+            </control>
           </itemlayout>
           <focusedlayout width="290" height="410">
             <include>PostersShelfFO</include>
             <control type="label">
               <include>PosterLabelCommons</include>
+              <label>$INFO[ListItem.Label]</label>
               <textcolor>$VAR[LabelNFColor]</textcolor>
             </control>
           </focusedlayout>
@@ -295,6 +307,7 @@
             <include>PostersShelfFO</include>
             <control type="label">
               <include>PosterLabelCommons</include>
+              <label>$INFO[ListItem.Label]</label>
               <textcolor>$VAR[LabelNFColor]</textcolor>
             </control>
           </focusedlayout>
