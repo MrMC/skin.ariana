@@ -84,6 +84,7 @@
       <control type="panel" id="9000" description="Main menu">
         <top>220</top>
         <left>90</left>
+        <right>0</right>
         <height>360</height>
         <onup>9001</onup>
         <ondown>9500</ondown>
@@ -173,7 +174,7 @@
           <visible>IntegerGreaterThan(Container(8020).NumItems,0)</visible>
           <animation effect="fade" time="200">Visible</animation>
           <top>0</top>
-          <left>0</left>
+          <left>90</left>
           <right>0</right>
           <height>405</height>
           <orientation>horizontal</orientation>
@@ -200,7 +201,7 @@
           <visible>IntegerGreaterThan(Container(8010).NumItems,0) + !Control.IsVisible(8020)</visible>
           <animation effect="fade" time="200">Visible</animation>
           <top>0</top>
-          <left>0</left>
+          <left>90</left>
           <right>0</right>
           <height>405</height>
           <orientation>horizontal</orientation>
@@ -227,7 +228,7 @@
           <visible>IntegerGreaterThan(Container(8011).NumItems,0)</visible>
           <animation effect="fade" time="200">Visible</animation>
           <top>600</top>
-          <left>0</left>
+          <left>90</left>
           <right>0</right>
           <height>455</height>
           <orientation>horizontal</orientation>
@@ -260,7 +261,7 @@
           <visible>IntegerGreaterThan(Container(8001).NumItems,0)</visible>
           <animation effect="fade" time="200">Visible</animation>
           <top>176</top>
-          <left>0</left>
+          <left>90</left>
           <right>0</right>
           <height>455</height>
           <orientation>horizontal</orientation>
@@ -293,7 +294,7 @@
           <visible>IntegerGreaterThan(Container(8000).NumItems,0)</visible>
           <animation effect="fade" time="200">Visible</animation>
           <top>176</top>
-          <left>0</left>
+          <left>90</left>
           <right>0</right>
           <height>455</height>
           <orientation>horizontal</orientation>
@@ -321,7 +322,7 @@
           <visible>IntegerGreaterThan(Container(8002).NumItems,0)</visible>
           <animation effect="fade" time="200">Visible</animation>
           <top>366</top>
-          <left>66</left>
+          <left>90</left>
           <right>0</right>
           <height>408</height>
           <orientation>horizontal</orientation>
