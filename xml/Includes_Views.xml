@@ -77,7 +77,6 @@
     <itemgap>21</itemgap>
     <onright>50</onright>
     <onleft>noop</onleft>
-    <onback>50</onback>
     <align>left</align>
     <aligny>center</aligny>
     <control type="label" id="2000" description="Views">
