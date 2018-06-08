@@ -22,9 +22,10 @@
   <string id="31049">Ends</string><!--Time when currently playing video will end -->
   <string id="31055">Open playlist</string>
   <string id="31056">Save playlist</string>
-  <string id="31057">Close playlist</string>
+  <string id="31057">Clear playlist</string>
   <string id="31058">System music files</string>
-  <string id="31059">Current playlist</string>
+  <string id="31059">New playlist</string>
+  <string id="31060">Use context menu to add and manage items for / in a new playlist</string>
   <string id="31062">Queued</string>
   <!-- Skin Settings labels -->
   <string id="31111">Hide</string>
