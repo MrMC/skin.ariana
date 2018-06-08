@@ -24,31 +24,6 @@
     </control>
   </include>
   <include name="View_50" description="50">
-    <control type="group" description="List 50 base">
-      <visible>Control.IsVisible(50)</visible>
-      <include>ContainerVisibleFade</include>
-      <control type="label" description="MainHeading">
-        <right>66</right>
-        <top>120</top>
-        <width>800</width>
-        <height>40</height>
-        <font>size50B</font>
-        <label>[B]$VAR[GlobalHeadings][/B]</label>
-        <textcolor>$VAR[LabelNFColor]</textcolor>
-        <align>center</align>
-      </control>
-      <control type="image" description="Thumb">
-        <centerleft>480</centerleft>
-        <centertop>580</centertop>
-        <width>600</width>
-        <height>760</height>
-        <include>Icon_Fade</include>
-        <texture background="true">$INFO[ListItem.Thumb]</texture>
-        <bordertexture border="12">img/ThumbBorder.png</bordertexture>
-        <bordersize>9</bordersize>
-        <aspectratio>keep</aspectratio>
-      </control>
-    </control>
     <control type="list" id="50">
       <visible>![Container.Content(Movies) | Container.content(tvshows) | container.content(seasons) | container.content(episodes) | container.content(albums) | container.content(songs)]</visible>
       <left>1058</left>
@@ -60,7 +35,7 @@
       <onback condition="!substring(Container.FolderPath,sources://)">9000</onback>
       <pagecontrol>60</pagecontrol>
       <viewtype label="535">List</viewtype>
-      <preloaditems>4</preloaditems>
+      <preloaditems>2</preloaditems>
       <itemlayout width="784" height="80">
         <control type="image">
           <visible>Container.Content(files)</visible>
@@ -162,6 +137,31 @@
           </control>
         </control>
       </focusedlayout>
+    </control>
+    <control type="group" description="List 50 base">
+      <visible>Control.IsVisible(50)</visible>
+      <include>ContainerVisibleFade</include>
+      <control type="label" description="MainHeading">
+        <right>66</right>
+        <top>120</top>
+        <width>800</width>
+        <height>40</height>
+        <font>size50B</font>
+        <label>[B]$VAR[GlobalHeadings][/B]</label>
+        <textcolor>$VAR[LabelNFColor]</textcolor>
+        <align>center</align>
+      </control>
+      <control type="image" description="Thumb">
+        <centerleft>480</centerleft>
+        <centertop>580</centertop>
+        <width>600</width>
+        <height>760</height>
+        <include>Icon_Fade</include>
+        <texture background="true">$INFO[ListItem.Thumb]</texture>
+        <bordertexture border="12">img/ThumbBorder.png</bordertexture>
+        <bordersize>9</bordersize>
+        <aspectratio>keep</aspectratio>
+      </control>
     </control>
   </include>
   <include name="InfoPVR" description="PVR item info">
