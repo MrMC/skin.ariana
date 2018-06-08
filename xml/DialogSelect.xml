@@ -6,6 +6,7 @@
     <control type="group">
       <include>OpenClose</include>
       <control type="label" id="1" description="Header label">
+        <top>100</top>
         <include>CenterHeading</include>
       </control>
       <control type="panel" id="6" description="Addons like">
@@ -134,9 +135,9 @@
       </control>
       <control type="panel" id="3">
         <centerleft>50%</centerleft>
-        <top>150</top>
+        <top>220</top>
         <width>930</width>
-        <height>700</height>
+        <height>630</height>
         <onleft>5</onleft>
         <onright>5</onright>
         <ondown>5</ondown>
