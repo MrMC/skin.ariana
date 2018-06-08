@@ -124,18 +124,18 @@
               <left>7</left>
               <right>7</right>
               <top>0</top>
-              <height>100%</height>
+              <height>94%</height>
               <aligny>center</aligny>
               <font>size20</font>
               <textcolor>$VAR[LabelNFColor]</textcolor>
               <label>$INFO[ListItem.Label]</label>
             </control>
             <control type="image">
-              <left>6</left>
+              <left>10</left>
               <top>50</top>
-              <width>24</width>
-              <height>24</height>
-              <texture>$VAR[PVRTimerIcon]</texture>
+              <width>26</width>
+              <height>26</height>
+              <texture colordiffuse="$VAR[LabelNFColor]">$VAR[PVRTimerIcon]</texture>
             </control>
           </itemlayout>
           <focusedlayout height="80" width="60">
@@ -156,18 +156,18 @@
               <left>7</left>
               <right>7</right>
               <top>0</top>
-              <height>100%</height>
+              <height>94%</height>
               <aligny>center</aligny>
               <font>size20</font>
               <textcolor>$VAR[LabelFOColor]</textcolor>
               <label>$INFO[ListItem.Label]</label>
             </control>
             <control type="image">
-              <left>6</left>
+              <left>10</left>
               <top>50</top>
-              <width>24</width>
-              <height>24</height>
-              <texture>$VAR[PVRTimerIcon]</texture>
+              <width>26</width>
+              <height>26</height>
+              <texture colordiffuse="$VAR[LabelFOColor]">$VAR[PVRTimerIcon]</texture>
             </control>
           </focusedlayout>
         </control>
