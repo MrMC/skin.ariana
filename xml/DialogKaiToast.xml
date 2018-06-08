@@ -11,7 +11,7 @@
         <top>0</top>
         <width>100%</width>
         <height>90</height>
-        <texture colordiffuse="$VAR[OverlayColor]">dot/White80.png</texture>
+        <texture colordiffuse="$VAR[OverlayColor]">dot/White90.png</texture>
       </control>
       <control type="label" id="9000" description="Real label">
         <top>0</top>
