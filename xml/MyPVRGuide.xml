@@ -126,7 +126,7 @@
               <top>0</top>
               <height>100%</height>
               <aligny>center</aligny>
-              <font>font16U</font>
+              <font>size20</font>
               <textcolor>$VAR[LabelNFColor]</textcolor>
               <label>$INFO[ListItem.Label]</label>
             </control>
@@ -158,7 +158,7 @@
               <top>0</top>
               <height>100%</height>
               <aligny>center</aligny>
-              <font>font16U</font>
+              <font>size20</font>
               <textcolor>$VAR[LabelFOColor]</textcolor>
               <label>$INFO[ListItem.Label]</label>
             </control>
