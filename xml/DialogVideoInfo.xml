@@ -19,9 +19,9 @@
       <control type="group" description="Media Info and buttons">
         <control type="image" description="Media Thumb">
           <visible>!Skin.HasSetting(InfoPosterHide)</visible>
-          <right>160</right>
+          <right>150</right>
           <top>70</top>
-          <width>860</width>
+          <width>662</width>
           <height>648</height>
           <fadetime>400</fadetime>
           <texture>$INFO[ListItem.Art(thumb)]</texture>
@@ -30,7 +30,7 @@
           <aspectratio align="right" aligny="center">keep</aspectratio>
         </control>
         <control type="group" description="top">
-          <left>160</left>
+          <left>150</left>
           <top>120</top>
           <control type="label" description="Main Label">
             <top>0</top>
@@ -158,8 +158,8 @@
             <label>$VAR[Plots]</label>
           </control>
           <control type="grouplist" id="9001">
-            <left>0</left>
-            <top>500</top>
+            <left>-5</left>
+            <top>495</top>
             <width>638</width>
             <height>150</height>
             <itemgap>20</itemgap>
