@@ -12,7 +12,7 @@
         <top>0</top>
         <width>1920</width>
         <height>390</height>
-        <texture colordiffuse="$VAR[OverlayColor]">dot/White.png</texture>
+        <texture colordiffuse="$VAR[OverlayColor]">dot/White95.png</texture>
       </control>
       <control type="image" description="Background">
         <left>0</left>

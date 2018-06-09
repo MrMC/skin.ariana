@@ -40,7 +40,7 @@
       <top>-141</top>
       <width>1920</width>
       <height>142</height>
-      <texture colordiffuse="$VAR[OverlayColor]">dot/White.png</texture>
+      <texture colordiffuse="$VAR[OverlayColor]">dot/White95.png</texture>
     </control>
   </include>
   <include name="SquareButtonCommons">
