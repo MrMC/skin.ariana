@@ -6,8 +6,8 @@
       <top>0</top>
       <width>100%</width>
       <height>100%</height>
-      <aspectratio aligny="center">scale</aspectratio>
-      <texture>background/DiffuseBG.png</texture>
+      <aspectratio>stretch</aspectratio>
+      <texture>dot/Black50.png</texture>
     </control>
   </include>
   <include name="FanartBG">

@@ -10,8 +10,8 @@
         <top>250</top>
         <width>600</width>
         <height>540</height>
-        <texture colordiffuse="$VAR[OverlayColor]" border="24">background/DialogBG.png</texture>
-        <bordersize>-48</bordersize>
+        <texture colordiffuse="$VAR[OverlayColor]" border="24">dot/GreyRounded.png</texture>
+        <bordersize>-24</bordersize>
       </control>
       <control type="label" id="1" description="Heading">
         <centerleft>50%</centerleft>
@@ -29,7 +29,7 @@
       </control>
       <control type="label" id="4" description="Edit Text">
         <centerleft>50%</centerleft>
-        <top>358</top>
+        <top>360</top>
         <width>660</width>
         <height>60</height>
         <align>center</align>

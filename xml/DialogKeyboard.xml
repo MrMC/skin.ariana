@@ -12,8 +12,8 @@
         <top>480</top>
         <width>1100</width>
         <height>540</height>
-        <texture colordiffuse="$VAR[OverlayColor]" border="24">background/DialogBG.png</texture>
-        <bordersize>-48</bordersize>
+        <texture colordiffuse="$VAR[OverlayColor]" border="24">dot/GreyRounded.png</texture>
+        <bordersize>-24</bordersize>
       </control>
       <control type="label" id="311" description="Heading">
         <centerleft>50%</centerleft>
@@ -399,7 +399,7 @@
             <control type="button" id="164">
               <description>(3,4) button</description>
               <onup>144</onup>
-              <ondown>45</ondown>
+              <ondown>32</ondown>
               <include>KeyboardButtons</include>
             </control>
             <control type="button" id="165">
@@ -411,25 +411,25 @@
             <control type="button" id="166">
               <description>(3,6) button</description>
               <onup>146</onup>
-              <ondown>32</ondown>
+              <ondown>300</ondown>
               <include>KeyboardButtons</include>
             </control>
             <control type="button" id="167">
               <description>(3,7) button</description>
               <onup>147</onup>
-              <ondown>32</ondown>
+              <ondown>300</ondown>
               <include>KeyboardButtons</include>
             </control>
             <control type="button" id="168">
               <description>(3,8) button</description>
               <onup>148</onup>
-              <ondown>32</ondown>
+              <ondown>300</ondown>
               <include>KeyboardButtons</include>
             </control>
             <control type="button" id="169">
               <description>(3,9) button</description>
               <onup>149</onup>
-              <ondown>32</ondown>
+              <ondown>300</ondown>
               <include>KeyboardButtons</include>
             </control>
             <control type="button" id="170">
@@ -461,7 +461,7 @@
               <description>SPACE button</description>
               <width>360</width>
               <label>$LOCALIZE[20182]</label>
-              <onup>162</onup>
+              <onup>163</onup>
               <ondown>105</ondown>
               <font>size22</font>
               <include>KeyboardButtons</include>
