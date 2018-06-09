@@ -170,7 +170,7 @@
             <width>150</width>
             <aspectratio>keep</aspectratio>
             <include>KeyboardButtons</include>
-            <texture>HUD/KeyButtonDel.png</texture>
+            <texture colordiffuse="$VAR[LabelNFColor]">HUD/KeyButtonDel.png</texture>
           </control>
           <control type="grouplist">
             <description>2nd Row</description>
