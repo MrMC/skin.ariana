@@ -100,7 +100,7 @@
             <top>0</top>
             <height>100%</height>
             <width>100%</width>
-            <texture border="4">thumbs/HomeFO.png</texture>
+            <texture colordiffuse="$VAR[MenuColor]" border="4">thumbs/HomeFO.png</texture>
             <bordersize>0</bordersize>
           </control>
           <control type="image">
@@ -136,7 +136,7 @@
               <top>0</top>
               <height>100%</height>
               <width>100%</width>
-              <texture border="4">thumbs/HomeFO.png</texture>
+              <texture colordiffuse="$VAR[MenuColor]" border="4">thumbs/HomeFO.png</texture>
               <bordersize>0</bordersize>
             </control>
             <control type="image">
@@ -171,31 +171,6 @@
         <aligny>top</aligny>
         <align>left</align>
         <itemgap>4</itemgap>
-        <!--
-        <control type="label" id="5555" description="ShelfHeading">
-          <visible>Control.IsVisible(8011)</visible>
-          <include>HeaderLabelShelf</include>
-          <label>test</label>
-        </control>
-        <control type="panel" id="55556" description="test">
-          <animation effect="fade" time="200">Visible</animation>
-          <top>600</top>
-          <left>66</left>
-          <width>1860</width>
-          <height>475</height>
-          <orientation>horizontal</orientation>
-          <onleft>8011</onleft>
-          <onright>8011</onright>
-          <onback>9000</onback>
-          <itemlayout width="298" height="475">
-            <include>PostersShelfFO</include>
-          </itemlayout>
-          <focusedlayout width="298" height="475">
-            <include>PostersShelfFO</include>
-          </focusedlayout>
-          <content target="video">plex://movies/titles/filters/$INFO[Container(9000).ListItem(2).Property(base64url)]</content>
-        </control>
-      -->
         <control type="label" id="80100" description="ShelfHeading">
           <visible>Control.IsVisible(8020)</visible>
           <include>HeaderLabelShelf</include>
@@ -242,29 +217,6 @@
             <include>PostersShelfFO</include>
           </focusedlayout>
         </control>
-        <control type="label" id="80000" description="ShelfHeading">
-          <visible>Control.IsVisible(8000)</visible>
-          <include>HeaderLabelShelf</include>
-          <label>$INFO[Container(8000).ListItem.Property(ItemType)]</label>
-        </control>
-        <control type="panel" id="8000" description="Movies RA">
-          <visible>IntegerGreaterThan(Container(8000).NumItems,0)</visible>
-          <animation effect="fade" time="200">Visible</animation>
-          <top>176</top>
-          <left>66</left>
-          <width>1860</width>
-          <height>475</height>
-          <orientation>horizontal</orientation>
-          <onleft>8000</onleft>
-          <onright>8000</onright>
-          <onback>9000</onback>
-          <itemlayout width="298" height="475">
-            <include>PostersShelfFO</include>
-          </itemlayout>
-          <focusedlayout width="298" height="475">
-            <include>PostersShelfFO</include>
-          </focusedlayout>
-        </control>
         <control type="label" id="80010" description="ShelfHeading">
           <visible>Control.IsVisible(8001)</visible>
           <include>HeaderLabelShelf</include>
@@ -280,6 +232,29 @@
           <orientation>horizontal</orientation>
           <onleft>8001</onleft>
           <onright>8001</onright>
+          <onback>9000</onback>
+          <itemlayout width="298" height="475">
+            <include>PostersShelfFO</include>
+          </itemlayout>
+          <focusedlayout width="298" height="475">
+            <include>PostersShelfFO</include>
+          </focusedlayout>
+        </control>
+        <control type="label" id="80000" description="ShelfHeading">
+          <visible>Control.IsVisible(8000)</visible>
+          <include>HeaderLabelShelf</include>
+          <label>$INFO[Container(8000).ListItem.Property(ItemType)]</label>
+        </control>
+        <control type="panel" id="8000" description="Movies RA">
+          <visible>IntegerGreaterThan(Container(8000).NumItems,0)</visible>
+          <animation effect="fade" time="200">Visible</animation>
+          <top>176</top>
+          <left>66</left>
+          <width>1860</width>
+          <height>475</height>
+          <orientation>horizontal</orientation>
+          <onleft>8000</onleft>
+          <onright>8000</onright>
           <onback>9000</onback>
           <itemlayout width="298" height="475">
             <include>PostersShelfFO</include>

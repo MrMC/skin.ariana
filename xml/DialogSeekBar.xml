@@ -73,13 +73,33 @@
         <label>$INFO[Player.FinishTime]</label>
         <font>size17</font>
       </control>
-      <control type="progress" id="23">
+      <control type="progress" id="1" description="ProgressbarCache">
+        <visible>!System.HasAppleTVSlider</visible>
+        <visible>[Player.Paused + Player.Caching] | [VideoPlayer.Content(livetv) + !Player.ChannelPreviewActive]</visible>
         <centerleft>50%</centerleft>
         <width>1800</width>
         <height>16</height>
+        <texturebg border="4,0,4,0">progress/ProgressBG.png</texturebg>
+        <lefttexture colordiffuse="silver" border="4,0,0,0">progress/ProgressLeft.png</lefttexture>
+        <righttexture colordiffuse="silver" flipx="true" border="0,0,4,0">progress/ProgressLeft.png</righttexture>
+        <midtexture colordiffuse="silver">progress/ProgressMid.png</midtexture>
+        <info>Player.ProgressCache</info>
+      </control>
+      <control type="progress" id="1" description="Progress">
+        <visible>!System.HasAppleTVSlider</visible>
+        <visible>VideoPlayer.Content(livetv)</visible>
+        <centerleft>50%</centerleft>
+        <width>1800</width>
+        <height>16</height>
+        <texturebg border="4,0,4,0">progress/ProgressBG.png</texturebg>
+        <lefttexture colordiffuse="white" border="4,0,0,0">progress/ProgressLeft.png</lefttexture>
+        <righttexture colordiffuse="white" flipx="true" border="0,0,4,0">progress/ProgressLeft.png</righttexture>
+        <midtexture colordiffuse="white">progress/ProgressMid.png</midtexture>
         <info>Player.Progress</info>
       </control>
-      <control type="slider" description="Slider">
+      <control type="slider" id="401" description="Seek Scrub">
+        <visible>System.HasAppleTVSlider</visible>
+        <visible>!VideoPlayer.Content(livetv)</visible>
         <centerleft>50%</centerleft>
         <width>1800</width>
         <height>16</height>
@@ -88,8 +108,8 @@
         <onleft>87</onleft>
         <onright>87</onright>
         <texturesliderbar border="8,0,8,0">OSD/ProgressBackground.png</texturesliderbar>
-        <textureslidernib>OSD/ProgressNib.png</textureslidernib>
-        <textureslidernibfocus colordiffuse="$VAR[SelectedColor]">OSD/ProgressNib.png</textureslidernibfocus>
+        <textureslidernib>OSD/SliderNib.png</textureslidernib>
+        <textureslidernibfocus colordiffuse="$VAR[SelectedColor]">OSD/SliderNib.png</textureslidernibfocus>
         <action>seek</action>
       </control>
       <control type="label">

@@ -69,7 +69,7 @@
             <visible>!System.Platform.TVOS</visible>
             <visible>!Skin.HasSetting(LightInterface)</visible>
             <label>$LOCALIZE[480]</label>
-            <label2>$LOCALIZE[14061]</label2>
+            <label2>$LOCALIZE[31021]</label2>
             <onclick>Skin.ToggleSetting(LightInterface)</onclick>
           </item>
           <item id="6" description="Theme reset fallback light">

@@ -161,7 +161,7 @@
     </font>
     <font>
       <name>monogram</name>
-      <filename>ArimoBold.ttf</filename>
+      <filename>Arimo.ttf</filename>
       <size>70</size>
     </font>
     <font>
@@ -346,7 +346,6 @@
       <name>monogram</name>
       <filename>Arial.ttf</filename>
       <size>70</size>
-      <style>bold</style>
     </font>
     <font>
       <name>size50</name>

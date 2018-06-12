@@ -110,7 +110,7 @@
             <texturebg>progress/ProgressBG.png</texturebg>
             <lefttexture>progress/ProgressLeft.png</lefttexture>
             <righttexture flipx="true">progress/ProgressLeft.png</righttexture>
-            <midtexture>progress/ProgressMiddle.png</midtexture>
+            <midtexture>progress/ProgressMid.png</midtexture>
             <info>ListItem.Progress</info>
           </control>
         </itemlayout>
@@ -196,7 +196,7 @@
               <texturebg>progress/ProgressBG.png</texturebg>
               <lefttexture>progress/ProgressLeft.png</lefttexture>
               <righttexture flipx="true">progress/ProgressLeft.png</righttexture>
-              <midtexture>progress/ProgressMiddle.png</midtexture>
+              <midtexture>progress/ProgressMid.png</midtexture>
               <info>ListItem.Progress</info>
             </control>
           </control>
