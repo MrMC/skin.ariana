@@ -76,16 +76,15 @@
     <value condition="!IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
   </variable>
   <variable name="PVRTimerIcon">
-		<value condition="ListItem.IsRecording">icons/pvr/PVR-IsRecording.png</value>
-		<value condition="ListItem.HasTimerSchedule + ListItem.TimerHasError">icons/pvr/PVR-HasTimerScheduleError.png</value>
-		<value condition="ListItem.HasTimer + ListItem.TimerHasError">icons/pvr/PVR-HasTimerError.png</value>
-		<value condition="ListItem.HasTimerSchedule + ListItem.TimerHasConflict">icons/pvr/PVR-HasTimerScheduleConflict.png</value>
-		<value condition="ListItem.HasTimer + ListItem.TimerHasConflict">icons/pvr/PVR-HasTimerConflict.png</value>
-		<value condition="ListItem.HasRecording">icons/pvr/PVR-HasRecording.png</value>
-		<value condition="ListItem.HasTimerSchedule + !ListItem.TimerIsActive">icons/pvr/PVR-HasTimerScheduleDisabled.png</value>
-		<value condition="ListItem.HasTimer + !ListItem.TimerIsActive">icons/pvr/PVR-HasTimerDisabled.png</value>
-		<value condition="ListItem.HasTimerSchedule">icons/pvr/PVR-HasTimerSchedule.png</value>
-		<value condition="ListItem.HasTimer">icons/pvr/PVR-HasTimer.png</value>
+		<value condition="ListItem.HasTimerSchedule">icons/pvr/HasTimerSchedule.png</value>
+		<value condition="ListItem.HasTimer">icons/pvr/HasTimer.png</value>
+    <value condition="ListItem.IsRecording">icons/pvr/IsRecording.png</value>
+		<value condition="ListItem.HasRecording">icons/pvr/HasRecording.png</value>
+  </variable>
+  <variable name="PVRTimerIcon2">
+		<value condition="ListItem.TimerHasError">icons/pvr/Error.png</value>
+		<value condition="ListItem.TimerHasConflict">icons/pvr/Conflict.png</value>
+    <value condition="[ListItem.HasTimerSchedule | ListItem.HasTimer] + !ListItem.TimerIsActive">icons/pvr/Disabled.png</value>
   </variable>
   <variable name="Background.Overlay" description="backgrounds">
     <value condition="[!System.IsDarkInterface + System.Platform.TVOS] | [!System.Platform.TVOS + Skin.HasSetting(LightInterface)]">background/LightBG.png</value>

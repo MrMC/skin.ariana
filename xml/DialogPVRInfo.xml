@@ -5,39 +5,24 @@
     <include>DialogFullBG</include>
     <control type="group">
       <include>OpenClose</include>
-      <control type="image" description="Sidebar">
-        <left>-150</left>
-        <top>0</top>
-        <width>660</width>
-        <height>100%</height>
-        <aspectratio>stretch</aspectratio>
-        <texture border="60">img/HomeMenuBarV.png</texture>
-      </control>
-      <control type="image" description="Icon">
-        <left>90</left>
-        <top>140</top>
-        <width>320</width>
-        <height>320</height>
-        <aspectratio align="center" aligny="center">keep</aspectratio>
-        <texture fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
-      </control>
       <control type="grouplist" id="300">
-        <left>90</left>
-        <top>650</top>
+        <centerleft>50%</centerleft>
+        <top>740</top>
         <width>320</width>
         <height>300</height>
-        <itemgap>10</itemgap>
+        <itemgap>8</itemgap>
         <aligny>top</aligny>
         <align>center</align>
+        <control type="button" id="1000" description="close">
+          <width>320</width>
+          <label>15067</label>
+          <onclick>Close</onclick>
+          <include>FocusButtonsAnimation</include>
+        </control>
         <control type="button" id="5" description="guide">
           <visible>Window.IsActive(PVRGuideInfo)</visible>
           <width>320</width>
           <label>19165</label>
-          <include>FocusButtonsAnimation</include>
-        </control>
-        <control type="button" id="4" description="similar">
-          <width>320</width>
-          <label>19003</label>
           <include>FocusButtonsAnimation</include>
         </control>
         <control type="button" id="8" description="play record">
@@ -52,39 +37,37 @@
           <label>19687</label>
           <include>FocusButtonsAnimation</include>
         </control>
+        <control type="button" id="4" description="similar">
+          <width>320</width>
+          <label>19003</label>
+          <include>FocusButtonsAnimation</include>
+        </control>
       </control>
       <control type="group" description="Info">
-        <left>600</left>
-        <top>70</top>
+        <top>90</top>
         <control type="label" description="Heading">
-          <top>0</top>
-          <width>1125</width>
+          <centerleft>50%</centerleft>
+          <width>80%</width>
           <height>40</height>
-          <align>left</align>
-          <font>size24</font>
-          <label>[B]$INFO[ListItem.Title]$INFO[ListItem.Season, ]$INFO[ListItem.Episode,x][/B]</label>
-        </control>
-        <control type="label" description="Channel">
-          <top>60</top>
-          <width>1125</width>
-          <height>40</height>
-          <align>left</align>
-          <label>$INFO[ListItem.ChannelName]</label>
+          <align>center</align>
+          <font>size50B</font>
+          <textcolor>$VAR[SelectedColor]</textcolor>
+          <label>$INFO[ListItem.Title]$INFO[ListItem.Season, ]$INFO[ListItem.Episode,x]</label>
         </control>
         <control type="textbox" description="Details">
-          <top>120</top>
-          <width>1125</width>
-          <height>90</height>
-          <font>size18</font>
+          <top>90</top>
+          <centerleft>50%</centerleft>
+          <width>80%</width>
+          <height>120</height>
           <align>left</align>
           <textcolor>$VAR[Label2Color]</textcolor>
-          <label>$INFO[ListItem.Season, [COLOR grey]S[/COLOR]]$INFO[ListItem.Episode, [COLOR grey]E[/COLOR],: ]$INFO[ListItem.EpisodeName,[B],[/B][CR]]$INFO[ListItem.Genre,[COLOR grey]$LOCALIZE[515]:[/COLOR] ,[CR]]</label>
+          <label>$INFO[ListItem.Season, S]$INFO[ListItem.Episode, E,: ]$INFO[ListItem.EpisodeName,,[CR]]$INFO[ListItem.Genre,$LOCALIZE[515]: ,[CR]]</label>
         </control>
         <control type="textbox" description="Plot">
-          <left>0</left>
-          <top>180</top>
-          <width>1200</width>
-          <height>750</height>
+          <top>186</top>
+          <centerleft>50%</centerleft>
+          <width>80%</width>
+          <height>400</height>
           <label>$INFO[ListItem.Writer,[COLOR grey]$LOCALIZE[20417]:[/COLOR] ,[CR]]$INFO[ListItem.Director,[COLOR grey]$LOCALIZE[20339]:[/COLOR] ,[CR]]$INFO[ListItem.Cast,[COLOR grey]$LOCALIZE[206]:[/COLOR] ,[CR]][CR]$INFO[ListItem.Plot]</label>
         </control>
       </control>
