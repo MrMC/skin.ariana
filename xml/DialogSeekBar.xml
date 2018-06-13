@@ -87,7 +87,6 @@
       </control>
       <control type="progress" id="1" description="Progress">
         <visible>!System.HasAppleTVSlider</visible>
-        <visible>VideoPlayer.Content(livetv)</visible>
         <centerleft>50%</centerleft>
         <width>1800</width>
         <height>16</height>
