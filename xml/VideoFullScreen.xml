@@ -2,7 +2,7 @@
 <window>
   <defaultcontrol>-</defaultcontrol>
   <animation effect="fade" time="500">WindowOpen</animation>
-  <animation effect="fade" time="300">WindowClose</animation>
+  <animation effect="fade" time="200">WindowClose</animation>
   <controls>
     <control type="group" id="0">
       <visible>!Window.IsActive(DialogFullscreenInfo.xml)</visible>

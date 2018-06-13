@@ -1,11 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
   <defaultcontrol always="true">9000</defaultcontrol>
-  <zorder>2</zorder>
+  <zorder>1</zorder>
   <controls>
+    <control type="group" description="osd buttons">
+      <visible>!System.HasAppleTVSlider</visible>
+      <visible>Player.HasVideo + [Window.IsActive(videoOSD) | Window.IsActive(osdsettings)]</visible>
+      <include>VisibleFadeEffect</include>
+      <include>OpenClose</include>
+      <control type="image" description="OSD BG">
+        <left>0</left>
+        <bottom>0</bottom>
+        <height>220</height>
+        <width>100%</width>
+        <texture colordiffuse="$VAR[OverlayColor]">dot/White95.png</texture>
+      </control>
+      <control type="grouplist" id="777">
+        <centerleft>50%</centerleft>
+        <width>100%</width>
+        <bottom>120</bottom>
+        <height>76</height>
+        <itemgap>20</itemgap>
+        <align>center</align>
+        <orientation>horizontal</orientation>
+        <onup>9000</onup>
+        <control type="button" id="1">
+          <visible>VideoPlayer.Content(livetv)</visible>
+          <width>93</width>
+          <height>57</height>
+          <texturenofocus>OSD/Stop.png</texturenofocus>
+          <texturefocus>OSD/StopFocused.png</texturefocus>
+          <onclick>PlayerControl(Stop)</onclick>
+        </control>
+        <control type="button" id="2">
+          <visible>!VideoPlayer.Content(livetv)</visible>
+          <width>93</width>
+          <height>57</height>
+          <texturenofocus>OSD/SkipBack.png</texturenofocus>
+          <texturefocus>OSD/SkipBackFocused.png</texturefocus>
+          <onclick>PlayerControl(Previous)</onclick>
+        </control>
+        <control type="button" id="3">
+          <width>93</width>
+          <height>57</height>
+          <texturenofocus>OSD/Rewind.png</texturenofocus>
+          <texturefocus>OSD/RewindFocused.png</texturefocus>
+          <onclick>PlayerControl(Rewind)</onclick>
+        </control>
+        <control type="togglebutton" id="4">
+          <width>93</width>
+          <height>57</height>
+          <texturenofocus>OSD/Play.png</texturenofocus>
+          <texturefocus>OSD/PlayFocused.png</texturefocus>
+          <usealttexture>Player.Playing</usealttexture>
+          <alttexturenofocus>OSD/Pause.png</alttexturenofocus>
+          <alttexturefocus>OSD/PauseFocused.png</alttexturefocus>
+          <onclick>PlayerControl(Play)</onclick>
+        </control>
+        <control type="button" id="5">
+          <width>93</width>
+          <height>57</height>
+          <texturenofocus>OSD/FastForward.png</texturenofocus>
+          <texturefocus>OSD/FastForwardFocused.png</texturefocus>
+          <onclick>PlayerControl(Forward)</onclick>
+        </control>
+        <control type="button" id="6">
+          <visible>!VideoPlayer.Content(livetv)</visible>
+          <width>93</width>
+          <height>57</height>
+          <texturenofocus>OSD/SkipForward.png</texturenofocus>
+          <texturefocus>OSD/SkipForwardFocused.png</texturefocus>
+          <onclick>PlayerControl(Next)</onclick>
+        </control>
+      </control>
+    </control>
     <control type="group">
       <visible>Player.HasVideo + ![Window.IsActive(sliderdialog) | Window.IsActive(subtitlesearch) | Window.IsActive(videoosdsettings.xml) | Window.IsActive(PVROSDGuide)]</visible>
       <include>VisibleFadeEffect</include>
+      <include>OpenClose</include>
       <control type="image" description="Background">
         <animation condition="!ControlGroup(9000).HasFocus(101)" effect="slide" start="0,0" end="0,-200" time="150" tween="cubic" easing="inout" reversible="true">Conditional</animation>
         <left>0</left>
@@ -27,8 +99,6 @@
         <width>1800</width>
         <height>90</height>
         <itemgap>0</itemgap>
-        <onleft>9000</onleft>
-        <onright>9000</onright>
         <onup>Close</onup>
         <ondown>9009</ondown>
         <align>center</align>
@@ -67,6 +137,7 @@
       </control>
       <control type="group" id="9009" description="Grouping for navigation sake">
         <onup>9000</onup>
+        <ondown>4</ondown>
         <control type="grouplist" id="9002" description="SubMenu Subtitles">
           <visible>ControlGroup(9000).HasFocus(102)</visible>
           <include>VisibleFadeEffect</include>
@@ -77,6 +148,7 @@
           <onup>9000</onup>
           <onleft>9002</onleft>
           <onright>9002</onright>
+          <ondown>5</ondown>
           <orientation>horizontal</orientation>
           <align>center</align>
           <control type="button" id="2000" description="SubtitlesSubMenuTemplateButton">
@@ -93,6 +165,7 @@
           <onup>9000</onup>
           <onleft>9003</onleft>
           <onright>9003</onright>
+          <ondown>5</ondown>
           <orientation>horizontal</orientation>
           <align>center</align>
           <control type="button" id="3000" description="AudioSubMenuTemplateButton">
@@ -109,6 +182,7 @@
           <onup>9000</onup>
           <onleft>9004</onleft>
           <onright>9004</onright>
+          <ondown>5</ondown>
           <orientation>horizontal</orientation>
           <align>center</align>
           <control type="button" id="4000">
@@ -141,6 +215,7 @@
           <onup>9000</onup>
           <onleft>9004</onleft>
           <onright>9004</onright>
+          <ondown>5</ondown>
           <orientation>horizontal</orientation>
           <align>center</align>
           <control type="button" id="5000" description="record">
@@ -155,7 +230,7 @@
             <include>VideoMenuButtons</include>
             <label>$LOCALIZE[19069]</label>
             <onclick>ActivateWindow(PVROSDGuide)</onclick>
-				  </control>
+          </control>
           <control type="button" id="5002" description="Teletext">
             <visible>ControlGroup(9000).HasFocus(105)</visible>
             <include>VideoMenuButtons</include>
