@@ -2,36 +2,29 @@
 <window>
   <defaultcontrol always="true">9000</defaultcontrol>
   <zorder>1</zorder>
+  <onload>Dialog.Close(videoosd)</onload>
+  <onload>Dialog.Close(fullscreeninfo)</onload>
   <controls>
     <control type="group" description="osd buttons">
-      <visible>!System.HasAppleTVSlider</visible>
-      <visible>Player.HasVideo + [Window.IsActive(videoOSD) | Window.IsActive(osdsettings)]</visible>
+      <visible>![Window.IsActive(videoosdsettings.xml) | Window.IsActive(dialogslider.xml)]</visible>
       <include>VisibleFadeEffect</include>
       <include>OpenClose</include>
       <control type="image" description="OSD BG">
         <left>0</left>
         <bottom>0</bottom>
-        <height>220</height>
+        <height>100</height>
         <width>100%</width>
-        <texture colordiffuse="$VAR[OverlayColor]">dot/White95.png</texture>
+        <texture>dot/Black50.png</texture>
       </control>
       <control type="grouplist" id="777">
         <centerleft>50%</centerleft>
         <width>100%</width>
-        <bottom>120</bottom>
-        <height>76</height>
+        <bottom>0</bottom>
+        <height>90</height>
         <itemgap>20</itemgap>
         <align>center</align>
         <orientation>horizontal</orientation>
         <onup>9000</onup>
-        <control type="button" id="1">
-          <visible>VideoPlayer.Content(livetv)</visible>
-          <width>93</width>
-          <height>57</height>
-          <texturenofocus>OSD/Stop.png</texturenofocus>
-          <texturefocus>OSD/StopFocused.png</texturefocus>
-          <onclick>PlayerControl(Stop)</onclick>
-        </control>
         <control type="button" id="2">
           <visible>!VideoPlayer.Content(livetv)</visible>
           <width>93</width>
@@ -46,6 +39,14 @@
           <texturenofocus>OSD/Rewind.png</texturenofocus>
           <texturefocus>OSD/RewindFocused.png</texturefocus>
           <onclick>PlayerControl(Rewind)</onclick>
+        </control>
+        <control type="button" id="1">
+          <visible>VideoPlayer.Content(livetv)</visible>
+          <width>93</width>
+          <height>57</height>
+          <texturenofocus>OSD/Stop.png</texturenofocus>
+          <texturefocus>OSD/StopFocused.png</texturefocus>
+          <onclick>PlayerControl(Stop)</onclick>
         </control>
         <control type="togglebutton" id="4">
           <width>93</width>
@@ -74,7 +75,7 @@
         </control>
       </control>
     </control>
-    <control type="group">
+    <control type="group" description="Video TopMenu">
       <visible>Player.HasVideo + ![Window.IsActive(sliderdialog) | Window.IsActive(subtitlesearch) | Window.IsActive(videoosdsettings.xml) | Window.IsActive(PVROSDGuide)]</visible>
       <include>VisibleFadeEffect</include>
       <include>OpenClose</include>
