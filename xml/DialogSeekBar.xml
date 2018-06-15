@@ -93,7 +93,7 @@
         <label>$INFO[Player.TimeRemaining]</label>
         <font>size17</font>
       </control>
-      <control type="progress" id="1" description="ProgressbarCache">
+      <control type="progress" id="1" description="Cache Progress">
         <visible>VideoPlayer.Content(livetv)</visible>
         <visible>[Player.Paused + Player.Caching] | [VideoPlayer.Content(livetv) + !Player.ChannelPreviewActive]</visible>
         <centerleft>50%</centerleft>
@@ -105,7 +105,7 @@
         <midtexture colordiffuse="grey">OSD/ProgressMid.png</midtexture>
         <info>Player.ProgressCache</info>
       </control>
-      <control type="progress" id="1" description="Progress">
+      <control type="progress" id="1" description="Video Progress">
         <visible>VideoPlayer.Content(livetv) | !System.HasAppleTVSlider</visible>
         <centerleft>50%</centerleft>
         <width>1800</width>
@@ -116,7 +116,18 @@
         <midtexture border="1">OSD/ProgressMid.png</midtexture>
         <info>Player.Progress</info>
       </control>
-      <control type="slider" id="401" description="Seek Scrub">
+      <control type="progress" id="1" description="Seek Scrub Fake Progress">
+        <visible>![VideoPlayer.Content(livetv) | !System.HasAppleTVSlider]</visible>
+        <centerleft>50%</centerleft>
+        <width>1800</width>
+        <height>16</height>
+        <texturesliderbar border="8,0,8,0">OSD/ProgressBackground.png</texturesliderbar>
+        <lefttexture border="6,0,0,0">-</lefttexture>
+        <righttexture border="1">-</righttexture>
+        <midtexture border="1">-</midtexture>
+        <info>Player.Progress</info>
+      </control>
+      <control type="slider" id="401" description="Seek Scrub Position Vertical Bar">
         <visible>!VideoPlayer.Content(livetv)</visible>
         <centerleft>50%</centerleft>
         <width>1800</width>
