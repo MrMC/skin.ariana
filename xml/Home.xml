@@ -171,7 +171,7 @@
         <aligny>top</aligny>
         <align>left</align>
         <itemgap>4</itemgap>
-        <control type="label" id="80020" description="ShelfHeading">
+        <control type="label" id="80200" description="ShelfHeading">
           <visible>Control.IsVisible(8020)</visible>
           <include>HeaderLabelShelf</include>
           <label>$INFO[Container(8020).ListItem.Property(ItemType)]</label>
