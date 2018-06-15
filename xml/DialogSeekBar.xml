@@ -128,7 +128,7 @@
         <info>Player.Progress</info>
       </control>
       <control type="slider" id="401" description="Seek Scrub Position Vertical Bar">
-        <visible>!VideoPlayer.Content(livetv)</visible>
+        <visible>System.HasAppleTVSlider + !VideoPlayer.Content(livetv)</visible>
         <centerleft>50%</centerleft>
         <width>1800</width>
         <height>16</height>
