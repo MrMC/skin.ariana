@@ -94,7 +94,7 @@
             <font>size16</font>
             <scroll>false</scroll>
             <textcolor>$VAR[Label2Color]</textcolor>
-            <label>$INFO[ListItem.Title]</label>
+            <label>$INFO[ListItem.Date]</label>
           </control>
           <control type="progress">
             <visible>ListItem.HasEpg</visible>
@@ -179,7 +179,7 @@
               <font>size16</font>
               <scroll>false</scroll>
               <textcolor>$VAR[Label2Color]</textcolor>
-              <label>$INFO[ListItem.Title]</label>
+              <label>$INFO[ListItem.Date]</label>
             </control>
             <control type="progress">
               <visible>ListItem.HasEpg</visible>

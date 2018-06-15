@@ -218,17 +218,17 @@
   <include name="PVRGroup9000">
     <control type="grouplist" id="9000">
       <include>9000GrouplistParameters</include>
-      <control type="button" id="2">
-        <visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
-        <description>View</description>
-        <include>9000Buttons</include>
-      </control>
       <control type="button" id="99">
         <visible>Player.HasMedia</visible>
         <description>fullscreen</description>
         <include>9000Buttons</include>
         <label>16003</label>
         <onclick condition="true">fullscreen</onclick>
+      </control>
+      <control type="button" id="2">
+        <visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
+        <description>View</description>
+        <include>9000Buttons</include>
       </control>
       <control type="togglebutton" id="100">
         <!--<visible>![Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)]</visible>-->
@@ -290,11 +290,6 @@
         <include>9000Buttons</include>
         <label>19184</label>
         <visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
-      </control>
-      <control type="button" id="3">
-        <description>Sort by button</description>
-        <include>9000Buttons</include>
-        <label>103</label>
       </control>
     </control>
   </include>
