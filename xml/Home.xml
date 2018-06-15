@@ -171,7 +171,7 @@
         <aligny>top</aligny>
         <align>left</align>
         <itemgap>4</itemgap>
-        <control type="label" id="80200" description="ShelfHeading">
+        <control type="label" id="80200" description="Heading8020">
           <visible>Control.IsVisible(8020)</visible>
           <include>HeaderLabelShelf</include>
           <label>$INFO[Container(8020).ListItem.Property(ItemType)]</label>
@@ -194,7 +194,30 @@
             <include>RectangleShelfFO</include>
           </focusedlayout>
         </control>
-        <control type="label" id="80110" description="ShelfHeading">
+        <control type="label" id="80100" description="Heading8010">
+          <visible>Control.IsVisible(8010)</visible>
+          <include>HeaderLabelShelf</include>
+          <label>$INFO[Container(8010).ListItem.Property(ItemType)]</label>
+        </control>
+        <control type="panel" id="8010" description="Continue">
+          <visible>IntegerGreaterThan(Container(8010).NumItems,0) + !Control.IsVisible(8020)</visible>
+          <animation effect="fade" time="200">Visible</animation>
+          <top>0</top>
+          <left>66</left>
+          <width>1860</width>
+          <height>425</height>
+          <orientation>horizontal</orientation>
+          <onleft>8010</onleft>
+          <onright>8010</onright>
+          <onback>9000</onback>
+          <itemlayout width="596" height="425">
+            <include>RectangleShelfFO</include>
+          </itemlayout>
+          <focusedlayout width="596" height="425">
+            <include>RectangleShelfFO</include>
+          </focusedlayout>
+        </control>
+        <control type="label" id="80110" description="Heading8011">
           <visible>Control.IsVisible(8011)</visible>
           <include>HeaderLabelShelf</include>
           <label>$INFO[Container(8011).ListItem.Property(ItemType)]</label>
@@ -217,7 +240,7 @@
             <include>PostersShelfFO</include>
           </focusedlayout>
         </control>
-        <control type="label" id="80010" description="ShelfHeading">
+        <control type="label" id="80010" description="Heading8001">
           <visible>Control.IsVisible(8001)</visible>
           <include>HeaderLabelShelf</include>
           <label>$INFO[Container(8001).ListItem.Property(ItemType)]</label>
@@ -240,7 +263,7 @@
             <include>PostersShelfFO</include>
           </focusedlayout>
         </control>
-        <control type="label" id="80000" description="ShelfHeading">
+        <control type="label" id="80000" description="Heading8000">
           <visible>Control.IsVisible(8000)</visible>
           <include>HeaderLabelShelf</include>
           <label>$INFO[Container(8000).ListItem.Property(ItemType)]</label>
@@ -263,7 +286,7 @@
             <include>PostersShelfFO</include>
           </focusedlayout>
         </control>
-        <control type="label" id="80020" description="ShelfHeading">
+        <control type="label" id="80020" description="Heading8002">
           <visible>Control.IsVisible(8002)</visible>
           <include>HeaderLabelShelf</include>
           <label>$INFO[Container(8002).ListItem.Property(ItemType)]</label>
