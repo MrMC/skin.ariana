@@ -15,7 +15,6 @@
     <value>$LOCALIZE[462]: $LOCALIZE[16018]</value>
   </variable>
   <variable name="GlobalHeadings" description="Global Headings">
-    <value condition="Window.IsActive(MyMediaSources.xml)">$LOCALIZE[20094]</value>
     <value condition="Window.IsActive(56) | Window.IsActive(SkinSettings.xml)">$LOCALIZE[20077]</value>
     <value condition="Window.IsActive(Settings.xml)">$LOCALIZE[5]</value>
     <value condition="Window.IsActive(AddonBrowser.xml) + IsEmpty(Container.FolderName)">$LOCALIZE[24001]</value>
@@ -34,6 +33,7 @@
     <value condition="Window.IsActive(mymusicnav.xml) + IsEmpty(Container.FolderName)">$LOCALIZE[2]</value>
     <value condition="Window.IsActive(mypvrsearch.xml) + IsEmpty(Container.FolderName)">$LOCALIZE[137]</value>
     <value condition="Window.IsActive(mypvrtimers.xml)">$LOCALIZE[19040]</value>
+    <value condition="Window.IsActive(mymediasources.xml) + IsEmpty(Container.FolderName)">$LOCALIZE[20094]</value>
     <value>$INFO[Container.FolderName]</value>
   </variable>
   <variable name="TopLabel" description="Shown Above Plots and descriptions">
@@ -44,7 +44,7 @@
     <value condition="Container.Content(songs)">$INFO[ListItem.Album]</value>
     <value condition="Container.Content(MusicVideos)">$INFO[ListItem.Label]</value>
     <value condition="Container.Content(Movies) + !IsEmpty(ListItem.VideoCodec)">$INFO[ListItem.Year]$INFO[ListItem.Rating, • ][UPPERCASE]$INFO[ListItem.MPAA, • ][/UPPERCASE]$INFO[ListItem.Genre, • ]</value>
-    <value condition="Container.Content(Movies) + IsEmpty(ListItem.VideoCodec)">$INFO[ListItem.Year]$INFO[ListItem.Rating, • ][UPPERCASE]$INFO[ListItem.MPAA, • ]</value>
+    <value condition="Container.Content(Movies) + IsEmpty(ListItem.VideoCodec)">$INFO[ListItem.Year]$INFO[ListItem.Rating, • ][UPPERCASE]$INFO[ListItem.MPAA, • ][/UPPERCASE]</value>
     <value condition="Container.Content(Seasons) | Container.Content(TVShows)">$INFO[ListItem.Year,, • ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20453]][UPPERCASE]$INFO[ListItem.MPAA, • ][/UPPERCASE]</value>
     <value condition="!IsEmpty(ListItem.StartTime)">$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime]$INFO[ListItem.Genre, • ]</value>
     <value>$INFO[ListItem.Label2]</value>
