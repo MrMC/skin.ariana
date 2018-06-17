@@ -187,7 +187,7 @@
         <itemgap>20</itemgap>
         <align>center</align>
         <orientation>horizontal</orientation>
-        <onup>9009</onup>
+        <onup>9000</onup>
         <control type="button" id="1">
           <visible>!VideoPlayer.Content(livetv)</visible>
           <width>93</width>
