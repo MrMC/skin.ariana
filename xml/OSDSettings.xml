@@ -17,7 +17,7 @@
         <height>390</height>
         <texture colordiffuse="$VAR[OverlayColor]">dot/White95.png</texture>
       </control>
-      <control type="image" description="Background">
+      <control type="image" description="Background Line">
         <left>0</left>
         <top>90</top>
         <width>1920</width>
@@ -169,7 +169,7 @@
       </control>
     </control>
     <control type="group" description="osd buttons">
-      <visible>![Window.IsActive(videoosdsettings.xml) | Window.IsActive(dialogslider.xml)]</visible>
+      <visible>[System.HasAppleTVSlider + VideoPlayer.Content(livetv)] | !System.HasAppleTVSlider</visible>
       <include>VisibleFadeEffect</include>
       <include>OpenClose</include>
       <control type="image" description="OSD BG">
