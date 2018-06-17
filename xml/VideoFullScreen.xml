@@ -47,6 +47,29 @@
         <font>size17</font>
         <label>-</label>
       </control>
+      <control type="group">
+        <visible>Player.Caching</visible>
+        <include>VisibleFadeEffect</include>
+        <control type="image" description="Buffer label Background">
+          <centertop>50%</centertop>
+          <centerleft>50%</centerleft>
+          <width>64</width>
+          <height>64</height>
+          <texture>img/SortLetterBG.png</texture>
+          <aspectratio aligny="center" align="center">keep</aspectratio>
+        </control>
+        <control type="label" id="1" description="Buffering label">
+          <centertop>50%</centertop>
+          <centerleft>50%</centerleft>
+          <height>64</height>
+          <width>100%</width>
+          <align>center</align>
+          <font>size50B</font>
+          <shadowcolor>black</shadowcolor>
+          <textcolor>white</textcolor>
+          <label>$INFO[Player.CacheLevel,,%]</label>
+        </control>
+      </control>
     </control>
   </controls>
 </window>
