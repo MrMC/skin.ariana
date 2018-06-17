@@ -2,8 +2,8 @@
 <window type="dialog">
   <zorder>2</zorder>
   <onunload>Dialog.Close(osdsettings)</onunload>
-  <visible>[[Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Caching | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(fullscreeninfo) | Window.IsActive(videoosd) | Window.IsActive(osdsettings)] + Window.IsActive(fullscreenvideo)] | [Window.IsActive(visualisation) + [Player.Showinfo | Window.IsActive(musicosd)]] | !IsEmpty(Player.SeekNumeric) | Window.IsActive(playercontrols)</visible>
-  <visible>![Window.IsActive(sliderdialog) | Window.IsActive(subtitlesearch) | Window.IsActive(videoosdsettings.xml) | Window.IsActive(PVROSDGuide)]</visible>
+  <visible>[[Player.Seeking | Player.DisplayAfterSeek | [Player.Paused + !Player.Caching] | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(fullscreeninfo) | Window.IsActive(videoosd)] + Window.IsActive(fullscreenvideo)] | [Window.IsActive(visualisation) + [Player.Showinfo | Window.IsActive(musicosd)]] | !IsEmpty(Player.SeekNumeric) | Window.IsActive(playercontrols)</visible>
+	<visible>![Window.IsActive(sliderdialog) | Window.IsActive(subtitlesearch) | Window.IsActive(videoosdsettings.xml) | Window.IsActive(PVROSDGuide)]</visible>
   <include>VisibleFadeEffect</include>
   <controls>
     <control type="group">
@@ -12,11 +12,6 @@
       <top>90%</top>
       <control type="group" description="feedback labels">
         <top>-250</top>
-        <control type="label" id="24" description="Buffering label">
-          <visible>[Player.Paused + Player.Caching] + ![Player.Seeking | player.forwarding | player.rewinding | Player.DisplayAfterSeek]</visible>
-          <include>SeekbarLabels</include>
-          <label>$INFO[Player.CacheLevel,,%]</label>
-        </control>
         <control type="label" description="2x RW FW label">
           <visible>player.forwarding2x | player.rewinding2x</visible>
           <include>SeekbarLabels</include>
@@ -93,9 +88,7 @@
         <label>$INFO[Player.TimeRemaining]</label>
         <font>size17</font>
       </control>
-      <control type="progress" id="1" description="Cache Progress">
-        <visible>VideoPlayer.Content(livetv)</visible>
-        <visible>[Player.Paused + Player.Caching] | [VideoPlayer.Content(livetv) + !Player.ChannelPreviewActive]</visible>
+      <control type="progress" description="Cache Progress">
         <centerleft>50%</centerleft>
         <width>1800</width>
         <height>16</height>
@@ -105,8 +98,7 @@
         <midtexture colordiffuse="grey">OSD/ProgressMid.png</midtexture>
         <info>Player.ProgressCache</info>
       </control>
-      <control type="progress" id="1" description="Video Progress">
-        <visible>VideoPlayer.Content(livetv) | !System.HasAppleTVSlider</visible>
+      <control type="progress" description="Video Progress">
         <centerleft>50%</centerleft>
         <width>1800</width>
         <height>16</height>
@@ -116,17 +108,6 @@
         <midtexture border="1">OSD/ProgressMid.png</midtexture>
         <info>Player.Progress</info>
       </control>
-      <control type="progress" id="1" description="Seek Scrub Fake Progress">
-        <visible>![VideoPlayer.Content(livetv) | !System.HasAppleTVSlider]</visible>
-        <centerleft>50%</centerleft>
-        <width>1800</width>
-        <height>16</height>
-        <texturesliderbar border="8,0,8,0">OSD/ProgressBackground.png</texturesliderbar>
-        <lefttexture border="6,0,0,0">-</lefttexture>
-        <righttexture border="1">-</righttexture>
-        <midtexture border="1">-</midtexture>
-        <info>Player.Progress</info>
-      </control>
       <control type="slider" id="401" description="Seek Scrub Position Vertical Bar">
         <visible>System.HasAppleTVSlider + !VideoPlayer.Content(livetv)</visible>
         <centerleft>50%</centerleft>
@@ -134,7 +115,18 @@
         <height>16</height>
         <onup>9000</onup>
         <texturesliderbar border="8,0,8,0">OSD/ProgressBackground.png</texturesliderbar>
-        <textureslidernib>OSD/SliderNib.png</textureslidernib>
+        <textureslidernib>-</textureslidernib>
+        <textureslidernibfocus>OSD/SliderNib.png</textureslidernibfocus>
+        <action>seek</action>
+      </control>
+      <control type="slider" id="401" description="Seek Scrub Position Vertical Bar">
+        <visible>!System.HasAppleTVSlider + !VideoPlayer.Content(livetv)</visible>
+        <centerleft>50%</centerleft>
+        <width>1800</width>
+        <height>16</height>
+        <onup>9000</onup>
+        <texturesliderbar border="8,0,8,0">OSD/ProgressBackground.png</texturesliderbar>
+        <textureslidernib>-</textureslidernib>
         <textureslidernibfocus>OSD/SliderNib.png</textureslidernibfocus>
         <action>seek</action>
       </control>
