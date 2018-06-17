@@ -232,7 +232,6 @@
           <control type="group">
             <include>FocusButtonsAnimation</include>
             <control type="image">
-              <visible>Control.HasFocus(51)</visible>
               <animation effect="fade" time="100">VisibleChange</animation>
               <left>16</left>
               <top>9</top>
@@ -322,7 +321,6 @@
           <bordersize>4</bordersize>
         </control>
         <control type="grouplist" id="9002">
-          <visible>!ControlGroup(9000).HasFocus()</visible>
           <left>1192</left>
           <top>830</top>
           <width>638</width>
