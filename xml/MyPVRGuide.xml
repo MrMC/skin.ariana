@@ -18,7 +18,7 @@
           <rulerunit>6</rulerunit>
           <onback>9000</onback>
           <viewtype label="19032">EPG Grid</viewtype>
-          <progresstexture border="0,60,10,4">epg/EPGMarker.png</progresstexture>
+          <progresstexture colordiffuse="$VAR[LabelFOColor]">dot/White20.png</progresstexture>
           <rulerlayout height="40" width="1300" description="Date and time epg header">
             <control type="label">
               <width min="100" max="300">auto</width>
