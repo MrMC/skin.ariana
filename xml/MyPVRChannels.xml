@@ -253,34 +253,57 @@
             <texture colordiffuse="$VAR[OverlayColor]">img/WhiteDot.png</texture>
             <include>SquareCommons</include>
           </control>
+          <control type="label">
+            <visible>IsEmpty(ListItem.Thumb)</visible>
+            <left>0</left>
+            <top>0</top>
+            <width>100%</width>
+            <height>90%</height>
+            <font>size22</font>
+            <textcolor>$VAR[LabelNFColor]</textcolor>
+            <align>center</align>
+            <aligny>center</aligny>
+            <label>[B]$INFO[ListItem.Label][/B]</label>
+          </control>
           <control type="image">
             <aspectratio align="center" aligny="center">keep</aspectratio>
-            <bordersize>20</bordersize>
+            <bordersize>50</bordersize>
             <include>SquareCommons</include>
-            <texture>$INFO[ListItem.Icon]</texture>
+            <texture>$INFO[ListItem.Thumb]</texture>
           </control>
         </itemlayout>
         <focusedlayout height="408" width="358">
           <control type="group">
             <animation type="Focus" reversible="false">
-              <effect type="zoom" center="auto" start="100" end="110" time="120" easing="inout"/>
+              <effect type="zoom" center="auto" start="100" end="110" time="125" easing="inout"/>
             </animation>
             <animation type="UnFocus" reversible="false">
-              <effect type="zoom" center="auto" start="110" end="100" time="120" easing="inout"/>
+              <effect type="zoom" center="auto" start="110" end="100" time="125" easing="inout"/>
             </animation>
             <include>SquareBG_FO</include>
             <control type="image">
               <texture colordiffuse="$VAR[OverlayColor]">img/WhiteDot.png</texture>
               <include>SquareCommons</include>
             </control>
+            <control type="label">
+              <visible>IsEmpty(ListItem.Thumb)</visible>
+              <left>0</left>
+              <top>0</top>
+              <width>100%</width>
+              <height>90%</height>
+              <font>size22</font>
+              <textcolor>$VAR[LabelNFColor]</textcolor>
+              <align>center</align>
+              <aligny>center</aligny>
+              <label>[B]$INFO[ListItem.Label][/B]</label>
+            </control>
             <control type="image">
               <aspectratio align="center" aligny="center">keep</aspectratio>
-              <bordersize>20</bordersize>
+              <bordersize>50</bordersize>
               <include>SquareCommons</include>
-              <texture>$INFO[ListItem.Icon]</texture>
+              <texture>$INFO[ListItem.Thumb]</texture>
             </control>
             <control type="label">
-              <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
               <left>0</left>
               <top>340</top>
               <width>358</width>
