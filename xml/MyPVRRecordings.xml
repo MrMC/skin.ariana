@@ -156,13 +156,11 @@
         <include>PVRGroup9000</include>
       </control>
       <control type="label" id="29">
-        <font>
-        </font>
+        <font/>
         <visible>false</visible>
       </control>
       <control type="label" id="30">
-        <font>
-        </font>
+        <font/>
         <visible>false</visible>
       </control>
     </control>
