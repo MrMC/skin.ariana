@@ -4,18 +4,17 @@
   <controls>
     <include>FullBackground</include>
     <control type="image" description="Fanart">
-      <animation effect="slide" start="0,0" end="0,363" time="300" reversible="true" condition="Control.HasFocus(50)">Conditional</animation>
       <left>0</left>
       <top>0</top>
       <width>100%</width>
-      <height>748</height>
+      <height>100%</height>
       <aspectratio aligny="top">scale</aspectratio>
       <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
       <animation effect="fade" end="8" time="0" condition="true">Conditional</animation>
     </control>
     <control type="group" description="content">
       <include>OpenClose</include>
-      <animation effect="slide" start="0,0" end="0,-732" time="300" reversible="true" condition="Control.HasFocus(50)">Conditional</animation>
+      <animation effect="slide" start="0,0" end="0,-740" time="300" reversible="true" condition="Control.HasFocus(50)">Conditional</animation>
       <control type="group" description="Media Info and buttons">
         <control type="image" description="Media Thumb">
           <visible>!Skin.HasSetting(InfoPosterHide)</visible>
@@ -31,10 +30,10 @@
         </control>
         <control type="group" description="top">
           <left>150</left>
-          <top>120</top>
+          <top>90</top>
           <control type="label" description="Main Label">
             <top>0</top>
-            <width>750</width>
+            <width>900</width>
             <height>60</height>
             <font>size50B</font>
             <align>left</align>
@@ -43,8 +42,8 @@
             <wrapmultiline>true</wrapmultiline>
           </control>
           <control type="grouplist">
-            <top>100</top>
-            <width>750</width>
+            <top>84</top>
+            <width>900</width>
             <height>38</height>
             <align>left</align>
             <aligny>center</aligny>
@@ -95,14 +94,13 @@
               <aspectratio aligny="center" align="left">keep</aspectratio>
               <texture colordiffuse="$VAR[LabelNFColor]">badges/default.rating.png</texture>
             </control>
-            <control type="label" description="Labels">
-              <visible>!IsEmpty(ListItem.Rating)</visible>
-              <width>70</width>
+            <control type="label" description="Simple Rating">
+              <width min="40">auto</width>
               <height>38</height>
               <font>size21</font>
               <textcolor>$VAR[LabelNFColor]</textcolor>
               <align>left</align>
-              <label>$INFO[ListItem.Rating]</label>
+              <label>$INFO[ListItem.RatingAndVotes]</label>
             </control>
             <control type="label" description="Labels">
               <width min="50">auto</width>
@@ -111,7 +109,16 @@
               <textcolor>$VAR[LabelNFColor]</textcolor>
               <align>left</align>
               <aligny>center</aligny>
-              <label>$INFO[ListItem.Year,,  ]</label>
+              <label>$INFO[ListItem.Year, • ,]</label>
+            </control>
+            <control type="label" description="Labels">
+              <width min="50">auto</width>
+              <height>38</height>
+              <font>size21</font>
+              <textcolor>$VAR[LabelNFColor]</textcolor>
+              <align>left</align>
+              <aligny>center</aligny>
+              <label>$INFO[ListItem.Duration, • , $LOCALIZE[31297]]</label>
             </control>
             <control type="button" description="Resolution">
               <visible>!IsEmpty(ListItem.VideoResolution)</visible>
@@ -138,20 +145,29 @@
               <onclick>-</onclick>
             </control>
           </control>
-          <control type="label" description="Codec">
-            <top>148</top>
-            <width>750</width>
+          <control type="label" description="Genre">
+            <top>136</top>
+            <width>900</width>
             <height>45</height>
             <font>size18</font>
             <textcolor>$VAR[LabelNFColor]</textcolor>
             <align>left</align>
             <label>$INFO[ListItem.Genre]</label>
           </control>
+          <control type="label" description="Codec">
+            <top>184</top>
+            <width>900</width>
+            <height>45</height>
+            <font>size16</font>
+            <textcolor>$VAR[Label2Color]</textcolor>
+            <align>left</align>
+            <label>[UPPERCASE]$INFO[ListItem.VideoCodec]$INFO[ListItem.VideoResolution, / ]$INFO[ListItem.AudioCodec, • ]$INFO[ListItem.AudioChannels, / ][/UPPERCASE]</label>
+          </control>
           <control type="textbox" description="Plot">
             <left>0</left>
-            <top>210</top>
+            <top>240</top>
             <width>920</width>
-            <height>254</height>
+            <height>212</height>
             <align>left</align>
             <font>plot</font>
             <autoscroll delay="15000" time="5000" repeat="10000">true</autoscroll>
@@ -210,16 +226,15 @@
         <top>60</top>
         <control type="image" description="Navbar">
           <centerleft>590</centerleft>
-          <top>670</top>
+          <top>680</top>
           <width>140%</width>
-          <height>390</height>
+          <height>360</height>
           <aspectratio align="center">stretch</aspectratio>
-          <texture border="60">img/HomeMenuBar.png</texture>
-          <bordersize>0</bordersize>
+          <texture colordiffuse="$VAR[OverlayColor]">dot/White95.png</texture>
         </control>
         <control type="panel" id="50" description="50 actors">
           <left>60</left>
-          <top>700</top>
+          <top>666</top>
           <width>1860</width>
           <height>408</height>
           <orientation>horizontal</orientation>
@@ -227,22 +242,21 @@
           <onright>50</onright>
           <onup>9001</onup>
           <ondown>noop</ondown>
-          <preloaditems>4</preloaditems>
           <itemlayout height="408" width="300">
             <control type="image">
-              <left>15</left>
-              <top>15</top>
-              <width>270</width>
-              <height>270</height>
+              <left>25</left>
+              <top>25</top>
+              <width>250</width>
+              <height>250</height>
               <texture colordiffuse="$VAR[OverlayColor]">thumbs/Monogram.png</texture>
               <bordersize>0</bordersize>
               <aspectratio>scale</aspectratio>
             </control>
             <control type="label" description="Monogram">
-              <left>15</left>
-              <top>15</top>
-              <width>270</width>
-              <height>270</height>
+              <left>25</left>
+              <top>25</top>
+              <width>250</width>
+              <height>250</height>
               <font>monogram</font>
               <align>center</align>
               <aligny>center</aligny>
@@ -250,10 +264,10 @@
               <label>$INFO[ListItem.Property(monogram)]</label>
             </control>
             <control type="image">
-              <left>15</left>
-              <top>15</top>
-              <width>270</width>
-              <height>270</height>
+              <left>25</left>
+              <top>26</top>
+              <width>250</width>
+              <height>250</height>
               <texture diffuse="img/UserDiffuse.png">$INFO[ListItem.Thumb]</texture>
               <aspectratio scalediffuse="false">scale</aspectratio>
               <bordersize>22</bordersize>
@@ -263,7 +277,17 @@
               <right>0</right>
               <top>250</top>
               <height>66</height>
-              <font>size19</font>
+              <font>size20</font>
+              <align>center</align>
+              <textcolor>$VAR[LabelNFColor]</textcolor>
+              <label>$INFO[ListItem.Label]</label>
+            </control>
+            <control type="label" description="Main Label">
+              <left>0</left>
+              <right>0</right>
+              <top>286</top>
+              <height>66</height>
+              <font>size18</font>
               <align>center</align>
               <textcolor>$VAR[Label2Color]</textcolor>
               <label>$INFO[ListItem.Label2]</label>
@@ -278,19 +302,19 @@
                 <effect type="zoom" center="auto" start="115" end="100" time="120" easing="inout"/>
               </animation>
               <control type="image">
-                <left>15</left>
-                <top>15</top>
-                <width>270</width>
-                <height>270</height>
+                <left>25</left>
+                <top>25</top>
+                <width>250</width>
+                <height>250</height>
                 <texture colordiffuse="$VAR[OverlayColor]">thumbs/Monogram.png</texture>
                 <bordersize>0</bordersize>
                 <aspectratio>scale</aspectratio>
               </control>
               <control type="label" description="Monogram">
-                <left>15</left>
-                <top>15</top>
-                <width>270</width>
-                <height>270</height>
+                <left>25</left>
+                <top>25</top>
+                <width>250</width>
+                <height>250</height>
                 <font>monogram</font>
                 <align>center</align>
                 <aligny>center</aligny>
@@ -298,10 +322,10 @@
                 <label>$INFO[ListItem.Property(monogram)]</label>
               </control>
               <control type="image">
-                <left>15</left>
-                <top>15</top>
-                <width>270</width>
-                <height>270</height>
+                <left>25</left>
+                <top>26</top>
+                <width>250</width>
+                <height>250</height>
                 <font>monogram</font>
                 <texture diffuse="img/UserDiffuse.png">$INFO[ListItem.Thumb]</texture>
                 <aspectratio scalediffuse="false">scale</aspectratio>
@@ -312,10 +336,20 @@
                 <right>0</right>
                 <top>250</top>
                 <height>66</height>
-                <font>size19</font>
+                <font>size20</font>
                 <align>center</align>
                 <textcolor>$VAR[LabelNFColor]</textcolor>
                 <label>$INFO[ListItem.Label]</label>
+              </control>
+              <control type="label" description="Main Label">
+                <left>0</left>
+                <right>0</right>
+                <top>286</top>
+                <height>66</height>
+                <font>size18</font>
+                <align>center</align>
+                <textcolor>$VAR[Label2Color]</textcolor>
+                <label>$INFO[ListItem.Label2]</label>
               </control>
             </control>
           </focusedlayout>
