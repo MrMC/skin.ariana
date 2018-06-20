@@ -47,10 +47,7 @@
         <font>size17</font>
         <label>-</label>
       </control>
-      <control type="group">
-        <visible>Player.Caching</visible>
-        <include>VisibleFadeEffect</include>
-        <control type="image" description="Buffer label Background">
+        <control type="image" id="1" description="Buffer label Background">
           <centertop>50%</centertop>
           <centerleft>50%</centerleft>
           <width>64</width>
@@ -69,7 +66,6 @@
           <textcolor>white</textcolor>
           <label>$INFO[Player.CacheLevel,,%]</label>
         </control>
-      </control>
     </control>
   </controls>
 </window>

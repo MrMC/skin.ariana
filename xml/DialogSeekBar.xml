@@ -93,9 +93,7 @@
         <width>1800</width>
         <height>16</height>
         <texturesliderbar border="8,0,8,0">OSD/ProgressBackground.png</texturesliderbar>
-        <lefttexture colordiffuse="grey" border="6,0,0,0">OSD/ProgressLeft.png</lefttexture>
-        <righttexture colordiffuse="grey" border="1">OSD/ProgressMid.png</righttexture>
-        <midtexture colordiffuse="grey">OSD/ProgressMid.png</midtexture>
+        <midtexture colordiffuse="silver">OSD/ProgressMid.png</midtexture>
         <info>Player.ProgressCache</info>
       </control>
       <control type="progress" description="Video Progress">
@@ -103,31 +101,17 @@
         <width>1800</width>
         <height>16</height>
         <texturesliderbar border="8,0,8,0">OSD/ProgressBackground.png</texturesliderbar>
-        <lefttexture border="6,0,0,0">OSD/ProgressLeft.png</lefttexture>
-        <righttexture border="1">OSD/ProgressMid.png</righttexture>
         <midtexture border="1">OSD/ProgressMid.png</midtexture>
         <info>Player.Progress</info>
       </control>
       <control type="slider" id="401" description="Seek Scrub Position Vertical Bar">
-        <visible>System.HasAppleTVSlider + !VideoPlayer.Content(livetv)</visible>
         <centerleft>50%</centerleft>
         <width>1800</width>
         <height>16</height>
         <onup>9000</onup>
         <texturesliderbar border="8,0,8,0">OSD/ProgressBackground.png</texturesliderbar>
-        <textureslidernib>-</textureslidernib>
-        <textureslidernibfocus>OSD/SliderNib.png</textureslidernibfocus>
-        <action>seek</action>
-      </control>
-      <control type="slider" id="401" description="Seek Scrub Position Vertical Bar">
-        <visible>!System.HasAppleTVSlider + !VideoPlayer.Content(livetv)</visible>
-        <centerleft>50%</centerleft>
-        <width>1800</width>
-        <height>16</height>
-        <onup>9000</onup>
-        <texturesliderbar border="8,0,8,0">OSD/ProgressBackground.png</texturesliderbar>
-        <textureslidernib>-</textureslidernib>
-        <textureslidernibfocus>OSD/SliderNib.png</textureslidernibfocus>
+        <textureslidernib colordiffuse="white">OSD/SliderNib.png</textureslidernib>
+        <textureslidernibfocus colordiffuse="white">OSD/SliderNib.png</textureslidernibfocus>
         <action>seek</action>
       </control>
     </control>

@@ -5,9 +5,7 @@
     <include>FullBackground</include>
     <control type="group">
       <control type="button" id="4004" description="Users">
-        <visible>IntegerGreaterThan(System.ProfileCount,1) | Library.HasServices</visible>
         <include>HiddenButton</include>
-        <onclick>System.LogOff</onclick>
       </control>
       <include>OpenClose</include>
       <animation type="Conditional" condition="ControlGroup(9500).HasFocus()" reversible="true">
