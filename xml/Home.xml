@@ -98,11 +98,9 @@
             <top>0</top>
             <height>100%</height>
             <width>100%</width>
-            <texture colordiffuse="$VAR[MenuColor]" border="4">thumbs/HomeFO.png</texture>
-            <bordersize>0</bordersize>
+            <texture>thumbs/MainMenuFO.png</texture>
           </control>
           <control type="image">
-            <include>VisibleFadeEffect</include>
             <centerleft>50%</centerleft>
             <centertop>42%</centertop>
             <height>74</height>
@@ -134,12 +132,9 @@
               <top>0</top>
               <height>100%</height>
               <width>100%</width>
-              <texture colordiffuse="$VAR[MenuColor]" border="4">thumbs/HomeFO.png</texture>
-              <bordersize>0</bordersize>
+              <texture>thumbs/MainMenuFO.png</texture>
             </control>
             <control type="image">
-              <visible>Control.HasFocus(9000)</visible>
-              <include>VisibleFadeEffect</include>
               <centerleft>50%</centerleft>
               <centertop>42%</centertop>
               <height>74</height>
