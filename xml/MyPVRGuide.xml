@@ -21,10 +21,10 @@
           <progresstexture colordiffuse="$VAR[LabelFOColor]">dot/White20.png</progresstexture>
           <rulerlayout height="40" width="1300" description="Date and time epg header">
             <control type="label">
-              <width min="100" max="300">auto</width>
+              <width min="100" max="270">auto</width>
               <height>40</height>
               <label>[B]$INFO[ListItem.Label][/B]</label>
-              <font>size15</font>
+              <font>size15slim</font>
               <align>left</align>
               <textcolor>$VAR[LabelNFColor]</textcolor>
             </control>
