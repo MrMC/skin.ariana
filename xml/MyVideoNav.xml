@@ -152,7 +152,6 @@
         <left>66</left>
         <top>126</top>
         <width>1788</width>
-        <height>950</height>
         <orientation>vertical</orientation>
         <onup>53</onup>
         <ondown>53</ondown>
@@ -239,7 +238,7 @@
         <right>66</right>
         <top>248</top>
         <width>800</width>
-        <height>756</height>
+        <bottom>76</bottom>
         <onback>9000</onback>
         <pagecontrol>60</pagecontrol>
         <viewtype label="535">List 52</viewtype>
