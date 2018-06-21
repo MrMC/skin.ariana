@@ -122,10 +122,10 @@
         <focusedlayout height="250" width="298">
           <control type="group" description="List in FO">
             <animation type="Focus">
-              <effect type="zoom" center="auto" start="100" end="120" time="100" easing="in"/>
+              <effect type="zoom" center="auto" start="100" end="120" time="100" tweener="cubic" easing="out"/>
             </animation>
             <animation type="UnFocus">
-              <effect type="zoom" center="auto" start="120" end="100" time="100" easing="out"/>
+              <effect type="zoom" center="auto" start="120" end="100" delay="50" time="220" tweener="cubic" easing="in"/>
             </animation>
             <control type="image">
               <left>0</left>
