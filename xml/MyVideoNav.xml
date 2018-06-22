@@ -181,10 +181,10 @@
         <focusedlayout condition="Container.Content(Movies) | Container.content(tvshows) | container.content(seasons)" height="475" width="298">
           <control type="group">
             <animation type="Focus">
-              <effect type="zoom" center="auto" start="100" end="120" time="100" tweener="cubic" easing="out"/>
+              <effect type="zoom" center="auto" start="100" end="114" time="100" tweener="cubic" easing="out"/>
             </animation>
             <animation type="UnFocus">
-              <effect type="zoom" center="auto" start="120" end="100" delay="50" time="220" tweener="cubic" easing="in"/>
+              <effect type="zoom" center="auto" start="114" end="100" delay="50" time="220" tweener="cubic" easing="in"/>
             </animation>
             <include>PosterBG_FO</include>
             <control type="image">
