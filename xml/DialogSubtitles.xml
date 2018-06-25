@@ -113,7 +113,7 @@
             <height>54</height>
             <colordiffuse>Label2</colordiffuse>
             <aspectratio>keep</aspectratio>
-            <texture>badges/rating$INFO[ListItem.ActualIcon].png</texture>
+            <texture>badges/$INFO[ListItem.ActualIcon].png</texture>
           </control>
         </itemlayout>
         <focusedlayout width="1365" height="62">
@@ -182,7 +182,7 @@
               <width>120</width>
               <height>54</height>
               <aspectratio>keep</aspectratio>
-              <texture>badges/rating$INFO[ListItem.ActualIcon].png</texture>
+              <texture>badges/$INFO[ListItem.ActualIcon].png</texture>
             </control>
           </control>
         </focusedlayout>
