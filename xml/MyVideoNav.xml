@@ -234,7 +234,7 @@
         </control>
       </control>
       <control type="list" id="52" description="Movie shows list">
-        <visible>container.content(Movies) | container.content(TVshows) | container.content(seasons) | container.content(episodes) | container.content(musicvideos) | container.content(files)</visible>
+        <visible>container.content(Movies) | container.content(TVshows) | container.content(seasons) | container.content(episodes) | container.content(musicvideos)</visible>
         <right>66</right>
         <top>248</top>
         <width>800</width>
