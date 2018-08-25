@@ -14,7 +14,7 @@
       </control>
       <control type="image" id="110" description="Service Logo">
         <centerleft>50%</centerleft>
-        <top>60</top>
+        <top>30</top>
         <width>500</width>
         <height>80</height>
         <aspectratio align="center">keep</aspectratio>
