@@ -460,21 +460,27 @@
           <control type="button" id="2" description="Views">
             <include>9000Buttons</include>
           </control>
-          <control type="togglebutton" id="14" description="Toggle Watched">
+          <control type="button" id="10" description="Toggle Watched">
+            <align>left</align>
             <include>9000Buttons</include>
-            <label>$LOCALIZE[535]: $LOCALIZE[16100]</label>
-            <altlabel>$LOCALIZE[535]: $LOCALIZE[16101]</altlabel>
+            <label>$LOCALIZE[20367]</label>
+						<label2>$INFO[Container.NumItems,: ]</label2>
           </control>
           <control type="button" id="3" description="Sort">
             <include>9000Buttons</include>
           </control>
           <control type="togglebutton" id="4" description="Ordering">
             <include>9000Buttons</include>
-            <label>$LOCALIZE[21429]: $LOCALIZE[21430]</label>
-            <altlabel>$LOCALIZE[21429]: $LOCALIZE[21431]</altlabel>
+            <label>$LOCALIZE[584]</label>
+            <altlabel>$LOCALIZE[585]</altlabel>
+          </control>
+          <control type="edit" id="19" description="Search">
+            <width>200</width>
+            <include>9000Buttons</include>
+            <hinttext>$LOCALIZE[137]</hinttext>
+            <!--<label>$LOCALIZE[137]</label>-->
           </control>
           <control type="button" id="20" description="Update library">
-            <visible>Library.HasContent(movies) | Library.HasContent(tvshows)</visible>
             <include>9000Buttons</include>
             <label>653</label>
           </control>

@@ -372,13 +372,14 @@
           </control>
           <control type="togglebutton" id="4" description="Ordering">
             <include>9000Buttons</include>
-            <label>$LOCALIZE[21429]: $LOCALIZE[21430]</label>
-            <altlabel>$LOCALIZE[21429]: $LOCALIZE[21431]</altlabel>
+            <label>$LOCALIZE[584]</label>
+            <altlabel>$LOCALIZE[585]</altlabel>
           </control>
-          <control type="togglebutton" id="16" description="PartyMode">
+          <control type="edit" id="19" description="Search">
+            <width>200</width>
             <include>9000Buttons</include>
-            <label>$LOCALIZE[589]: $LOCALIZE[351]</label>
-            <altlabel>$LOCALIZE[589]: $LOCALIZE[16041]</altlabel>
+            <hinttext>$LOCALIZE[137]</hinttext>
+            <!--<label>$LOCALIZE[137]</label>-->
           </control>
           <control type="button" id="20" description="Update library">
             <visible>Library.HasContent(music)</visible>
