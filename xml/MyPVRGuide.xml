@@ -80,7 +80,7 @@
           <focusedchannellayout height="80" width="280">
             <control type="image">
               <left>0</left>
-              <right>0</right>
+              <right>220</right>
               <top>0</top>
               <height>100%</height>
               <texture border="9">img/SettingsButtonFO.png</texture>
