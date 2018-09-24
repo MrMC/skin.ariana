@@ -2,8 +2,9 @@
 <window>
   <defaultcontrol always="true">9000</defaultcontrol>
   <zorder>1</zorder>
+  <include>OpenClose</include>
   <onload>Dialog.Close(videoosd)</onload>
-  <onload>Dialog.Close(fullscreeninfo)</onload>
+  <!--<onload>Dialog.Close(fullscreeninfo)</onload>-->
   <controls>
     <control type="group" description="Video TopMenu">
       <visible>Player.HasVideo + ![Window.IsActive(sliderdialog) | Window.IsActive(subtitlesearch) | Window.IsActive(videoosdsettings.xml) | Window.IsActive(PVROSDGuide)]</visible>
@@ -30,7 +31,7 @@
         <width>1800</width>
         <height>90</height>
         <itemgap>0</itemgap>
-        <onup>Close</onup>
+        <onup>Dialog.Close(all,true)</onup>
         <align>center</align>
         <ondown>9009</ondown>
         <orientation>horizontal</orientation>
@@ -130,6 +131,13 @@
             <include>VideoMenuButtons</include>
             <label>CMS</label>
             <onclick>ActivateWindow(osdcmssettings)</onclick>
+          </control>
+          <control type="button" id="4003">
+            <visible>ControlGroup(9000).HasFocus(104)</visible>
+            <include>VisibleFadeEffect</include>
+            <include>VideoMenuButtons</include>
+            <label>31040</label>
+            <onclick>codecinfo</onclick>
           </control>
         </control>
         <control type="grouplist" id="9005" description="Player Settings Submenu">
