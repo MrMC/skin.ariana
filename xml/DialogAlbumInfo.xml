@@ -88,7 +88,6 @@
           <width>900</width>
           <height>250</height>
           <font>plot</font>
-          <autoscroll delay="6500" time="4000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
         </control>
       </control>
       <control type="grouplist" id="9001">

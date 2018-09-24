@@ -20,6 +20,7 @@
         <align>center</align>
         <aligny>center</aligny>
         <textcolor>$VAR[SelectedColor]</textcolor>
+        <autoscroll>false</autoscroll>
       </control>
       <control type="button" id="1000" description="Buttons">
         <include>FocusButtonsAnimation</include>
