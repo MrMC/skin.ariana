@@ -33,9 +33,7 @@
         <top>248</top>
         <width>800</width>
         <height>750</height>
-        <onup>50</onup>
-        <ondown>50</ondown>
-        <onback>9000</onback>
+        <onup>9000</onup>
         <pagecontrol>60</pagecontrol>
         <viewtype label="535">List 50</viewtype>
         <preloaditems>4</preloaditems>
@@ -243,9 +241,7 @@
         <width>1860</width>
         <height>954</height>
         <orientation>vertical</orientation>
-        <ondown>53</ondown>
-        <onup>53</onup>
-        <onback>9000</onback>
+        <onup>9000</onup>
         <pagecontrol>60</pagecontrol>
         <itemlayout height="408" width="358">
           <include>SquareBG_FO</include>

@@ -13,7 +13,7 @@
         <width>1860</width>
         <height>954</height>
         <orientation>vertical</orientation>
-        <onback>9000</onback>
+        <onup>9000</onup>
         <pagecontrol>60</pagecontrol>
         <preloaditems>4</preloaditems>
         <itemlayout height="408" width="358">

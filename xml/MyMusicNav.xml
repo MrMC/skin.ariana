@@ -14,7 +14,7 @@
         <width>1860</width>
         <height>954</height>
         <orientation>vertical</orientation>
-        <onback>9000</onback>
+        <onup>9000</onup>
         <pagecontrol>60</pagecontrol>
         <preloaditems>4</preloaditems>
         <itemlayout height="408" width="358">
@@ -70,7 +70,7 @@
         <top>270</top>
         <width>840</width>
         <height>742</height>
-        <onback>9000</onback>
+        <onup>9000</onup>
         <pagecontrol>60</pagecontrol>
         <viewtype label="537">Big List</viewtype>
         <preloaditems>4</preloaditems>
@@ -185,7 +185,7 @@
         <width>920</width>
         <height>636</height>
         <onright>9002</onright>
-        <onback>9000</onback>
+        <onup>9000</onup>
         <pagecontrol>60</pagecontrol>
         <viewtype label="537">Big List 51</viewtype>
         <preloaditems>4</preloaditems>

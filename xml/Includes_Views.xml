@@ -30,9 +30,7 @@
       <top>260</top>
       <width>784</width>
       <height>720</height>
-      <onup>50</onup>
-      <ondown>50</ondown>
-      <onback condition="!substring(Container.FolderPath,sources://)">9000</onback>
+      <onup>9000</onup>
       <pagecontrol>60</pagecontrol>
       <viewtype label="535">List</viewtype>
       <preloaditems>2</preloaditems>
