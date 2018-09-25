@@ -374,7 +374,7 @@
     <height>40</height>
     <width>1860</width>
     <font>size22</font>
-    <textcolor>$VAR[Label2Color]</textcolor>
+    <textcolor>$VAR[LabelNFColor]</textcolor>
     <align>left</align>
   </include>
   <include name="SquareBG_FO">
@@ -493,30 +493,7 @@
         <texture background="true">$INFO[ListItem.Art(tvshow.poster)]</texture>
       </control>
       <include>PosterWatchedMarks</include>
-      <control type="label">
-        <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
-        <left>5</left>
-        <top>400</top>
-        <width>290</width>
-        <height>45</height>
-        <font>size19</font>
-        <textcolor>$VAR[LabelNFColor]</textcolor>
-        <align>center</align>
-        <label>$INFO[ListItem.Label]</label>
       </control>
-      <control type="label" description="Label2">
-        <visible>container.content(TVshows) | container.content(seasons)</visible>
-        <visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
-        <right>25</right>
-        <top>17</top>
-        <height>42</height>
-        <width>42</width>
-        <font>size14</font>
-        <align>center</align>
-        <textcolor>$VAR[LabelFOColor]</textcolor>
-        <label>[B]$INFO[ListItem.Property(UnwatchedEpisodes)][/B]</label>
-      </control>
-    </control>
   </include>
   <include name="RectangleShelfFO">
     <control type="group">
@@ -550,17 +527,7 @@
         <info>ListItem.PercentPlayed</info>
       </control>
       <include>RectangleWatchedMarks</include>
-      <control type="label">
-        <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
-        <left>5</left>
-        <top>350</top>
-        <width>586</width>
-        <height>45</height>
-        <font>size19</font>
-        <textcolor>$VAR[LabelNFColor]</textcolor>
-        <align>center</align>
-        <label>$INFO[ListItem.Property(SeasonEpisode),, - ]$INFO[ListItem.Label]</label>
       </control>
-    </control>
+
   </include>
 </includes>

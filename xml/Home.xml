@@ -109,7 +109,7 @@
             <aspectratio>keep</aspectratio>
           </control>
           <control type="label">
-            <top>196</top>
+            <top>206</top>
             <left>0</left>
             <right>0</right>
             <height>40</height>
@@ -142,8 +142,9 @@
               <texture>$INFO[ListItem.Property(type),icons/,.png]</texture>
               <aspectratio>keep</aspectratio>
             </control>
+          </control>
             <control type="label">
-              <top>196</top>
+              <top>206</top>
               <left>0</left>
               <right>0</right>
               <height>40</height>
@@ -152,7 +153,7 @@
               <textcolor>$VAR[LabelNFColor]</textcolor>
               <label>$INFO[ListItem.Label]</label>
             </control>
-          </control>
+
         </focusedlayout>
       </control>
       <control type="grouplist" id="9500" description="home shelves">
@@ -182,9 +183,29 @@
           <onback>9000</onback>
           <itemlayout width="596" height="425">
             <include>RectangleShelfFO</include>
+            <control type="label">
+              <left>5</left>
+              <top>366</top>
+              <width>586</width>
+              <height>45</height>
+              <font>size19</font>
+              <textcolor>$VAR[Label2Color]</textcolor>
+              <align>center</align>
+              <label>$INFO[ListItem.Property(SeasonEpisode),, - ]$INFO[ListItem.Label]</label>
+            </control>
           </itemlayout>
           <focusedlayout width="596" height="425">
             <include>RectangleShelfFO</include>
+            <control type="label">
+              <left>5</left>
+              <top>366</top>
+              <width>586</width>
+              <height>45</height>
+              <font>size19</font>
+              <textcolor>$VAR[LabelNFColor]</textcolor>
+              <align>center</align>
+              <label>$INFO[ListItem.Property(SeasonEpisode),, - ]$INFO[ListItem.Label]</label>
+            </control>
           </focusedlayout>
         </control>
         <control type="label" id="80100" description="Heading8010">
@@ -205,9 +226,30 @@
           <onback>9000</onback>
           <itemlayout width="596" height="425">
             <include>RectangleShelfFO</include>
+            <control type="label">
+
+              <left>5</left>
+              <top>366</top>
+              <width>586</width>
+              <height>45</height>
+              <font>size19</font>
+              <textcolor>$VAR[Label2Color]</textcolor>
+              <align>center</align>
+              <label>$INFO[ListItem.Property(SeasonEpisode),, - ]$INFO[ListItem.Label]</label>
+            </control>
           </itemlayout>
           <focusedlayout width="596" height="425">
             <include>RectangleShelfFO</include>
+            <control type="label">
+              <left>5</left>
+              <top>366</top>
+              <width>586</width>
+              <height>45</height>
+              <font>size19</font>
+              <textcolor>$VAR[LabelNFColor]</textcolor>
+              <align>center</align>
+              <label>$INFO[ListItem.Property(SeasonEpisode),, - ]$INFO[ListItem.Label]</label>
+            </control>
           </focusedlayout>
         </control>
         <control type="label" id="80110" description="Heading8011">
@@ -228,9 +270,44 @@
           <onback>9000</onback>
           <itemlayout width="298" height="475">
             <include>PostersShelfFO</include>
+            <control type="label">
+              <left>5</left>
+              <top>418</top>
+              <width>290</width>
+              <height>45</height>
+              <font>size19</font>
+              <textcolor>$VAR[LabelNFColor]</textcolor>
+              <align>center</align>
+              <label>$INFO[ListItem.Label]</label>
+            </control>
+
           </itemlayout>
           <focusedlayout width="298" height="475">
             <include>PostersShelfFO</include>
+            <control type="label">
+              <left>5</left>
+              <top>418</top>
+              <width>290</width>
+              <height>45</height>
+              <font>size19</font>
+              <textcolor>$VAR[LabelNFColor]</textcolor>
+              <align>center</align>
+              <label>$INFO[ListItem.Label]</label>
+            </control>
+
+            <control type="label" description="Label2">
+              <visible>container.content(TVshows) | container.content(seasons)</visible>
+              <visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+              <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
+              <right>25</right>
+              <top>17</top>
+              <height>42</height>
+              <width>42</width>
+              <font>size14</font>
+              <align>center</align>
+              <textcolor>$VAR[LabelNFColor]</textcolor>
+              <label>[B]$INFO[ListItem.Property(UnwatchedEpisodes)][/B]</label>
+            </control>
           </focusedlayout>
         </control>
         <control type="label" id="80010" description="Heading8001">
@@ -251,9 +328,44 @@
           <onback>9000</onback>
           <itemlayout width="298" height="475">
             <include>PostersShelfFO</include>
+            <control type="label">
+              <left>5</left>
+              <top>418</top>
+              <width>290</width>
+              <height>45</height>
+              <font>size19</font>
+              <textcolor>$VAR[Label2Color]</textcolor>
+              <align>center</align>
+              <label>$INFO[ListItem.Label]</label>
+            </control>
+
           </itemlayout>
           <focusedlayout width="298" height="475">
             <include>PostersShelfFO</include>
+            <control type="label">
+              <left>5</left>
+              <top>418</top>
+              <width>290</width>
+              <height>45</height>
+              <font>size19</font>
+              <textcolor>$VAR[LabelNFColor]</textcolor>
+              <align>center</align>
+              <label>$INFO[ListItem.Label]</label>
+            </control>
+
+            <control type="label" description="Label2">
+              <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
+              <visible>container.content(TVshows) | container.content(seasons)</visible>
+              <visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+              <right>25</right>
+              <top>17</top>
+              <height>42</height>
+              <width>42</width>
+              <font>size14</font>
+              <align>center</align>
+              <textcolor>$VAR[LabelNFColor]</textcolor>
+              <label>[B]$INFO[ListItem.Property(UnwatchedEpisodes)][/B]</label>
+            </control>
           </focusedlayout>
         </control>
         <control type="label" id="80000" description="Heading8000">
@@ -274,9 +386,44 @@
           <onback>9000</onback>
           <itemlayout width="298" height="475">
             <include>PostersShelfFO</include>
+            <control type="label">
+              <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
+              <left>5</left>
+              <top>418</top>
+              <width>290</width>
+              <height>45</height>
+              <font>size19</font>
+              <textcolor>$VAR[Label2Color]</textcolor>
+              <align>center</align>
+              <label>$INFO[ListItem.Label]</label>
+            </control>
           </itemlayout>
           <focusedlayout width="298" height="475">
             <include>PostersShelfFO</include>
+            <control type="label">
+              <left>5</left>
+              <top>418</top>
+              <width>290</width>
+              <height>45</height>
+              <font>size19</font>
+              <textcolor>$VAR[LabelNFColor]</textcolor>
+              <align>center</align>
+              <label>$INFO[ListItem.Label]</label>
+            </control>
+
+            <control type="label" description="Label2">
+              <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
+              <visible>container.content(TVshows) | container.content(seasons)</visible>
+              <visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+              <right>25</right>
+              <top>17</top>
+              <height>42</height>
+              <width>42</width>
+              <font>size14</font>
+              <align>center</align>
+              <textcolor>$VAR[LabelNFColor]</textcolor>
+              <label>[B]$INFO[ListItem.Property(UnwatchedEpisodes)][/B]</label>
+            </control>
           </focusedlayout>
         </control>
         <control type="label" id="80020" description="Heading8002">
@@ -301,6 +448,17 @@
               <include>SquareCommons</include>
               <texture background="true">$INFO[ListItem.Property(Thumb)]</texture>
             </control>
+            <control type="label">
+
+                <left>0</left>
+                <top>354</top>
+                <width>358</width>
+                <height>30</height>
+                <font>size16</font>
+                <textcolor>$VAR[Label2Color]</textcolor>
+                <align>center</align>
+                <label>$INFO[ListItem.Label]</label>
+              </control>
           </itemlayout>
           <focusedlayout width="358" height="408">
             <control type="group">
@@ -315,10 +473,11 @@
                 <include>SquareCommons</include>
                 <texture background="true">$INFO[ListItem.Property(Thumb)]</texture>
               </control>
-              <control type="label">
-                <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
+            </control>
+            <control type="label">
+
                 <left>0</left>
-                <top>340</top>
+                <top>354</top>
                 <width>358</width>
                 <height>30</height>
                 <font>size16</font>
@@ -326,7 +485,7 @@
                 <align>center</align>
                 <label>$INFO[ListItem.Label]</label>
               </control>
-            </control>
+
           </focusedlayout>
         </control>
       </control>
