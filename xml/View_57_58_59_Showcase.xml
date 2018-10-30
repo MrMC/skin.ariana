@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+  <include name="MovieShowcaseThumbDimensions">
+    <left>0</left>
+    <top>30</top>
+    <width>192</width>
+    <height>284</height>
+  </include>
+  <include name="MovieShowcaseThumb">
+    <include>MovieShowcaseThumbDimensions</include>
+    <texture diffuse="thumbs/PosterDiffuse.png" background="true">$INFO[ListItem.Art(thumb)]</texture>
+    <aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+    <bordersize>6</bordersize>
+  </include>
+  <include name="MovieShowcaseBG">
+    <include>MovieShowcaseThumbDimensions</include>
+    <texture>thumbs/PosterBG.png</texture>
+    <aspectratio aligny="center">stretch</aspectratio>
+    <bordersize>-10</bordersize>
+  </include>
+  <include name="MusicShowcaseThumbDimensions">
+    <left>0</left>
+    <top>12</top>
+    <width>240</width>
+    <height>240</height>
+  </include>
+  <include name="MusicShowcaseBG">
+    <include>MusicShowcaseThumbDimensions</include>
+    <texture>thumbs/AlbumBG.png</texture>
+    <aspectratio aligny="center">stretch</aspectratio>
+    <bordersize>-10</bordersize>
+  </include>
+  <include name="MusicShowcaseThumb">
+    <include>MusicShowcaseThumbDimensions</include>
+    <texture diffuse="thumbs/AlbumDiffuse.png" background="true">$INFO[ListItem.Art(thumb)]</texture>
+    <aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+    <bordersize>6</bordersize>
+  </include>
+  <include name="EpisodeShowcaseThumbDimensions">
+    <left>0</left>
+    <top>12</top>
+    <width>320</width>
+    <height>198</height>
+  </include>
+  <include name="EpisodeShowcaseThumb">
+    <include>EpisodeShowcaseThumbDimensions</include>
+    <bordersize>6</bordersize>
+    <texture diffuse="thumbs/EpisodeDiffuse.png" background="true">$INFO[ListItem.Art(thumb)]</texture>
+    <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+  </include>
+  <include name="EpisodeShowcaseBG">
+    <include>EpisodeShowcaseThumbDimensions</include>
+    <texture>thumbs/EpisodeBG.png</texture>
+    <aspectratio aligny="center">stretch</aspectratio>
+    <bordersize>-6</bordersize>
+  </include>
+  <include name="View_59_Showcase">
+    <control type="group" description="Furniture">
+      <visible>Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)</visible>
+      <include>ShowcaseArtBG</include>
+      <control type="image" description="Gallery BG">
+        <animation effect="slide" easing="out" start="0,0" end="0,400" time="300" delay="0" center="120,350" reversible="true" condition="IsEmpty(Window.Property(gallery))">Conditional</animation>
+        <animation effect="fade" start="100" end="80" time="0" delay="0" condition="true">Conditional</animation>
+        <left>90</left>
+        <right>90</right>
+        <bottom>60</bottom>
+        <height>270</height>
+        <aspectratio>stretch</aspectratio>
+        <texture colordiffuse="$VAR[OverlayColor]" border="128">dot/GreyRoundedSDW.png</texture>
+        <bordersize>-60</bordersize>
+      </control>
+      <control type="image" description="Showcase Stage BG">
+        <visible>Window.IsActive(MyPics.xml) | [IsEmpty(Window.Property(gallery)) + ![[Control.IsVisible(58) + Skin.HasSetting(Music_Info)] | [Control.IsVisible(57) + Skin.HasSetting(Episodes_Info)] | [Control.IsVisible(59) + Skin.HasSetting(Posters_Info)]]]</visible>
+        <animation effect="fade" start="100" end="0" time="100" delay="0">Hidden</animation>
+        <animation effect="fade" start="0" end="100" time="250" delay="200">Visible</animation>
+        <left>-30</left>
+        <bottom>0</bottom>
+        <width>110%</width>
+        <height>500</height>
+        <texture colordiffuse="$VAR[OverlayColor]">img/GradientW.png</texture>
+      </control>
+      <control type="image" description="Showcase Stage BG">
+        <visible>Window.IsActive(MyPics.xml) | [IsEmpty(Window.Property(gallery)) + ![[Control.IsVisible(58) + Skin.HasSetting(Music_Info)] | [Control.IsVisible(57) + Skin.HasSetting(Episodes_Info)] | [Control.IsVisible(59) + Skin.HasSetting(Posters_Info)]]]</visible>
+        <animation effect="fade" start="100" end="0" time="100" delay="0">Hidden</animation>
+        <animation effect="fade" start="0" end="100" time="250" delay="200">Visible</animation>
+        <left>-30</left>
+        <bottom>0</bottom>
+        <width>110%</width>
+        <height>240</height>
+        <texture colordiffuse="$VAR[OverlayColor]">img/GradientW.png</texture>
+      </control>
+      <control type="image" description="Pointer Up">
+        <visible>!ControlGroup(9000).HasFocus()</visible>
+        <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)">Conditional</animation>
+        <width>96</width>
+        <height>96</height>
+        <centerleft>50%</centerleft>
+        <top>-15</top>
+        <aspectratio>keep</aspectratio>
+        <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowU.png</texture>
+      </control>
+      <control type="image" description="Pointer Dw">
+        <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)">Conditional</animation>
+        <width>96</width>
+        <height>96</height>
+        <centerleft>50%</centerleft>
+        <bottom>-15</bottom>
+        <aspectratio>keep</aspectratio>
+        <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowD.png</texture>
+      </control>
+    </control>
+    <control type="group" description="Gallery">
+      <visible>!IsEmpty(Window.Property(gallery)) +  [Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)]</visible>
+      <animation effect="fade" delay="200" time="300">Visible</animation>
+      <animation effect="fade" time="100">Hidden</animation>
+      <control type="image" description="Pointer Dw">
+        <width>96</width>
+        <height>96</height>
+        <centerleft>50%</centerleft>
+        <bottom>-15</bottom>
+        <aspectratio>keep</aspectratio>
+        <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowD.png</texture>
+      </control>
+      <control type="group" description="Media info">
+        <left>120</left>
+        <right>120</right>
+        <top>780</top>
+        <height>280</height>
+        <control type="label" description="Title Label">
+          <width>90%</width>
+          <height>40</height>
+          <scroll>false</scroll>
+          <label>[B]$INFO[ListItem.Label][/B]</label>
+        </control>
+        <control type="image" description="Stars">
+          <top>0</top>
+          <width>100%</width>
+          <height>28</height>
+          <aspectratio align="right">keep</aspectratio>
+          <texture colordiffuse="$VAR[LabelNFColor]">$INFO[ListItem.Rating,badges/,.png]</texture>
+        </control>
+        <control type="label" description="Genre">
+          <top>58</top>
+          <height>30</height>
+          <width>100%</width>
+          <font>plot</font>
+          <textcolor>$VAR[Label2Color]</textcolor>
+          <label>$INFO[ListItem.Genre]</label>
+        </control>
+        <control type="textbox" description="Plot">
+          <top>96</top>
+          <width>100%</width>
+          <height>80</height>
+          <font>plot</font>
+          <align>left</align>
+          <label>$VAR[Plots]</label>
+        </control>
+        <control type="label" description="Details">
+          <top>164</top>
+          <width>100%</width>
+          <height>80</height>
+          <font>plot</font>
+          <textcolor>$VAR[Label2Color]</textcolor>
+          <label>$INFO[ListItem.Year,, - ]$INFO[ListItem.RatingAndVotes,, - ]$INFO[ListItem.Duration,, $LOCALIZE[31297]][COLOR=$VAR[SelectedColor]]$VAR[WatchedStatus,    ][/COLOR]</label>
+        </control>
+        <control type="label" description="Details">
+          <top>164</top>
+          <width>100%</width>
+          <height>80</height>
+          <font>plot</font>
+          <align>right</align>
+          <textcolor>$VAR[Label2Color]</textcolor>
+          <label>$VAR[CodecList-Genre,   ]</label>
+        </control>
+      </control>
+    </control>
+    <control type="group" description="Footer info">
+      <include>ContentFade</include>
+      <visible>IsEmpty(Window.Property(gallery)) + [Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)]</visible>
+      <animation effect="fade" start="100" end="0" time="50" delay="0" center="120,350" reversible="false">Hidden</animation>
+      <animation effect="fade" start="0" end="100" time="450" delay="400" center="120,350" reversible="false">Visible</animation>
+      <control type="group" description="Media Info Lite">
+        <include>ContentFade</include>
+        <bottom>48</bottom>
+        <left>110</left>
+        <right>110</right>
+        <height>40</height>
+        <control type="label" description="Title">
+          <height>40</height>
+          <width>100%</width>
+          <align>center</align>
+          <scroll>false</scroll>
+          <label>[B]$INFO[ListItem.Label][/B]$VAR[ShowcaseListLabel,  |  ][COLOR=grey][UPPERCASE]$INFO[ListItem.VideoCodec,    ]$INFO[ListItem.VideoResolution, / ]$INFO[ListItem.AudioCodec, • ]$INFO[ListItem.AudioChannels, / ][/UPPERCASE][/COLOR]</label>
+        </control>
+      </control>
+    </control>
+    <control type="group" description="Showcase 59 Posters">
+      <visible>Control.IsVisible(59)</visible>
+      <include>ContentFade</include>
+      <control type="fixedlist" id="59">
+        <visible>[container.content(MusicVideos) + Window.IsActive(myvideonav.xml)] | container.content(movies) | container.content(sets) | container.content(tvshows) | container.content(seasons)</visible>
+        <animation effect="slide" easing="out" start="0,0" end="0,800" time="350" delay="0" center="120,350" reversible="true" condition="!IsEmpty(Window.Property(gallery))">Conditional</animation>
+        <left>-96</left>
+        <bottom>30</bottom>
+        <width>2080</width>
+        <height>400</height>
+        <onleft>59</onleft>
+        <onright>59</onright>
+        <onup condition="IsEmpty(Window.Property(gallery))">9000</onup>
+        <ondown condition="!IsEmpty(Window.Property(gallery))">ClearProperty(gallery)</ondown>
+        <ondown condition="IsEmpty(Window.Property(gallery))">SetProperty(gallery, true)</ondown>
+        <viewtype label="20445">Fanart</viewtype>
+        <pagecontrol>60</pagecontrol>
+        <orientation>horizontal</orientation>
+        <scrolltime>330</scrolltime>
+        <focusposition>5</focusposition>
+        <movement>4</movement>
+        <preloaditems>4</preloaditems>
+        <itemlayout height="330" width="192">
+          <control type="image">
+            <include>MovieShowcaseBG</include>
+          </control>
+          <control type="image">
+            <include>MovieShowcaseThumb</include>
+          </control>
+          <control type="image">
+            <visible>!IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+            <right>6</right>
+            <bottom>22</bottom>
+            <width>40</width>
+            <height>40</height>
+            <texture>$VAR[Overlay,thumbs/]</texture>
+            <bordertexture colordiffuse="$VAR[SelectedColor]">thumbs/OverlayUnwatched.png</bordertexture>
+            <bordersize>1</bordersize>
+          </control>
+          <control type="progress">
+            <visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+            <bottom>18</bottom>
+            <left>30</left>
+            <right>30</right>
+            <height>42</height>
+            <texturebg colordiffuse="$VAR[SelectedColor]" border="2">HUD/SliderBG.png</texturebg>
+            <lefttexture/>
+            <righttexture/>
+            <midtexture border="1">HUD/ProgressFill.png</midtexture>
+            <info>ListItem.PercentPlayed</info>
+          </control>
+        </itemlayout>
+        <focusedlayout height="330" width="192">
+          <control type="group">
+            <animation effect="zoom" easing="out" start="100" end="140" time="100" delay="0" center="96,240">Focus</animation>
+            <animation effect="zoom" easing="in" start="140" end="100" time="300" delay="0" center="96,240">UnFocus</animation>
+            <control type="image">
+              <include>MovieShowcaseBG</include>
+            </control>
+            <control type="image">
+              <include>MovieShowcaseThumb</include>
+            </control>
+            <control type="image">
+              <visible>!IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+              <right>6</right>
+              <bottom>22</bottom>
+              <width>40</width>
+              <height>40</height>
+              <texture>$VAR[Overlay,thumbs/]</texture>
+              <bordertexture colordiffuse="$VAR[SelectedColor]">thumbs/OverlayUnwatched.png</bordertexture>
+              <bordersize>1</bordersize>
+            </control>
+            <control type="progress">
+              <visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+              <bottom>18</bottom>
+              <left>30</left>
+              <right>30</right>
+              <height>42</height>
+              <texturebg colordiffuse="$VAR[SelectedColor]" border="2">HUD/SliderBG.png</texturebg>
+              <lefttexture/>
+              <righttexture/>
+              <midtexture border="1">HUD/ProgressFill.png</midtexture>
+              <info>ListItem.PercentPlayed</info>
+            </control>
+          </control>
+        </focusedlayout>
+      </control>
+    </control>
+    <control type="group" description="Showcase 58 Squares">
+      <visible>Control.IsVisible(58)</visible>
+      <include>ContentFade</include>
+      <control type="fixedlist" id="58">
+        <visible>Window.IsActive(MyMusicNav.xml) + [container.content(MusicVideos) | container.content(albums) | container.content(artists)]</visible>
+        <animation effect="slide" easing="out" start="0,0" end="0,800" time="350" delay="0" center="120,350" reversible="true" condition="!IsEmpty(Window.Property(gallery))">Conditional</animation>
+        <left>-120</left>
+        <bottom>60</bottom>
+        <width>2160</width>
+        <height>318</height>
+        <onleft>58</onleft>
+        <onright>58</onright>
+        <onup condition="IsEmpty(Window.Property(gallery))">9000</onup>
+        <ondown condition="!IsEmpty(Window.Property(gallery))">ClearProperty(gallery)</ondown>
+        <ondown condition="IsEmpty(Window.Property(gallery))">SetProperty(gallery, true)</ondown>
+        <viewtype label="20445">Fanart</viewtype>
+        <pagecontrol>60</pagecontrol>
+        <orientation>horizontal</orientation>
+        <scrolltime>250</scrolltime>
+        <focusposition>4</focusposition>
+        <movement>3</movement>
+        <preloaditems>4</preloaditems>
+        <itemlayout height="300" width="240">
+          <control type="image">
+            <include>MusicShowcaseBG</include>
+          </control>
+          <control type="image">
+            <include>MusicShowcaseThumb</include>
+          </control>
+        </itemlayout>
+        <focusedlayout height="300" width="240">
+          <control type="group">
+            <animation effect="zoom" easing="out" start="100" end="140" time="100" delay="0" center="120,150">Focus</animation>
+            <animation effect="zoom" easing="in" start="140" end="100" time="300" delay="0" center="120,150">UnFocus</animation>
+            <control type="image">
+              <include>MusicShowcaseBG</include>
+            </control>
+            <control type="image">
+              <include>MusicShowcaseThumb</include>
+            </control>
+          </control>
+        </focusedlayout>
+      </control>
+    </control>
+    <control type="group" description="Showcase 57 Episodes">
+      <visible>Control.IsVisible(57)</visible>
+      <include>ContentFade</include>
+      <control type="fixedlist" id="57">
+        <visible>container.content(episodes)</visible>
+        <animation effect="slide" easing="out" start="0,0" end="0,800" time="350" delay="0" center="120,350" reversible="true" condition="!IsEmpty(Window.Property(gallery))">Conditional</animation>
+        <left>-160</left>
+        <bottom>30</bottom>
+        <width>2240</width>
+        <height>300</height>
+        <onleft>57</onleft>
+        <onright>57</onright>
+        <onup condition="IsEmpty(Window.Property(gallery))">9000</onup>
+        <ondown condition="!IsEmpty(Window.Property(gallery))">ClearProperty(gallery)</ondown>
+        <ondown condition="IsEmpty(Window.Property(gallery))">SetProperty(gallery, true)</ondown>
+        <viewtype label="20445">Fanart</viewtype>
+        <pagecontrol>60</pagecontrol>
+        <orientation>horizontal</orientation>
+        <scrolltime>250</scrolltime>
+        <focusposition>3</focusposition>
+        <movement>2</movement>
+        <preloaditems>4</preloaditems>
+        <itemlayout height="300" width="320">
+          <control type="image">
+            <include>EpisodeShowcaseBG</include>
+          </control>
+          <control type="image">
+            <include>EpisodeShowcaseThumb</include>
+          </control>
+          <control type="image">
+            <visible>!IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+            <right>6</right>
+            <bottom>96</bottom>
+            <width>40</width>
+            <height>40</height>
+            <texture>$VAR[Overlay,thumbs/]</texture>
+            <bordertexture colordiffuse="$VAR[SelectedColor]">thumbs/OverlayUnwatched.png</bordertexture>
+            <bordersize>1</bordersize>
+          </control>
+          <control type="progress">
+            <visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+            <bottom>96</bottom>
+            <left>30</left>
+            <right>30</right>
+            <height>42</height>
+            <texturebg colordiffuse="$VAR[SelectedColor]" border="2">HUD/SliderBG.png</texturebg>
+            <lefttexture/>
+            <righttexture/>
+            <midtexture border="1">HUD/ProgressFill.png</midtexture>
+            <info>ListItem.PercentPlayed</info>
+          </control>
+        </itemlayout>
+        <focusedlayout height="300" width="320">
+          <control type="group">
+            <animation effect="zoom" easing="out" start="100" end="140" time="100" delay="0" center="160,150">Focus</animation>
+            <animation effect="zoom" easing="in" start="140" end="100" time="300" delay="0" center="160,150">UnFocus</animation>
+            <control type="image">
+              <include>EpisodeShowcaseBG</include>
+            </control>
+            <control type="image">
+              <include>EpisodeShowcaseThumb</include>
+            </control>
+            <control type="image">
+              <visible>!IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+              <right>6</right>
+              <bottom>96</bottom>
+              <width>40</width>
+              <height>40</height>
+              <texture>$VAR[Overlay,thumbs/]</texture>
+              <bordertexture colordiffuse="$VAR[SelectedColor]">thumbs/OverlayUnwatched.png</bordertexture>
+              <bordersize>1</bordersize>
+            </control>
+            <control type="progress">
+              <visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+              <bottom>96</bottom>
+              <left>30</left>
+              <right>30</right>
+              <height>42</height>
+              <texturebg colordiffuse="$VAR[SelectedColor]" border="2">HUD/SliderBG.png</texturebg>
+              <lefttexture/>
+              <righttexture/>
+              <midtexture border="1">HUD/ProgressFill.png</midtexture>
+              <info>ListItem.PercentPlayed</info>
+            </control>
+          </control>
+        </focusedlayout>
+      </control>
+    </control>
+  </include>
+</includes>

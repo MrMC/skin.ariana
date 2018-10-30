@@ -1,99 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-  <defaultcontrol>9000</defaultcontrol>
+  <defaultcontrol always="true">50</defaultcontrol>
   <controls>
     <include>FullBackground</include>
     <control type="group">
       <include>OpenClose</include>
       <include>View_50</include>
+      <include>View_59_Showcase</include>
       <control type="fixedlist" id="51" description="51 Wide Container">
         <visible>Container.Content(episodes)</visible>
         <viewtype label="539">Wide 51</viewtype>
-        <focusposition>1</focusposition>
+        <focusposition>2</focusposition>
         <movement>0</movement>
-        <left>60</left>
-        <top>260</top>
-        <width>1860</width>
+        <left>-160</left>
+        <top>300</top>
+        <width>2160</width>
         <height>408</height>
         <orientation>horizontal</orientation>
         <onup>9000</onup>
         <pagecontrol>60</pagecontrol>
         <preloaditems>4</preloaditems>
-        <itemlayout height="408" width="360">
+        <itemlayout height="300" width="320">
           <control type="image">
-            <left>15</left>
-            <top>15</top>
-            <width>330</width>
-            <height>220</height>
-            <texture border="12">img/ThumbBorder.png</texture>
-            <bordersize>-5</bordersize>
+            <include>EpisodeShowcaseBG</include>
           </control>
           <control type="image">
-            <left>15</left>
-            <top>15</top>
-            <width>330</width>
-            <height>220</height>
-            <texture background="true">$INFO[ListItem.Thumb]</texture>
-            <aspectratio aligny="top">scale</aspectratio>
+            <include>EpisodeShowcaseThumb</include>
           </control>
           <control type="image">
-            <visible>!IsEmpty(ListItem.Thumb)</visible>
-            <right>15</right>
-            <top>15</top>
-            <height>62</height>
-            <width>62</width>
-            <aspectratio>keep</aspectratio>
-            <texture>OverlayBG.png</texture>
+            <visible>!IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+            <right>6</right>
+            <bottom>96</bottom>
+            <width>40</width>
+            <height>40</height>
+            <texture>$VAR[Overlay,thumbs/]</texture>
+            <bordertexture colordiffuse="$VAR[SelectedColor]">thumbs/OverlayUnwatched.png</bordertexture>
+            <bordersize>1</bordersize>
           </control>
-          <control type="image">
-            <right>18</right>
-            <top>18</top>
-            <height>28</height>
-            <width>28</width>
-            <aspectratio>keep</aspectratio>
-            <texture colordiffuse="Black">$VAR[Overlay]</texture>
+          <control type="progress">
+            <visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+            <bottom>96</bottom>
+            <left>30</left>
+            <right>30</right>
+            <height>42</height>
+            <texturebg colordiffuse="$VAR[SelectedColor]" border="2">HUD/SliderBG.png</texturebg>
+            <lefttexture/>
+            <righttexture/>
+            <midtexture border="1">HUD/ProgressFill.png</midtexture>
+            <info>ListItem.PercentPlayed</info>
           </control>
         </itemlayout>
-        <focusedlayout height="408" width="360">
+        <focusedlayout height="300" width="320">
           <control type="group">
-            <animation type="Focus">
-              <effect type="zoom" center="auto" start="100" end="120" time="100" tweener="cubic" easing="out"/>
-            </animation>
-            <animation type="UnFocus">
-              <effect type="zoom" center="auto" start="120" end="100" delay="50" time="220" tweener="cubic" easing="in"/>
-            </animation>
+            <animation effect="zoom" easing="out" start="100" end="140" time="100" delay="0" center="160,150">Focus</animation>
+            <animation effect="zoom" easing="in" start="140" end="100" time="300" delay="0" center="160,150">UnFocus</animation>
             <control type="image">
-              <left>15</left>
-              <top>15</top>
-              <width>330</width>
-              <height>220</height>
-              <texture border="12">img/ThumbBorder.png</texture>
-              <bordersize>-5</bordersize>
+              <include>EpisodeShowcaseBG</include>
             </control>
             <control type="image">
-              <left>15</left>
-              <top>15</top>
-              <width>330</width>
-              <height>220</height>
-              <texture background="true">$INFO[ListItem.Thumb]</texture>
-              <aspectratio aligny="top">scale</aspectratio>
+              <include>EpisodeShowcaseThumb</include>
             </control>
             <control type="image">
-              <visible>!IsEmpty(ListItem.Thumb)</visible>
-              <right>15</right>
-              <top>15</top>
-              <height>62</height>
-              <width>62</width>
-              <aspectratio>keep</aspectratio>
-              <texture>OverlayBG.png</texture>
+              <visible>!IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+              <right>6</right>
+              <bottom>96</bottom>
+              <width>40</width>
+              <height>40</height>
+              <texture>$VAR[Overlay,thumbs/]</texture>
+              <bordertexture colordiffuse="$VAR[SelectedColor]">thumbs/OverlayUnwatched.png</bordertexture>
+              <bordersize>1</bordersize>
             </control>
-            <control type="image">
-              <right>18</right>
-              <top>18</top>
-              <height>28</height>
-              <width>28</width>
-              <aspectratio>keep</aspectratio>
-              <texture colordiffuse="Black">$VAR[Overlay]</texture>
+            <control type="progress">
+              <visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+              <bottom>96</bottom>
+              <left>30</left>
+              <right>30</right>
+              <height>42</height>
+              <texturebg colordiffuse="$VAR[SelectedColor]" border="2">HUD/SliderBG.png</texturebg>
+              <lefttexture/>
+              <righttexture/>
+              <midtexture border="1">HUD/ProgressFill.png</midtexture>
+              <info>ListItem.PercentPlayed</info>
             </control>
           </control>
         </focusedlayout>
@@ -102,8 +89,18 @@
         <visible>Control.IsVisible(51)</visible>
         <include>ContainerVisibleFade</include>
         <include>FanartBG</include>
+        <control type="image" description="Pointer Up">
+          <visible>!ControlGroup(9000).HasFocus()</visible>
+          <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(51)">Conditional</animation>
+          <width>96</width>
+          <height>96</height>
+          <centerleft>50%</centerleft>
+          <top>-15</top>
+          <aspectratio>keep</aspectratio>
+          <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowU.png</texture>
+        </control>
         <control type="label" description="Main Label">
-          <left>420</left>
+          <left>450</left>
           <top>160</top>
           <align>left</align>
           <font>size50B</font>
@@ -113,34 +110,33 @@
           <label>[B]$INFO[ListItem.TVShowTitle][/B]</label>
         </control>
         <control type="group" description="Media info left">
-          <left>420</left>
+          <left>450</left>
+          <right>450</right>
           <top>600</top>
           <control type="label" description="Main Label">
             <top>-14</top>
-            <width>758</width>
             <font>size22</font>
             <textcolor>$VAR[LabelNFColor]</textcolor>
             <label>[B]$INFO[ListItem.Label][/B]</label>
           </control>
           <control type="label">
             <top>40</top>
-            <width>758</width>
+            <font>plot</font>
             <label>$VAR[TopLabel]</label>
           </control>
-          <control type="label" description="Details">
-            <top>90</top>
-            <width>758</width>
-            <font>size19</font>
-            <label>$VAR[CodecList-Genre]</label>
-          </control>
           <control type="textbox" description="Plot">
-            <top>160</top>
-            <width>758</width>
+            <top>120</top>
             <height>174</height>
             <font>plot</font>
             <align>left</align>
             <aligny>bottom</aligny>
             <label>$VAR[Plots]</label>
+          </control>
+          <control type="label" description="Details">
+            <top>300</top>
+            <font>size19</font>
+            <textcolor>$VAR[Label2Color]</textcolor>
+            <label>$VAR[CodecList-Genre]</label>
           </control>
         </control>
       </control>
@@ -148,28 +144,30 @@
         <visible>[Container.Content(Movies) | Container.content(tvshows) | container.content(seasons)]</visible>
         <viewtype label="536">Thumbnails</viewtype>
         <left>66</left>
-        <top>126</top>
+        <top>108</top>
         <width>1788</width>
         <orientation>vertical</orientation>
-        <onup>9000</onup>
+        <onleft>9000</onleft>
+        <onright>61</onright>
         <preloaditems>4</preloaditems>
         <pagecontrol>60</pagecontrol>
         <itemlayout condition="Container.Content(Movies) | Container.content(tvshows) | container.content(seasons)" height="475" width="298">
           <include>PosterBG_FO</include>
           <control type="image">
             <include>PosterCommons</include>
-            <texture background="true">$INFO[ListItem.Thumb]</texture>
+            <texture diffuse="thumbs/PosterDiffuse.png" background="true">$INFO[ListItem.Thumb]</texture>
           </control>
           <include>PosterWatchedMarks</include>
           <control type="label" description="Label2">
             <visible>container.content(TVshows) | container.content(seasons)</visible>
             <visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
-            <right>26</right>
-            <top>17</top>
-            <height>42</height>
-            <width>42</width>
+            <right>23</right>
+            <bottom>72</bottom>
+            <height>60</height>
+            <width>60</width>
             <font>size14</font>
             <align>center</align>
+            <aligny>center</aligny>
             <textcolor>$VAR[LabelFOColor]</textcolor>
             <label>[B]$INFO[ListItem.Property(UnwatchedEpisodes)][/B]</label>
           </control>
@@ -185,41 +183,65 @@
             <include>PosterBG_FO</include>
             <control type="image">
               <include>PosterCommons</include>
-              <texture background="true">$INFO[ListItem.Thumb]</texture>
-            </control>
-            <control type="label">
-              <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
-              <left>5</left>
-              <top>400</top>
-              <width>290</width>
-              <height>45</height>
-              <font>size19B</font>
-              <textcolor>$VAR[LabelNFColor]</textcolor>
-              <align>center</align>
-              <label>$INFO[ListItem.Label]</label>
+              <texture diffuse="thumbs/PosterDiffuse.png" background="true">$INFO[ListItem.Thumb]</texture>
             </control>
             <include>PosterWatchedMarks</include>
             <control type="label" description="Label2">
               <visible>container.content(TVshows) | container.content(seasons)</visible>
               <visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
-              <right>25</right>
-              <top>17</top>
-              <height>42</height>
-              <width>42</width>
+              <right>23</right>
+              <bottom>72</bottom>
+              <height>60</height>
+              <width>60</width>
               <font>size14</font>
               <align>center</align>
+              <aligny>center</aligny>
               <textcolor>$VAR[LabelFOColor]</textcolor>
               <label>[B]$INFO[ListItem.Property(UnwatchedEpisodes)][/B]</label>
             </control>
+          </control>
+          <control type="label">
+            <animation effect="fade" start="0" end="100" time="100" delay="170">Focus</animation>
+            <animation effect="fade" start="100" end="0" time="50" delay="0">UnFocus</animation>
+            <left>5</left>
+            <top>432</top>
+            <width>290</width>
+            <height>45</height>
+            <font>size20B</font>
+            <textcolor>$VAR[LabelNFColor]</textcolor>
+            <align>center</align>
+            <label>$INFO[ListItem.Label]</label>
           </control>
         </focusedlayout>
       </control>
       <control type="group" description="53 Furniture">
         <visible>Control.IsVisible(53)</visible>
         <include>ContainerVisibleFade</include>
-        <control type="group" description="Container">
+        <control type="image" description="Pointer Left">
+          <visible>!ControlGroup(9000).HasFocus()</visible>
+          <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(53)">Conditional</animation>
+          <width>96</width>
+          <height>96</height>
+          <left>-15</left>
+          <centertop>50%</centertop>
+          <aspectratio>keep</aspectratio>
+          <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowL.png</texture>
+        </control>
+        <control type="scrollbar" id="60">
+        <right>-100</right>
+        <top>0</top>
+        <width>36</width>
+        <height>100%</height>
+        <texturesliderbackground/>
+        <texturesliderbar/>
+        <texturesliderbarfocus/>
+        <textureslidernib/>
+        <textureslidernibfocus/>
+        <orientation>vertical</orientation>
+      </control>
+      <control type="group" description="Container">
           <control type="label" description="MainHeading">
-            <top>54</top>
+            <top>42</top>
             <left>84</left>
             <width>1920</width>
             <font>size50B</font>
@@ -235,7 +257,8 @@
         <top>248</top>
         <width>800</width>
         <bottom>76</bottom>
-        <onup>9000</onup>
+        <onleft>9000</onleft>
+        <onright>61</onright>
         <pagecontrol>60</pagecontrol>
         <viewtype label="535">List 52</viewtype>
         <preloaditems>4</preloaditems>
@@ -360,6 +383,16 @@
         <visible>Control.IsVisible(52)</visible>
         <include>ContainerVisibleFade</include>
         <include>FanartBG</include>
+        <control type="image" description="Pointer Left">
+          <visible>!ControlGroup(9000).HasFocus()</visible>
+          <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(52)">Conditional</animation>
+          <width>96</width>
+          <height>96</height>
+          <left>-15</left>
+          <centertop>50%</centertop>
+          <aspectratio>keep</aspectratio>
+          <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowL.png</texture>
+        </control>
         <control type="label" description="MainHeading">
           <right>66</right>
           <top>120</top>
@@ -448,9 +481,7 @@
         </control>
       </control>
       <control type="group" description="Side menu 9000 group">
-        <visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
         <include>TopBar</include>
-        <include>VisibleFadeEffect</include>
         <control type="grouplist" id="9000">
           <include>9000GrouplistParameters</include>
           <control type="button" id="2" description="Views">
@@ -460,28 +491,42 @@
             <align>left</align>
             <include>9000Buttons</include>
             <label>$LOCALIZE[20367]</label>
-						<label2>$INFO[Container.NumItems,: ]</label2>
+						<label2>$INFO[Container.NumItems]</label2>
           </control>
           <control type="button" id="3" description="Sort">
             <include>9000Buttons</include>
           </control>
           <control type="togglebutton" id="4" description="Ordering">
             <include>9000Buttons</include>
-            <label>$LOCALIZE[584]</label>
-            <altlabel>$LOCALIZE[585]</altlabel>
+            <label>$LOCALIZE[21429]: $LOCALIZE[584]</label>
+            <altlabel>$LOCALIZE[21429]: $LOCALIZE[585]</altlabel>
           </control>
           <control type="edit" id="19" description="Search">
-            <width>200</width>
             <include>9000Buttons</include>
             <hinttext>$LOCALIZE[137]</hinttext>
             <!--<label>$LOCALIZE[137]</label>-->
           </control>
-          <control type="button" id="20" description="Update library">
+          <control type="image" description="separator" id="98">
+            <height>3</height>
+            <include>9000Buttons</include>
+            <texture colordiffuse="$VAR[LabelNFColor]">img/LineST.png</texture>
+          </control>
+          <control type="button" id="99" description="Update library">
             <include>9000Buttons</include>
             <label>653</label>
           </control>
         </control>
       </control>
     </control>
+    <!--<control type="button" id="61" description="Sort">
+      <centertop>50%</centertop>
+      <right>20</right>
+      <width>200</width>
+      <align>right</align>
+      <label>$INFO[ListItem.SortLetter]</label>
+      <onup>pageup(60)</onup>
+      <ondown>pagedown(60)</ondown>
+      <onleft>50</onleft>
+    </control>-->
   </controls>
 </window>

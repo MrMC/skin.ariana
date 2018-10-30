@@ -22,7 +22,7 @@
         <top>248</top>
         <width>800</width>
         <height>750</height>
-        <onup>9000</onup>
+        <onleft>9000</onleft>
         <pagecontrol>60</pagecontrol>
         <viewtype label="535">List 50</viewtype>
         <itemlayout width="800" height="125">

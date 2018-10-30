@@ -3,44 +3,71 @@
   <include file="Includes_Variables.xml" />
   <include file="defaults.xml" />
   <include file="Includes_Views.xml" />
-  <!--<include file="View_57_58_59_Showcase.xml" /> -->
+  <include file="View_57_58_59_Showcase.xml" />
   <include name="9000GrouplistParameters">
-    <centerleft>50%</centerleft>
-    <top>50</top>
-    <width max="1800">auto</width>
-    <height>40</height>
-    <itemgap>65</itemgap>
-    <onleft>9000</onleft>
-    <onright>9000</onright>
-    <onup>50</onup>
-    <ondown>50</ondown>
-    <align>center</align>
+    <animation condition="ControlGroup(9000).HasFocus()" effect="slide" start="0,0" end="540,0" time="200" reversible="false">Conditional</animation>
+    <animation condition="!ControlGroup(9000).HasFocus()" effect="slide" start="540,0" end="0,0" time="300" reversible="false">Conditional</animation>
+    <left>-450</left>
+    <top>150</top>
+    <width>420</width>
+    <height>800</height>
+    <itemgap>21</itemgap>
+    <onright>50</onright>
+    <onleft>50</onleft>
+    <onback>50</onback>
+    <align>left</align>
     <aligny>center</aligny>
-    <orientation>horizontal</orientation>
+    <control type="label" id="2000" description="Views">
+      <font>size22B</font>
+      <align>center</align>
+      <textcolor>$VAR[SelectedColor]</textcolor>
+      <include>9000Buttons</include>
+      <label>$LOCALIZE[14018]</label>
+    </control>
+    <control type="image" description="separator" id="2001">
+      <height>3</height>
+      <include>9000Buttons</include>
+      <texture colordiffuse="$VAR[LabelNFColor]">img/LineST.png</texture>
+    </control>
   </include>
   <include name="9000Buttons">
-    <width min="150" max="540">auto</width>
-    <height>40</height>
-    <textoffsetx>0</textoffsetx>
-    <align>center</align>
-    <aligny>center</aligny>
-    <font>size20B</font>
-    <textcolor>grey</textcolor>
-    <focusedcolor>$VAR[LabelNFColor]</focusedcolor>
-    <texturefocus/>
-    <texturenofocus/>
-    <alttexturenofocus/>
-    <alttexturefocus/>
+    <animation type="Focus" reversible="true">
+      <effect type="zoom" center="auto" start="100" end="104" time="100" easing="inout"/>
+    </animation>
+    <width>420</width>
+    <align>left</align>
   </include>
   <include name="TopBar">
     <control type="image" description="Background">
-      <animation condition="ControlGroup(9000).HasFocus()" effect="slide" start="0,0" end="0,140" time="100" easing="in" reversible="false">Conditional</animation>
-      <animation condition="!ControlGroup(9000).HasFocus()" effect="slide" start="0,140" end="0,0" time="100" delay="50" easing="in" reversible="false">Conditional</animation>
-      <left>0</left>
-      <top>-141</top>
-      <width>1920</width>
-      <height>142</height>
-      <texture colordiffuse="$VAR[OverlayColor]">dot/White95.png</texture>
+      <animation condition="ControlGroup(9000).HasFocus()" effect="slide" start="0,0" end="540,0" time="200" reversible="false">Conditional</animation>
+      <animation condition="!ControlGroup(9000).HasFocus()" effect="slide" start="540,0" end="0,0" time="300" reversible="false">Conditional</animation>
+      <left>-480</left>
+      <centertop>50%</centertop>
+      <width>480</width>
+      <height>840</height>
+      <texture border="24" colordiffuse="$VAR[OverlayColor]">common/Menu.png</texture>
+      <bordersize>-9</bordersize>
+      <aligny>center</aligny>
+    </control>
+    <control type="image" description="Pointer R">
+      <animation condition="ControlGroup(9000).HasFocus()" effect="fade" start="0" end="100" time="300" delay="300" reversible="false">Conditional</animation>
+      <animation condition="!ControlGroup(9000).HasFocus()" effect="fade" start="100" end="0" time="0" reversible="false">Conditional</animation>
+      <centertop>50%</centertop>
+      <width>96</width>
+      <height>96</height>
+      <left>520</left>
+      <aspectratio>keep</aspectratio>
+      <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowR.png</texture>
+    </control>
+    <control type="label">
+      <left>-480</left>
+      <top>30</top>
+      <left>30</left>
+      <width>480</width>
+      <height>60</height>
+      <font>size24</font>
+      <textcolor>red</textcolor>
+      <label>View Options</label>
     </control>
   </include>
   <include name="SquareButtonCommons">
@@ -162,6 +189,26 @@
       <height>100%</height>
       <aspectratio>stretch</aspectratio>
       <texture background="true">$VAR[Background.Overlay]</texture>
+    </control>
+    <control type="image" description="DebugGrid">
+      <visible>Skin.HasSetting(DebugGrid)</visible>
+      <left>0</left>
+      <top>0</top>
+      <width>1920</width>
+      <height>1080</height>
+      <texture>debuggrid1080.png</texture>
+      <aspectratio>scale</aspectratio>
+    </control>
+  </include>
+  <include name="ShowcaseArtBG">
+    <control type="image" description="Fanart">
+      <left>0</left>
+      <top>0</top>
+      <width>100%</width>
+      <height>100%</height>
+      <fadetime>400</fadetime>
+      <aspectratio aligny="top">scale</aspectratio>
+      <texture background="true">$VAR[ShowcaseFanart]</texture>
     </control>
     <control type="image" description="DebugGrid">
       <visible>Skin.HasSetting(DebugGrid)</visible>

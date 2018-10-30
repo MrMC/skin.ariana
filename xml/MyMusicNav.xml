@@ -6,6 +6,7 @@
     <control type="group">
       <include>OpenClose</include>
       <include>View_50</include>
+      <include>View_59_Showcase</include>
       <control type="panel" id="53" description="Grid view">
         <visible>[Container.Content(albums) | Container.content(artists)]</visible>
         <viewtype label="536">Thumbnails</viewtype>
@@ -14,7 +15,7 @@
         <width>1860</width>
         <height>954</height>
         <orientation>vertical</orientation>
-        <onup>9000</onup>
+        <onleft>9000</onleft>
         <pagecontrol>60</pagecontrol>
         <preloaditems>4</preloaditems>
         <itemlayout height="408" width="358">
@@ -54,6 +55,16 @@
       <control type="group" description="53 furniture">
         <visible>Control.IsVisible(53)</visible>
         <include>ContainerVisibleFade</include>
+        <control type="image" description="Pointer Left">
+          <visible>!ControlGroup(9000).HasFocus()</visible>
+          <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(53)">Conditional</animation>
+          <width>96</width>
+          <height>96</height>
+          <left>-15</left>
+          <centertop>50%</centertop>
+          <aspectratio>keep</aspectratio>
+          <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowL.png</texture>
+        </control>
         <control type="label" description="MainHeading">
           <top>66</top>
           <left>84</left>
@@ -70,7 +81,7 @@
         <top>270</top>
         <width>840</width>
         <height>742</height>
-        <onup>9000</onup>
+        <onleft>9000</onleft>
         <pagecontrol>60</pagecontrol>
         <viewtype label="537">Big List</viewtype>
         <preloaditems>4</preloaditems>
@@ -156,6 +167,16 @@
       <control type="group" description="52 furniture">
         <visible>Control.IsVisible(52)</visible>
         <include>ContainerVisibleFade</include>
+        <control type="image" description="Pointer Left">
+          <visible>!ControlGroup(9000).HasFocus()</visible>
+          <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(52)">Conditional</animation>
+          <width>96</width>
+          <height>96</height>
+          <left>-15</left>
+          <centertop>50%</centertop>
+          <aspectratio>keep</aspectratio>
+          <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowL.png</texture>
+        </control>
         <control type="label" description="MainHeading">
           <right>66</right>
           <top>120</top>
@@ -185,7 +206,7 @@
         <width>920</width>
         <height>636</height>
         <onright>9002</onright>
-        <onup>9000</onup>
+        <onleft>9000</onleft>
         <pagecontrol>60</pagecontrol>
         <viewtype label="537">Big List 51</viewtype>
         <preloaditems>4</preloaditems>
@@ -285,6 +306,15 @@
       <control type="group" description="51 furniture">
         <visible>Control.IsVisible(51)</visible>
         <include>ContainerVisibleFade</include>
+        <control type="image" description="Pointer Left">
+          <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(51) + !ControlGroup(9000).HasFocus()">Conditional</animation>
+          <width>96</width>
+          <height>96</height>
+          <left>-15</left>
+          <centertop>50%</centertop>
+          <aspectratio>keep</aspectratio>
+          <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowL.png</texture>
+        </control>
         <control type="label" description="Show Label">
           <left>180</left>
           <top>80</top>
@@ -372,16 +402,20 @@
           </control>
           <control type="togglebutton" id="4" description="Ordering">
             <include>9000Buttons</include>
-            <label>$LOCALIZE[584]</label>
-            <altlabel>$LOCALIZE[585]</altlabel>
+            <label>$LOCALIZE[21429]: $LOCALIZE[584]</label>
+            <altlabel>$LOCALIZE[21429]: $LOCALIZE[585]</altlabel>
           </control>
           <control type="edit" id="19" description="Search">
-            <width>200</width>
             <include>9000Buttons</include>
             <hinttext>$LOCALIZE[137]</hinttext>
             <!--<label>$LOCALIZE[137]</label>-->
           </control>
-          <control type="button" id="20" description="Update library">
+          <control type="image" description="separator" id="98">
+            <height>3</height>
+            <include>9000Buttons</include>
+            <texture colordiffuse="$VAR[LabelNFColor]">img/LineST.png</texture>
+          </control>
+          <control type="button" id="99" description="Update library">
             <visible>Library.HasContent(music)</visible>
             <include>9000Buttons</include>
             <label>653</label>

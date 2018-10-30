@@ -30,7 +30,7 @@
       <top>260</top>
       <width>784</width>
       <height>720</height>
-      <onup>9000</onup>
+      <onleft>9000</onleft>
       <pagecontrol>60</pagecontrol>
       <viewtype label="535">List</viewtype>
       <preloaditems>2</preloaditems>
@@ -150,9 +150,19 @@
         </control>
       </focusedlayout>
     </control>
-    <control type="group" description="List 50 base">
+    <control type="group" description="List 50 Furniture">
       <visible>Control.IsVisible(50)</visible>
       <include>ContainerVisibleFade</include>
+      <control type="image" description="Pointer Left">
+        <visible>!ControlGroup(9000).HasFocus()</visible>
+        <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(50)">Conditional</animation>
+        <width>96</width>
+        <height>96</height>
+        <left>-15</left>
+        <centertop>50%</centertop>
+        <aspectratio>keep</aspectratio>
+        <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowL.png</texture>
+      </control>
       <control type="label" description="MainHeading">
         <right>66</right>
         <top>120</top>
@@ -305,8 +315,7 @@
       </control>
     </control>
   </include>
-  <include name="List49_Commons">
-    <!--VideoInfo metadata lists-->
+  <include name="List49_Commons" description="VideoInfo metadata lists">
     <left>0</left>
     <top>0</top>
     <width>800</width>
@@ -395,14 +404,24 @@
     <aspectratio aligny="top">scale</aspectratio>
     <bordersize>25</bordersize>
   </include>
+  <include name="PosterBG_NF">
+    <control type="image">
+      <left>0</left>
+      <top>0</top>
+      <width>298</width>
+      <height>475</height>
+      <texture diffuse="thumbs/PosterDiffuse.png">thumbs/PosterNF.png</texture>
+      <bordersize>2</bordersize>
+    </control>
+  </include>
   <include name="PosterBG_FO">
     <control type="image">
       <left>0</left>
       <top>0</top>
       <width>298</width>
       <height>475</height>
-      <texture>thumbs/PosterFO.png</texture>
-      <bordersize>1</bordersize>
+      <texture diffuse="thumbs/PosterDiffuse.png">thumbs/PosterFO.png</texture>
+      <bordersize>2</bordersize>
     </control>
   </include>
   <include name="PosterCommons">
@@ -410,27 +429,32 @@
     <top>0</top>
     <width>298</width>
     <height>425</height>
-    <aspectratio>scale</aspectratio>
+    <aspectratio scalediffuse="false">scale</aspectratio>
     <bordersize>24</bordersize>
   </include>
   <include name="PosterWatchedMarks">
     <control type="group" description="Overlay">
       <control type="image">
+        <visible>!IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
         <right>24</right>
-        <top>24</top>
-        <height>64</height>
-        <width>64</width>
-        <aspectratio>keep</aspectratio>
-        <texture>OverlayBG.png</texture>
+        <bottom>74</bottom>
+        <height>60</height>
+        <width>60</width>
+        <texture>$VAR[Overlay,thumbs/]</texture>
+        <bordertexture colordiffuse="$VAR[SelectedColor]">thumbs/OverlayUnwatched.png</bordertexture>
+        <bordersize>1</bordersize>
       </control>
-      <control type="image">
-        <visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
-        <right>28</right>
-        <top>28</top>
-        <height>28</height>
-        <width>28</width>
-        <aspectratio>keep</aspectratio>
-        <texture colordiffuse="FF000000">$VAR[Overlay]</texture>
+      <control type="progress">
+        <visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+        <bottom>74</bottom>
+        <left>48</left>
+        <width>68%</width>
+        <height>42</height>
+        <texturebg colordiffuse="$VAR[SelectedColor]" border="2">HUD/SliderBG.png</texturebg>
+        <lefttexture/>
+        <righttexture/>
+        <midtexture border="1">HUD/ProgressFill.png</midtexture>
+        <info>ListItem.PercentPlayed</info>
       </control>
     </control>
   </include>

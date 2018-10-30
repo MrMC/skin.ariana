@@ -14,7 +14,7 @@
         <width>1800</width>
         <height>954</height>
         <orientation>vertical</orientation>
-        <onup>9000</onup>
+        <onleft>9000</onleft>
         <pagecontrol>60</pagecontrol>
         <preloaditems>4</preloaditems>
         <itemlayout height="408" width="358">
@@ -54,6 +54,16 @@
       <control type="group" description="53 Furniture">
         <visible>Control.IsVisible(53)</visible>
         <include>ContainerVisibleFade</include>
+        <control type="image" description="Pointer Left">
+          <visible>!ControlGroup(9000).HasFocus()</visible>
+          <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(53)">Conditional</animation>
+          <width>96</width>
+          <height>96</height>
+          <left>-15</left>
+          <centertop>50%</centertop>
+          <aspectratio>keep</aspectratio>
+          <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowL.png</texture>
+        </control>
         <control type="group" description="Container">
           <control type="label" description="MainHeading">
             <top>66</top>
