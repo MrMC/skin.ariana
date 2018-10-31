@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+  <!-- screeen 1920 minus left and right margin 90 - 6xposter, 5xalbum, 3xfanart -->
   <include name="DiffuseBG">
     <control type="image" description="Dim">
       <left>0</left>
@@ -23,168 +24,228 @@
       <animation effect="fade" end="5" time="0" condition="true">Conditional</animation>
     </control>
   </include>
-  <include name="View_50" description="50">
-    <control type="list" id="50">
-      <visible>![Container.Content(Movies) | Container.content(tvshows) | container.content(seasons) | container.content(episodes) | container.content(albums) | container.content(songs)]</visible>
-      <left>1058</left>
-      <top>260</top>
-      <width>784</width>
-      <height>720</height>
-      <onleft>9000</onleft>
-      <pagecontrol>60</pagecontrol>
-      <viewtype label="535">List</viewtype>
-      <preloaditems>2</preloaditems>
-      <itemlayout width="784" height="80">
-        <control type="image">
-          <visible>!IsEmpty(ListItem.Overlay)</visible>
-          <left>20</left>
-          <top>0</top>
-          <height>80</height>
-          <width>28</width>
-          <texture colordiffuse="$VAR[LabelNFColor]" align="left" aligny="center">$VAR[Overlay]</texture>
-          <aspectratio>keep</aspectratio>
-        </control>
-        <control type="label" description="Label2">
-          <visible>!ListItem.IsFolder</visible>
-          <right>20</right>
-          <top>0</top>
-          <height>80</height>
-          <width>124</width>
-          <font>size16</font>
-          <scroll>false</scroll>
-          <align>right</align>
-          <label>$INFO[ListItem.Label2]</label>
-        </control>
-        <control type="label" description="Main Label">
-          <visible>IsEmpty(ListItem.Overlay)</visible>
-          <left>20</left>
-          <right>150</right>
-          <top>0</top>
-          <height>80</height>
-          <font>size22</font>
-          <label>$INFO[ListItem.Label]</label>
-        </control>
-        <control type="label" description="Main Label">
-          <visible>!IsEmpty(ListItem.Overlay)</visible>
-          <left>60</left>
-          <right>150</right>
-          <top>0</top>
-          <height>80</height>
-          <font>size22</font>
-          <label>$INFO[ListItem.Label]</label>
-        </control>
-        <control type="image" description="arrow">
-          <visible>ListItem.IsFolder</visible>
-          <right>20</right>
-          <top>0</top>
-          <height>80</height>
-          <width>40</width>
-          <align>right</align>
-          <aspectratio>keep</aspectratio>
-          <texture colordiffuse="$VAR[LabelNFColor]">img/Arrow.png</texture>
-        </control>
-      </itemlayout>
-      <focusedlayout width="784" height="80">
-        <control type="group">
-          <include>FocusButtonsAnimation</include>
-          <control type="image">
-            <animation effect="fade" time="100">VisibleChange</animation>
-            <left>10</left>
-            <top>10</top>
-            <width>764</width>
-            <height>60</height>
-            <texture border="10">focus/FrameFO.png</texture>
-            <bordersize>-10</bordersize>
-            <aspectratio>stretch</aspectratio>
-          </control>
-          <control type="image">
-            <visible>!IsEmpty(ListItem.Overlay)</visible>
-            <left>20</left>
-            <top>0</top>
-            <height>80</height>
-            <width>28</width>
-            <texture colordiffuse="$VAR[LabelFOColor]" align="left" aligny="center">$VAR[Overlay]</texture>
-            <aspectratio>keep</aspectratio>
-          </control>
-          <control type="label" description="Label2">
-            <visible>!ListItem.IsFolder</visible>
-            <right>20</right>
-            <top>0</top>
-            <height>80</height>
-            <width>124</width>
-            <font>size16</font>
-            <align>right</align>
-            <textcolor>$VAR[LabelFOColor]</textcolor>
-            <label>$INFO[ListItem.Label2]</label>
-          </control>
-          <control type="label" description="Main Label">
-            <visible>IsEmpty(ListItem.Overlay)</visible>
-            <left>20</left>
-            <right>150</right>
-            <top>0</top>
-            <height>80</height>
-            <font>size22</font>
-            <textcolor>$VAR[LabelFOColor]</textcolor>
-            <label>$INFO[ListItem.Label]</label>
-          </control>
-          <control type="label" description="Main Label">
-            <visible>!IsEmpty(ListItem.Overlay)</visible>
-            <left>60</left>
-            <right>150</right>
-            <top>0</top>
-            <height>80</height>
-            <font>size22</font>
-            <textcolor>$VAR[LabelFOColor]</textcolor>
-            <label>$INFO[ListItem.Label]</label>
-          </control>
-          <control type="image" description="arrow">
-            <visible>ListItem.IsFolder</visible>
-            <right>20</right>
-            <top>0</top>
-            <height>80</height>
-            <width>40</width>
-            <aspectratio>keep</aspectratio>
-            <align>right</align>
-            <texture colordiffuse="$VAR[LabelFOColor]">img/Arrow.png</texture>
-          </control>
-        </control>
-      </focusedlayout>
+  <include name="Menu9000">
+    <control type="image" description="Background">
+      <animation condition="ControlGroup(9000).HasFocus()" effect="slide" start="0,0" end="540,0" time="200" reversible="false">Conditional</animation>
+      <animation condition="!ControlGroup(9000).HasFocus()" effect="slide" start="540,0" end="0,0" time="300" reversible="false">Conditional</animation>
+      <left>-480</left>
+      <centertop>50%</centertop>
+      <width>480</width>
+      <height>840</height>
+      <texture border="24" colordiffuse="$VAR[OverlayColor]">common/Menu.png</texture>
+      <bordersize>-9</bordersize>
+      <aligny>center</aligny>
     </control>
-    <control type="group" description="List 50 Furniture">
-      <visible>Control.IsVisible(50)</visible>
-      <include>ContainerVisibleFade</include>
-      <control type="image" description="Pointer Left">
-        <visible>!ControlGroup(9000).HasFocus()</visible>
-        <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(50)">Conditional</animation>
-        <width>96</width>
-        <height>96</height>
-        <left>-15</left>
+    <control type="image" description="Pointer R">
+      <animation condition="ControlGroup(9000).HasFocus()" effect="fade" start="0" end="100" time="300" delay="300" reversible="false">Conditional</animation>
+      <animation condition="!ControlGroup(9000).HasFocus()" effect="fade" start="100" end="0" time="0" reversible="false">Conditional</animation>
+      <centertop>50%</centertop>
+      <width>96</width>
+      <height>96</height>
+      <left>520</left>
+      <aspectratio>keep</aspectratio>
+      <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowR.png</texture>
+    </control>
+    <control type="label">
+      <left>-480</left>
+      <top>30</top>
+      <left>30</left>
+      <width>480</width>
+      <height>60</height>
+      <font>size24</font>
+      <textcolor>red</textcolor>
+      <label>14018</label>
+    </control>
+  </include>
+  <include name="9000GrouplistParameters">
+    <animation condition="ControlGroup(9000).HasFocus()" effect="slide" start="0,0" end="540,0" time="200" reversible="false">Conditional</animation>
+    <animation condition="!ControlGroup(9000).HasFocus()" effect="slide" start="540,0" end="0,0" time="300" reversible="false">Conditional</animation>
+    <left>-450</left>
+    <top>150</top>
+    <width>420</width>
+    <height>800</height>
+    <itemgap>21</itemgap>
+    <onright>50</onright>
+    <onleft>50</onleft>
+    <onback>50</onback>
+    <align>left</align>
+    <aligny>center</aligny>
+    <control type="label" id="2000" description="Views">
+      <font>size22B</font>
+      <align>center</align>
+      <textcolor>$VAR[SelectedColor]</textcolor>
+      <include>9000Buttons</include>
+      <label>$LOCALIZE[14018]</label>
+    </control>
+    <control type="image" description="separator" id="2001">
+      <height>3</height>
+      <include>9000Buttons</include>
+      <texture colordiffuse="$VAR[LabelNFColor]">img/LineST.png</texture>
+    </control>
+  </include>
+  <include name="9000Buttons">
+    <animation type="Focus" reversible="true">
+      <effect type="zoom" center="auto" start="100" end="104" time="100" easing="inout"/>
+    </animation>
+    <width>420</width>
+    <align>left</align>
+  </include>
+  <include name="Scroller">
+
+    <control type="group" description="Scroller">
+      <visible>[Container.HasNext | Container.HasPrevious] + [Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53)]</visible>
+      <animation condition="Control.HasFocus(61)" effect="slide" start="0,0" end="-270,0" time="200" reversible="false">Conditional</animation>
+      <animation condition="!Control.HasFocus(61)" effect="slide" start="-270,0" end="0,0" time="300" reversible="false">Conditional</animation>
+      <control type="scrollbar" id="60">
+        <right>-500</right>
+        <top>0</top>
+        <width>36</width>
+        <height>100%</height>
+        <texturesliderbackground/>
+        <texturesliderbar/>
+        <texturesliderbarfocus/>
+        <textureslidernib/>
+        <textureslidernibfocus/>
+        <orientation>vertical</orientation>
+      </control>
+      <control type="image" description="Background">
+        <right>-240</right>
         <centertop>50%</centertop>
-        <aspectratio>keep</aspectratio>
-        <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowL.png</texture>
+        <width>240</width>
+        <height>360</height>
+        <texture border="24" colordiffuse="$VAR[OverlayColor]">common/Menu.png</texture>
+        <bordersize>-9</bordersize>
+        <aligny>center</aligny>
       </control>
-      <control type="label" description="MainHeading">
-        <right>66</right>
-        <top>120</top>
-        <width>800</width>
-        <height>40</height>
-        <font>size50B</font>
-        <label>[B]$VAR[GlobalHeadings][/B]</label>
-        <textcolor>$VAR[LabelNFColor]</textcolor>
+      <control type="image" description="PgUp">
+        <centertop>40%</centertop>
+        <right>-165</right>
+        <width>90</width>
+        <height>90</height>
+        <texture colordiffuse="$VAR[Label2Color]">icons/PageUp.png</texture>
+        <aspectratio>keep</aspectratio>
+        <aligny>center</aligny>
+      </control>
+      <control type="image" description="PgUp">
+        <centertop>60%</centertop>
+        <right>-165</right>
+        <width>90</width>
+        <height>90</height>
+        <texture colordiffuse="$VAR[Label2Color]">icons/PageDown.png</texture>
+        <aspectratio>keep</aspectratio>
+        <aligny>center</aligny>
+      </control>
+      <control type="button" id="61" description="Sort">
+        <centertop>50%</centertop>
+        <right>-240</right>
+        <width>240</width>
+        <height>120</height>
         <align>center</align>
-      </control>
-      <control type="image" description="Thumb">
-        <centerleft>480</centerleft>
-        <centertop>580</centertop>
-        <width>600</width>
-        <height>760</height>
-        <include>Icon_Fade</include>
-        <texture background="true">$INFO[ListItem.Thumb]</texture>
-        <bordertexture border="12">img/ThumbBorder.png</bordertexture>
-        <bordersize>9</bordersize>
-        <aspectratio>keep</aspectratio>
+        <font>SortLetter</font>
+        <texturefocus/>
+        <texturenofocus/>
+        <textcolor>$VAR[LabelNFColor]</textcolor>
+        <focusedcolor>$VAR[LabelNFColor]</focusedcolor>
+        <label>$INFO[ListItem.SortLetter]</label>
+        <onup>pageup(60)</onup>
+        <ondown>pagedown(60)</ondown>
+        <onleft>50</onleft>
+        <onright>50</onright>
+        <onback>50</onback>
       </control>
     </control>
+  </include>
+  <include name="SquareButtonCommons">
+    <width>144</width>
+    <height>80</height>
+    <focusedcolor>$VAR[LabelNFColor]</focusedcolor>
+    <altfocusedcolor>$VAR[LabelNFColor]</altfocusedcolor>
+    <wrapmultiline>True</wrapmultiline>
+    <font>size14</font>
+    <aligny>top</aligny>
+    <textoffsety>80</textoffsety>
+    <textoffsetx>0</textoffsetx>
+    <align>center</align>
+  </include>
+  <include name="VideoMenuInfo">
+    <control type="group" description="Info group">
+      <top>90</top>
+      <control type="image">
+        <left>15</left>
+        <top>30</top>
+        <width>240</width>
+        <height>256</height>
+        <texture>$INFO[VideoPlayer.Cover]</texture>
+        <aspectratio align="center" aligny="top">keep</aspectratio>
+      </control>
+      <control type="group">
+        <left>-30</left>
+        <top>30</top>
+        <control type="label" description="Main label">
+          <visible>![VideoPlayer.Content(MusicVideos)]</visible>
+          <include>FullscreenInfoLabelMain</include>
+          <label>[B]$INFO[VideoPlayer.Title][/B]</label>
+        </control>
+        <control type="label" description="Main label">
+          <visible>VideoPlayer.Content(MusicVideos)</visible>
+          <include>FullscreenInfoLabelMain</include>
+          <label>[B]$INFO[VideoPlayer.Artist][/B]</label>
+        </control>
+        <control type="label" description="Label 2">
+          <visible>VideoPlayer.Content(MusicVideos)</visible>
+          <include>FullscreenInfoLabel2</include>
+          <label>$INFO[VideoPlayer.Album]</label>
+        </control>
+        <control type="label" description="Label 2">
+          <visible>VideoPlayer.Content(Episodes)</visible>
+          <include>FullscreenInfoLabel2</include>
+          <label>$INFO[VideoPlayer.TVShowTitle] - $LOCALIZE[20373] $INFO[VideoPlayer.Season], $LOCALIZE[20359] $INFO[VideoPlayer.Episode]</label>
+        </control>
+        <control type="label" description="Label 2">
+          <visible>![VideoPlayer.Content(MusicVideos) | VideoPlayer.Content(episodes)]</visible>
+          <include>FullscreenInfoLabel2</include>
+          <label>$INFO[VideoPlayer.Genre]</label>
+        </control>
+        <control type="textbox">
+          <left>300</left>
+          <top>99</top>
+          <width>1500</width>
+          <height>132</height>
+          <label>$INFO[VideoPlayer.Plot]</label>
+          <align>left</align>
+          <autoscroll>false</autoscroll>
+          <font>plot</font>
+        </control>
+        <control type="label" description="Details">
+          <top>214</top>
+          <font>size16</font>
+          <include>FullscreenInfoLabel2</include>
+          <label>[UPPERCASE]$INFO[VideoPlayer.VideoCodec]$INFO[VideoPlayer.VideoResolution, / ]$INFO[VideoPlayer.AudioCodec, • ]$INFO[VideoPlayer.AudioChannels, / ][/UPPERCASE]</label>
+        </control>
+      </control>
+    </control>
+  </include>
+  <include name="VideoMenuButtons">
+    <width min="240" max="540">auto</width>
+    <height>90</height>
+    <font>size16USys</font>
+    <align>center</align>
+    <aligny>center</aligny>
+    <texturefocus/>
+    <texturenofocus/>
+    <alttexturefocus/>
+    <alttexturenofocus/>
+    <textcolor>grey</textcolor>
+    <focusedcolor>$VAR[LabelNFColor]</focusedcolor>
+  </include>
+  <include name="CenterHeading">
+    <centerleft>50%</centerleft>
+    <top>52</top>
+    <align>center</align>
+    <aligny>center</aligny>
+    <width>1000</width>
+    <height>75</height>
+    <font>size50B</font>
   </include>
   <include name="InfoPVR" description="PVR item info">
     <control type="image" description="mid">
@@ -398,11 +459,9 @@
   </include>
   <include name="SquareCommons">
     <left>0</left>
-    <top>0</top>
-    <width>358</width>
-    <height>358</height>
-    <aspectratio aligny="top">scale</aspectratio>
-    <bordersize>25</bordersize>
+    <top>15</top>
+    <width>348</width>
+    <height>348</height>
   </include>
   <include name="PosterBG_NF">
     <control type="image">
@@ -517,7 +576,7 @@
         <texture background="true">$INFO[ListItem.Art(tvshow.poster)]</texture>
       </control>
       <include>PosterWatchedMarks</include>
-      </control>
+    </control>
   </include>
   <include name="RectangleShelfFO">
     <control type="group">
@@ -551,7 +610,102 @@
         <info>ListItem.PercentPlayed</info>
       </control>
       <include>RectangleWatchedMarks</include>
+    </control>
+  </include>
+  <include name="HiddenButton">
+    <left>-300</left>
+    <top>-300</top>
+    <width>1</width>
+    <height>1</height>
+  </include>
+  <include name="HeadingR">
+    <left>960</left>
+    <top>60</top>
+    <width>930</width>
+    <height>75</height>
+    <align>center</align>
+    <aligny>bottom</aligny>
+    <textcolor>$VAR[SelectedColor]</textcolor>
+    <font>size50B</font>
+  </include>
+  <include name="Dimensions_Fullscreen">
+    <left>0</left>
+    <top>0</top>
+    <width>100%</width>
+    <height>100%</height>
+  </include>
+  <include name="Header">
+    <control type="group">
+      <visible>![Window.IsActive(home) | Window.IsActive(LoginScreen.xml)]</visible>
+      <control type="label" description="Heading">
+        <left>0</left>
+        <top>60</top>
+        <align>center</align>
+        <aligny>center</aligny>
+        <width>1920</width>
+        <height>75</height>
+        <textcolor>$VAR[LabelNFColor]</textcolor>
+        <font>size50B</font>
+        <label>$VAR[GlobalHeadings]</label>
       </control>
-
+    </control>
+  </include>
+  <include name="SeekbarIconsCommons">
+    <width>45</width>
+    <height>45</height>
+    <aspectratio aligny="center" align="left">keep</aspectratio>
+  </include>
+  <include name="SeekbarLabels">
+    <height>40</height>
+    <width>100%</width>
+    <align>center</align>
+    <font>size50B</font>
+    <shadowcolor>black</shadowcolor>
+    <textcolor>white</textcolor>
+  </include>
+  <include name="FocusButtonsAnimation">
+    <animation type="Focus" reversible="true">
+      <effect type="zoom" center="auto" start="100" end="104" time="100" easing="inout"/>
+    </animation>
+  </include>
+  <include name="FullscreenInfoLabelMain">
+    <left>300</left>
+    <top>-6</top>
+    <width>1200</width>
+    <scroll>false</scroll>
+    <align>left</align>
+    <font>size24B</font>
+    <textcolor>$VAR[LabelNFColor]</textcolor>
+    <animation effect="fade" time="200">VisibleChange</animation>
+  </include>
+  <include name="FullscreenInfoLabel2">
+    <left>300</left>
+    <top>45</top>
+    <width>1200</width>
+    <scroll>false</scroll>
+    <align>left</align>
+    <textcolor>$VAR[LabelNFColor]</textcolor>
+    <font>plot</font>
+    <animation effect="fade" time="200">VisibleChange</animation>
+  </include>
+  <include name="10Rating">
+    <height>24</height>
+    <width>135</width>
+    <aspectratio align="right">keep</aspectratio>
+    <texture>$INFO[ListItem.Rating,badges/,.png]</texture>
+  </include>
+  <include name="StarRating">
+    <height>24</height>
+    <width>135</width>
+    <aspectratio align="right">keep</aspectratio>
+    <texture>$INFO[ListItem.StarRating,badges/]</texture>
+  </include>
+  <include name="KeyboardButtons">
+    <align>center</align>
+    <aligny>center</aligny>
+    <textoffsetx>0</textoffsetx>
+    <width>68</width>
+    <height>68</height>
+    <font>size26</font>
   </include>
 </includes>

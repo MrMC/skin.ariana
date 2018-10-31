@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+  <include name="View_51" description="51">
+    <control type="fixedlist" id="51" description="51 Wide Container">
+      <visible>Container.Content(episodes)</visible>
+      <viewtype label="539">Wide 51</viewtype>
+      <focusposition>2</focusposition>
+      <movement>0</movement>
+      <left>-160</left>
+      <top>300</top>
+      <width>2160</width>
+      <height>408</height>
+      <orientation>horizontal</orientation>
+      <onup>9000</onup>
+      <pagecontrol>60</pagecontrol>
+      <preloaditems>4</preloaditems>
+      <itemlayout height="300" width="320">
+        <control type="image">
+          <include>EpisodeShowcaseBG</include>
+        </control>
+        <control type="image">
+          <include>EpisodeShowcaseThumb</include>
+        </control>
+        <control type="image">
+          <visible>!IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+          <right>6</right>
+          <bottom>96</bottom>
+          <width>40</width>
+          <height>40</height>
+          <texture>$VAR[Overlay,thumbs/]</texture>
+          <bordertexture colordiffuse="$VAR[SelectedColor]">thumbs/OverlayUnwatched.png</bordertexture>
+          <bordersize>1</bordersize>
+        </control>
+        <control type="progress">
+          <visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+          <bottom>96</bottom>
+          <left>30</left>
+          <right>30</right>
+          <height>42</height>
+          <texturebg colordiffuse="$VAR[SelectedColor]" border="2">HUD/SliderBG.png</texturebg>
+          <lefttexture/>
+          <righttexture/>
+          <midtexture border="1">HUD/ProgressFill.png</midtexture>
+          <info>ListItem.PercentPlayed</info>
+        </control>
+      </itemlayout>
+      <focusedlayout height="300" width="320">
+        <control type="group">
+          <animation effect="zoom" easing="out" start="100" end="140" time="100" delay="0" center="160,150">Focus</animation>
+          <animation effect="zoom" easing="in" start="140" end="100" time="300" delay="0" center="160,150">UnFocus</animation>
+          <control type="image">
+            <include>EpisodeShowcaseBG</include>
+          </control>
+          <control type="image">
+            <include>EpisodeShowcaseThumb</include>
+          </control>
+          <control type="image">
+            <visible>!IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+            <right>6</right>
+            <bottom>96</bottom>
+            <width>40</width>
+            <height>40</height>
+            <texture>$VAR[Overlay,thumbs/]</texture>
+            <bordertexture colordiffuse="$VAR[SelectedColor]">thumbs/OverlayUnwatched.png</bordertexture>
+            <bordersize>1</bordersize>
+          </control>
+          <control type="progress">
+            <visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+            <bottom>96</bottom>
+            <left>30</left>
+            <right>30</right>
+            <height>42</height>
+            <texturebg colordiffuse="$VAR[SelectedColor]" border="2">HUD/SliderBG.png</texturebg>
+            <lefttexture/>
+            <righttexture/>
+            <midtexture border="1">HUD/ProgressFill.png</midtexture>
+            <info>ListItem.PercentPlayed</info>
+          </control>
+        </control>
+      </focusedlayout>
+    </control>
+    <control type="group" description="51 episodes Furniture">
+      <visible>Control.IsVisible(51)</visible>
+      <include>ContainerVisibleFade</include>
+      <include>FanartBG</include>
+      <control type="image" description="Pointer Up">
+        <visible>!ControlGroup(9000).HasFocus()</visible>
+        <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(51)">Conditional</animation>
+        <width>96</width>
+        <height>96</height>
+        <centerleft>50%</centerleft>
+        <top>-15</top>
+        <aspectratio>keep</aspectratio>
+        <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowU.png</texture>
+      </control>
+      <control type="label" description="Main Label">
+        <left>450</left>
+        <top>160</top>
+        <align>left</align>
+        <font>size50B</font>
+        <width>850</width>
+        <height>40</height>
+        <textcolor>$VAR[LabelNFColor]</textcolor>
+        <label>[B]$INFO[ListItem.TVShowTitle][/B]</label>
+      </control>
+      <control type="group" description="Media info left">
+        <left>450</left>
+        <right>450</right>
+        <top>600</top>
+        <control type="label" description="Main Label">
+          <top>-14</top>
+          <font>size22</font>
+          <textcolor>$VAR[LabelNFColor]</textcolor>
+          <label>[B]$INFO[ListItem.Label][/B]</label>
+        </control>
+        <control type="label">
+          <top>40</top>
+          <font>plot</font>
+          <label>$VAR[TopLabel]</label>
+        </control>
+        <control type="textbox" description="Plot">
+          <top>120</top>
+          <height>174</height>
+          <font>plot</font>
+          <align>left</align>
+          <aligny>bottom</aligny>
+          <label>$VAR[Plots]</label>
+        </control>
+        <control type="label" description="Details">
+          <top>300</top>
+          <font>size19</font>
+          <textcolor>$VAR[Label2Color]</textcolor>
+          <label>$VAR[CodecList-Genre]</label>
+        </control>
+      </control>
+    </control>
+  </include>
+</includes>

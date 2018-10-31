@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+  <include name="53SquareCommons">
+    <left>0</left>
+    <top>15</top>
+    <width>348</width>
+    <height>348</height>
+  </include>
+  <include name="53PosterCommons">
+    <left>0</left>
+    <top>0</top>
+    <width>290</width>
+    <height>410</height>
+  </include>
+  <include name="53WatchedMarks">
+    <control type="group" description="Overlay">
+      <control type="image">
+        <visible>!IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+        <right>24</right>
+        <bottom>69</bottom>
+        <height>60</height>
+        <width>60</width>
+        <texture>$VAR[Overlay,thumbs/]</texture>
+        <bordertexture colordiffuse="$VAR[SelectedColor]">thumbs/OverlayUnwatched.png</bordertexture>
+        <bordersize>1</bordersize>
+      </control>
+      <control type="progress">
+        <visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+        <bottom>66</bottom>
+        <left>48</left>
+        <width>68%</width>
+        <height>42</height>
+        <texturebg colordiffuse="$VAR[SelectedColor]" border="2">HUD/SliderBG.png</texturebg>
+        <lefttexture/>
+        <righttexture/>
+        <midtexture border="1">HUD/ProgressFill.png</midtexture>
+        <info>ListItem.PercentPlayed</info>
+      </control>
+    </control>
+  </include>
+  <include name="View_53" description="53">
+    <control type="panel" id="53" description="Grid Container">
+      <visible>[Window.IsActive(mypvrchannels.xml) | Window.IsActive(MyPics.xml) | Container.Content(Movies) | Container.content(tvshows) | container.content(seasons) | container.Content(albums) | Container.content(artists)]</visible>
+      <viewtype label="536">Thumbnails</viewtype>
+      <left>90</left>
+      <right>90</right>
+      <top>108</top>
+      <onleft>9000</onleft>
+      <onright>61</onright>
+      <preloaditems>4</preloaditems>
+      <pagecontrol>60</pagecontrol>
+      <itemlayout condition="Container.Content(Movies) | Container.content(tvshows) | container.content(seasons)" height="456" width="290">
+        <control type="image">
+          <include>53PosterCommons</include>
+          <texture>thumbs/PosterBG.png</texture>
+          <bordersize>0</bordersize>
+        </control>
+        <control type="image">
+          <include>53PosterCommons</include>
+          <texture diffuse="thumbs/PosterDiffuse.png" background="true">$INFO[ListItem.Thumb]</texture>
+          <aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+          <bordersize>22</bordersize>
+        </control>
+        <include>53WatchedMarks</include>
+        <control type="label" description="Label2">
+          <visible>container.content(TVshows) | container.content(seasons)</visible>
+          <visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+          <right>22</right>
+          <bottom>67</bottom>
+          <height>60</height>
+          <width>60</width>
+          <font>size14</font>
+          <align>center</align>
+          <aligny>center</aligny>
+          <textcolor>$VAR[LabelFOColor]</textcolor>
+          <label>[B]$INFO[ListItem.Property(UnwatchedEpisodes)][/B]</label>
+        </control>
+      </itemlayout>
+      <focusedlayout condition="Container.Content(Movies) | Container.content(tvshows) | container.content(seasons)" height="456" width="290">
+        <control type="group">
+          <animation type="Focus">
+            <effect type="zoom" center="auto" start="100" end="120" time="100" tweener="cubic" easing="out"/>
+          </animation>
+          <animation type="UnFocus">
+            <effect type="zoom" center="auto" start="120" end="100" delay="50" time="220" tweener="cubic" easing="in"/>
+          </animation>
+          <control type="image">
+            <include>53PosterCommons</include>
+            <texture>thumbs/PosterBG.png</texture>
+            <bordersize>0</bordersize>
+          </control>
+          <control type="image">
+            <include>53PosterCommons</include>
+            <texture diffuse="thumbs/PosterDiffuse.png" background="true">$INFO[ListItem.Thumb]</texture>
+            <aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+            <bordersize>22</bordersize>
+          </control>
+          <include>53WatchedMarks</include>
+          <control type="label" description="Label2">
+            <visible>container.content(TVshows) | container.content(seasons)</visible>
+            <visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+            <right>22</right>
+            <bottom>67</bottom>
+            <height>60</height>
+            <width>60</width>
+            <font>size14</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>$VAR[LabelFOColor]</textcolor>
+            <label>[B]$INFO[ListItem.Property(UnwatchedEpisodes)][/B]</label>
+          </control>
+        </control>
+        <control type="label">
+          <animation effect="fade" start="0" end="100" time="100" delay="170">Focus</animation>
+          <animation effect="fade" start="100" end="0" time="50" delay="0">UnFocus</animation>
+          <left>5</left>
+          <top>418</top>
+          <width>290</width>
+          <height>45</height>
+          <font>size20B</font>
+          <textcolor>$VAR[LabelNFColor]</textcolor>
+          <align>center</align>
+          <label>$INFO[ListItem.Label]</label>
+        </control>
+      </focusedlayout>
+      <itemlayout condition="Window.IsActive(mypvrchannels.xml) | Window.IsActive(MyPics.xml) | Container.Content(albums) | Container.content(artists)" height="408" width="348">
+        <control type="image">
+          <include>53SquareCommons</include>
+          <texture>thumbs/AlbumBG.png</texture>
+          <bordersize>0</bordersize>
+        </control>
+        <control type="image">
+          <include>53SquareCommons</include>
+          <texture diffuse="thumbs/AlbumDiffuse.png" background="true">$INFO[ListItem.Thumb]</texture>
+          <aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+          <bordersize>22</bordersize>
+        </control>
+      </itemlayout>
+      <focusedlayout condition="Window.IsActive(mypvrchannels.xml) | Window.IsActive(MyPics.xml) | Container.Content(albums) | Container.content(artists)" height="408" width="348">
+        <control type="group">
+          <animation type="Focus">
+            <effect type="zoom" center="auto" start="100" end="120" time="100" tweener="cubic" easing="out"/>
+          </animation>
+          <animation type="UnFocus">
+            <effect type="zoom" center="auto" start="120" end="100" delay="50" time="220" tweener="cubic" easing="in"/>
+          </animation>
+          <control type="image">
+            <include>53SquareCommons</include>
+            <texture>thumbs/AlbumBG.png</texture>
+            <bordersize>0</bordersize>
+          </control>
+          <control type="image">
+            <include>53SquareCommons</include>
+            <texture diffuse="thumbs/AlbumDiffuse.png" background="true">$INFO[ListItem.Thumb]</texture>
+            <aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+            <bordersize>22</bordersize>
+          </control>
+        </control>
+        <control type="label">
+          <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
+          <left>0</left>
+          <top>369</top>
+          <width>358</width>
+          <height>30</height>
+          <font>size20B</font>
+          <textcolor>$VAR[LabelNFColor]</textcolor>
+          <align>center</align>
+          <label>$INFO[ListItem.Label]</label>
+        </control>
+      </focusedlayout>
+    </control>
+    <control type="group" description="53 Furniture">
+      <visible>Control.IsVisible(53)</visible>
+      <include>ContainerVisibleFade</include>
+      <control type="image" description="Pointer Left">
+        <visible>!ControlGroup(9000).HasFocus()</visible>
+        <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(53)">Conditional</animation>
+        <width>96</width>
+        <height>96</height>
+        <left>-15</left>
+        <centertop>50%</centertop>
+        <aspectratio>keep</aspectratio>
+        <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowL.png</texture>
+      </control>
+      <control type="image" description="Pointer Right">
+        <visible>!Control.HasFocus(61)</visible>
+        <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(53)">Conditional</animation>
+        <width>96</width>
+        <height>96</height>
+        <right>-15</right>
+        <centertop>50%</centertop>
+        <aspectratio>keep</aspectratio>
+        <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowR.png</texture>
+      </control>
+      <control type="group" description="Container">
+        <control type="label" description="MainHeading">
+          <top>33</top>
+          <left>112</left>
+          <width>1920</width>
+          <font>size50B</font>
+          <label>[B]$VAR[GlobalHeadings][/B]</label>
+          <textcolor>$VAR[LabelNFColor]</textcolor>
+          <align>left</align>
+        </control>
+      </control>
+    </control>
+  </include>
+</includes>

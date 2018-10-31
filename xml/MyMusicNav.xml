@@ -6,75 +6,9 @@
     <control type="group">
       <include>OpenClose</include>
       <include>View_50</include>
+      <include>View_53</include>
       <include>View_59_Showcase</include>
-      <control type="panel" id="53" description="Grid view">
-        <visible>[Container.Content(albums) | Container.content(artists)]</visible>
-        <viewtype label="536">Thumbnails</viewtype>
-        <left>66</left>
-        <top>126</top>
-        <width>1860</width>
-        <height>954</height>
-        <orientation>vertical</orientation>
-        <onleft>9000</onleft>
-        <pagecontrol>60</pagecontrol>
-        <preloaditems>4</preloaditems>
-        <itemlayout height="408" width="358">
-          <include>SquareBG_FO</include>
-          <control type="image">
-            <include>SquareCommons</include>
-            <texture background="true">$INFO[ListItem.Thumb]</texture>
-          </control>
-        </itemlayout>
-        <focusedlayout height="408" width="358">
-          <control type="group">
-            <animation type="Focus">
-              <effect type="zoom" center="auto" start="100" end="114" time="100" tweener="cubic" easing="out"/>
-            </animation>
-            <animation type="UnFocus">
-              <effect type="zoom" center="auto" start="114" end="100" delay="50" time="220" tweener="cubic" easing="in"/>
-            </animation>
-            <include>SquareBG_FO</include>
-            <control type="image">
-              <include>SquareCommons</include>
-              <texture background="true">$INFO[ListItem.Thumb]</texture>
-            </control>
-            <control type="label">
-              <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
-              <left>0</left>
-              <top>340</top>
-              <width>358</width>
-              <height>30</height>
-              <font>size16</font>
-              <textcolor>$VAR[LabelNFColor]</textcolor>
-              <align>center</align>
-              <label>$INFO[ListItem.Label]</label>
-            </control>
-          </control>
-        </focusedlayout>
-      </control>
-      <control type="group" description="53 furniture">
-        <visible>Control.IsVisible(53)</visible>
-        <include>ContainerVisibleFade</include>
-        <control type="image" description="Pointer Left">
-          <visible>!ControlGroup(9000).HasFocus()</visible>
-          <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(53)">Conditional</animation>
-          <width>96</width>
-          <height>96</height>
-          <left>-15</left>
-          <centertop>50%</centertop>
-          <aspectratio>keep</aspectratio>
-          <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowL.png</texture>
-        </control>
-        <control type="label" description="MainHeading">
-          <top>66</top>
-          <left>84</left>
-          <width>1920</width>
-          <font>size50B</font>
-          <label>[B]$VAR[GlobalHeadings][/B]</label>
-          <textcolor>$VAR[LabelNFColor]</textcolor>
-          <align>left</align>
-        </control>
-      </control>
+      <include>Scroller</include>
       <control type="list" id="52" description="List view">
         <visible>container.content(albums)</visible>
         <right>80</right>
@@ -390,7 +324,7 @@
       </control>
       <control type="group" description="Side menu 9000 group">
         <visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
-        <include>TopBar</include>
+        <include>Menu9000</include>
         <include>VisibleFadeEffect</include>
         <control type="grouplist" id="9000">
           <include>9000GrouplistParameters</include>

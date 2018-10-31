@@ -201,7 +201,7 @@
       </control>
       <control type="group" description="Side menu 9000 group">
         <visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
-        <include>TopBar</include>
+        <include>Menu9000</include>
         <include>VisibleFadeEffect</include>
         <include>PVRGroup9000</include>
       </control>
