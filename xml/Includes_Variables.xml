@@ -9,6 +9,11 @@
     <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
     <value>$INFO[ListItem.Thumb]</value>
   </variable>
+  <variable name="52Label2" description="List view secondary label">
+    <value condition="container.content(Movies) | container.content(episodes) | container.content(musicvideos)">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
+    <value condition="container.content(albums)">$INFO[ListItem.Year,,  •  ]$INFO[ListItem.Artist]</value>
+    <value>$INFO[ListItem.Label2]</value>
+  </variable>
   <variable name="Overlay" description="Overlay image">
     <value condition="ListItem.IsResumable">OverlayInProgress.png</value>
     <value>$INFO[ListItem.Overlay]</value>

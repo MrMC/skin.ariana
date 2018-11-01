@@ -22,7 +22,7 @@
             <align>left</align>
             <include>9000Buttons</include>
             <label>$LOCALIZE[20367]</label>
-            <label2>$INFO[Container.NumItems]</label2>
+            <label2>[COLOR=$VAR[Label2Color]]$INFO[Container.NumItems][/COLOR]</label2>
           </control>
           <control type="button" id="3" description="Sort">
             <include>9000Buttons</include>

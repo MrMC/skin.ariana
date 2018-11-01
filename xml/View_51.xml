@@ -98,14 +98,14 @@
         <top>160</top>
         <align>left</align>
         <font>size50B</font>
-        <width>850</width>
+        <right>200</right>
         <height>40</height>
         <textcolor>$VAR[LabelNFColor]</textcolor>
         <label>[B]$INFO[ListItem.TVShowTitle][/B]</label>
       </control>
       <control type="group" description="Media info left">
         <left>450</left>
-        <right>450</right>
+        <right>200</right>
         <top>600</top>
         <control type="label" description="Main Label">
           <top>-14</top>
@@ -120,7 +120,7 @@
         </control>
         <control type="textbox" description="Plot">
           <top>120</top>
-          <height>174</height>
+          <height>172</height>
           <font>plot</font>
           <align>left</align>
           <aligny>bottom</aligny>
