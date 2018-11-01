@@ -2,6 +2,7 @@
 <includes>
   <include file="Includes_Variables.xml" />
   <include file="defaults.xml" />
+  <include file="Includes_Home.xml" />
   <include file="Includes_Views.xml" />
   <include file="View_50.xml" />
   <include file="View_51.xml" />

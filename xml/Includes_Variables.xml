@@ -94,11 +94,15 @@
   </variable>
   <variable name="Background.Overlay" description="backgrounds">
     <value condition="[!System.IsDarkInterface + System.Platform.TVOS] | [!System.Platform.TVOS + Skin.HasSetting(LightInterface)]">background/LightBG.png</value>
-    <value>background/DarkBG.png</value>
+    <value>background/DarkBG2.png</value>
   </variable>
   <variable name="OverlayColor" description="Overlay">
     <value condition="[!System.IsDarkInterface + System.Platform.TVOS] | [!System.Platform.TVOS + Skin.HasSetting(LightInterface)]">FFf6f6f6</value>
     <value>FF2A2C32</value>
+  </variable>
+  <variable name="HomeOverlayColor" description="Overlay">
+    <value condition="[!System.IsDarkInterface + System.Platform.TVOS] | [!System.Platform.TVOS + Skin.HasSetting(LightInterface)]">FFC6E2FF</value>
+    <value>FF757575</value>
   </variable>
   <variable name="LabelNFColor" description="LabelNF">
     <value condition="[!System.IsDarkInterface + System.Platform.TVOS] | [!System.Platform.TVOS + Skin.HasSetting(LightInterface)]">FF000000</value>

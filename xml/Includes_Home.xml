@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+  <include name="HeaderLabelShelf">
+    <textoffsetx>24</textoffsetx>
+    <height>40</height>
+    <width>1860</width>
+    <font>size22</font>
+    <textcolor>$VAR[Label2Color]</textcolor>
+    <align>left</align>
+  </include>
+  <include name="RectangleShelfCommons">
+    <left>0</left>
+    <top>0</top>
+    <width>580</width>
+    <height>326</height>
+  </include>
+  <include name="PosterShelfCommons">
+    <left>0</left>
+    <top>0</top>
+    <width>290</width>
+    <height>410</height>
+  </include>
+  <include name="RectangleLabelCommons">
+    <animation effect="fade" start="0" end="100" time="100" delay="170">Focus</animation>
+    <animation effect="fade" start="100" end="0" time="50" delay="0">UnFocus</animation>
+    <left>5</left>
+    <top>324</top>
+    <width>586</width>
+    <height>45</height>
+    <align>center</align>
+    <font>size19B</font>
+    <label>$INFO[ListItem.Property(SeasonEpisode),, - ]$INFO[ListItem.Label]</label>
+  </include>
+  <include name="PosterLabelCommons">
+    <animation effect="fade" start="0" end="100" time="100" delay="170">Focus</animation>
+    <animation effect="fade" start="100" end="0" time="50" delay="0">UnFocus</animation>
+    <left>5</left>
+    <top>408</top>
+    <width>290</width>
+    <height>45</height>
+    <font>size19B</font>
+    <align>center</align>
+    <label>$INFO[ListItem.Label]</label>
+  </include>
+  <include name="RectangleWatchedMarks">
+    <control type="image">
+      <visible>!IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+      <right>24</right>
+      <top>200</top>
+      <height>60</height>
+      <width>60</width>
+      <texture>$VAR[Overlay,thumbs/]</texture>
+      <bordertexture colordiffuse="$VAR[SelectedColor]">thumbs/OverlayUnwatched.png</bordertexture>
+      <bordersize>1</bordersize>
+    </control>
+    <control type="progress">
+      <visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+      <centerleft>50%</centerleft>
+      <top>270</top>
+      <width>85%</width>
+      <height>42</height>
+      <texturebg colordiffuse="$VAR[SelectedColor]" border="2">HUD/SliderBG.png</texturebg>
+      <lefttexture/>
+      <righttexture/>
+      <midtexture border="1">HUD/ProgressFill.png</midtexture>
+      <info>ListItem.PercentPlayed</info>
+    </control>
+  </include>
+  <include name="PosterWatchedMarks">
+    <control type="group" description="Overlay">
+      <control type="image">
+        <visible>!IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+        <right>18</right>
+        <top>332</top>
+        <height>60</height>
+        <width>60</width>
+        <texture>$VAR[Overlay,thumbs/]</texture>
+        <bordertexture colordiffuse="$VAR[SelectedColor]">thumbs/OverlayUnwatched.png</bordertexture>
+        <bordersize>1</bordersize>
+      </control>
+      <control type="label" description="Label2">
+        <visible>container.content(TVshows) | container.content(seasons)</visible>
+        <visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+        <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
+        <right>18</right>
+        <top>332</top>
+        <height>60</height>
+        <width>60</width>
+        <font>size14</font>
+        <align>center</align>
+        <textcolor>$VAR[LabelNFColor]</textcolor>
+        <label>[B]$INFO[ListItem.Property(UnwatchedEpisodes)][/B]</label>
+      </control>
+      <control type="progress">
+        <visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+        <centerleft>50%</centerleft>
+        <top>352</top>
+        <width>75%</width>
+        <height>42</height>
+        <texturebg colordiffuse="$VAR[SelectedColor]" border="2">HUD/SliderBG.png</texturebg>
+        <lefttexture/>
+        <righttexture/>
+        <midtexture border="1">HUD/ProgressFill.png</midtexture>
+        <info>ListItem.PercentPlayed</info>
+      </control>
+    </control>
+  </include>
+  <include name="RectangleBG_FO">
+    <control type="image">
+      <include>RectangleShelfCommons</include>
+      <texture>thumbs/EpisodeBG.png</texture>
+      <bordersize>0</bordersize>
+    </control>
+  </include>
+  <include name="PosterBG_FO">
+    <control type="image">
+      <include>PosterShelfCommons</include>
+      <texture diffuse="thumbs/PosterDiffuse.png">thumbs/PosterBG.png</texture>
+      <bordersize>0</bordersize>
+    </control>
+  </include>
+  <include name="RectangleShelfFO">
+    <control type="group">
+      <animation type="Focus">
+        <effect type="zoom" center="auto" start="100" end="112" time="100" tweener="cubic" easing="out"/>
+      </animation>
+      <animation type="UnFocus">
+        <effect type="zoom" center="auto" start="112" end="100" delay="50" time="220" tweener="cubic" easing="in"/>
+      </animation>
+      <include>RectangleBG_FO</include>
+      <control type="image">
+        <visible>IsEmpty(ListItem.Art(fanart))</visible>
+        <include>RectangleShelfCommons</include>
+        <texture diffuse="thumbs/EpisodeDiffuse.png" background="true">$INFO[ListItem.Thumb]</texture>
+        <aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+        <bordersize>18</bordersize>
+      </control>
+      <control type="image">
+        <visible>!IsEmpty(ListItem.Art(fanart))</visible>
+        <include>RectangleShelfCommons</include>
+        <texture diffuse="thumbs/EpisodeDiffuse.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
+        <aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+        <bordersize>18</bordersize>
+      </control>
+      <include>RectangleWatchedMarks</include>
+    </control>
+  </include>
+  <include name="PostersShelfFO">
+    <control type="group">
+      <animation type="Focus">
+        <effect type="zoom" center="auto" start="100" end="112" time="100" tweener="cubic" easing="out"/>
+      </animation>
+      <animation type="UnFocus">
+        <effect type="zoom" center="auto" start="112" end="100" delay="50" time="220" tweener="cubic" easing="in"/>
+      </animation>
+      <include>PosterBG_FO</include>
+      <control type="image">
+        <visible>IsEmpty(ListItem.Art(tvshow.poster))</visible>
+        <include>PosterShelfCommons</include>
+        <texture diffuse="thumbs/PosterDiffuse.png" background="true">$INFO[ListItem.Thumb]</texture>
+        <aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+        <bordersize>18</bordersize>
+      </control>
+      <control type="image">
+        <visible>!IsEmpty(ListItem.Art(tvshow.poster))</visible>
+        <include>PosterShelfCommons</include>
+        <texture diffuse="thumbs/PosterDiffuse.png" background="true">$INFO[ListItem.Art(tvshow.poster)]</texture>
+        <aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+        <bordersize>18</bordersize>
+      </control>
+      <include>PosterWatchedMarks</include>
+    </control>
+  </include>
+</includes>
