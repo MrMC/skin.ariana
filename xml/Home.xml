@@ -157,6 +157,7 @@
       <control type="grouplist" id="9500" description="home shelves">
         <top>500</top>
         <left>90</left>
+        <right>0</right>
         <onup>9000</onup>
         <ondown>noop</ondown>
         <height>1080</height>
@@ -174,6 +175,7 @@
           <animation effect="fade" time="200">Visible</animation>
           <top>0</top>
           <left>0</left>
+          <right>0</right>
           <height>405</height>
           <orientation>horizontal</orientation>
           <onleft>8010</onleft>
@@ -200,6 +202,7 @@
           <animation effect="fade" time="200">Visible</animation>
           <top>0</top>
           <left>0</left>
+          <right>0</right>
           <height>405</height>
           <orientation>horizontal</orientation>
           <onleft>8010</onleft>
@@ -225,8 +228,8 @@
           <visible>IntegerGreaterThan(Container(8011).NumItems,0)</visible>
           <animation effect="fade" time="200">Visible</animation>
           <top>600</top>
-          <left>66</left>
-          <width>1860</width>
+          <left>0</left>
+          <right>0</right>
           <height>455</height>
           <orientation>horizontal</orientation>
           <onleft>8011</onleft>
@@ -253,6 +256,7 @@
           <animation effect="fade" time="200">Visible</animation>
           <top>176</top>
           <left>0</left>
+          <right>0</right>
           <height>455</height>
           <orientation>horizontal</orientation>
           <onleft>8001</onleft>
@@ -279,6 +283,7 @@
           <animation effect="fade" time="200">Visible</animation>
           <top>176</top>
           <left>0</left>
+          <right>0</right>
           <height>455</height>
           <orientation>horizontal</orientation>
           <onleft>8000</onleft>
@@ -305,7 +310,7 @@
           <animation effect="fade" time="200">Visible</animation>
           <top>366</top>
           <left>66</left>
-          <width>1860</width>
+          <right>0</right>
           <height>408</height>
           <orientation>horizontal</orientation>
           <onleft>8002</onleft>
