@@ -10,7 +10,6 @@
       <include>View_52</include>
       <include>View_53</include>
       <include>View_59_Showcase</include>
-      <include>Scroller</include>
       <control type="group" description="Side menu 9000 group">
         <include>Menu9000</include>
         <control type="grouplist" id="9000">

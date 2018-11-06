@@ -92,7 +92,7 @@
   </include>
   <include name="Scroller">
     <control type="group" description="Scroller">
-      <visible>[Container.HasNext | Container.HasPrevious] + [Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53)]</visible>
+      <visible>[Container.HasNext | Container.HasPrevious]</visible>
       <animation condition="Control.HasFocus(61)" effect="slide" start="0,0" end="-270,0" time="200" reversible="false">Conditional</animation>
       <animation condition="!Control.HasFocus(61)" effect="slide" start="-270,0" end="0,0" time="300" reversible="false">Conditional</animation>
       <control type="scrollbar" id="60">
@@ -147,7 +147,7 @@
         <texturenofocus/>
         <textcolor>$VAR[LabelNFColor]</textcolor>
         <focusedcolor>$VAR[LabelNFColor]</focusedcolor>
-        <label>$INFO[ListItem.SortLetter]</label>
+        <label>$VAR[SortLetterLabel]</label>
         <onup>pageup(60)</onup>
         <ondown>pagedown(60)</ondown>
         <onleft>50</onleft>

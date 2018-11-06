@@ -22,6 +22,10 @@
     <value condition="ListItem.IsResumable">$INFO[ListItem.PercentPlayed,$LOCALIZE[13558] ,%]</value>
     <value condition="!IntegerGreaterThan(ListItem.Playcount,0)">$LOCALIZE[16101]</value>
   </variable>
+  <variable name="SortLetterLabel" description="If sort other than title it does not work">
+    <value condition="StringCompare(Container.SortMethod,Title)">$INFO[ListItem.SortLetter]</value>
+    <value> • </value>
+  </variable>
   <variable name="CurrentSubs" description="VideoMenu">
     <value condition="VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled">$LOCALIZE[462]: $LOCALIZE[305]</value>
     <value condition="VideoPlayer.HasSubtitles + !VideoPlayer.SubtitlesEnabled">$LOCALIZE[462]: $LOCALIZE[1223]</value>

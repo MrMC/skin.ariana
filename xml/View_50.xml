@@ -131,6 +131,7 @@
     <control type="group" description="List 50 Furniture">
       <visible>Control.IsVisible(50)</visible>
       <include>ContainerVisibleFade</include>
+      <include>Scroller</include>
       <control type="image" description="Pointer Left">
         <visible>!ControlGroup(9000).HasFocus()</visible>
         <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(50)">Conditional</animation>

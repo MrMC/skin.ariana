@@ -8,8 +8,9 @@
       <width>840</width>
       <height>742</height>
       <onleft>9000</onleft>
+      <onright>61</onright>
       <pagecontrol>60</pagecontrol>
-      <viewtype label="537">Big List</viewtype>
+      <viewtype label="535">Big List</viewtype>
       <preloaditems>4</preloaditems>
       <itemlayout width="840" height="106">
         <control type="image">
@@ -88,6 +89,7 @@
       <visible>container.content(Movies) | container.content(TVshows) | container.content(seasons) | container.content(episodes) | container.content(musicvideos)</visible>
       <include>ContainerVisibleFade</include>
       <include>FanartBG</include>
+      <include>Scroller</include>
       <control type="image" description="Pointer Left">
         <visible>!ControlGroup(9000).HasFocus()</visible>
         <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(52)">Conditional</animation>
@@ -189,6 +191,7 @@
       <visible>Control.IsVisible(52)</visible>
       <visible>container.content(albums)</visible>
       <include>ContainerVisibleFade</include>
+      <include>Scroller</include>
       <control type="image" description="Pointer Left">
         <visible>!ControlGroup(9000).HasFocus()</visible>
         <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(52)">Conditional</animation>

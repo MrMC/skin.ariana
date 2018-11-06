@@ -207,6 +207,7 @@
         <onleft>59</onleft>
         <onright>59</onright>
         <onup condition="IsEmpty(Window.Property(gallery))">9000</onup>
+        <onup condition="!IsEmpty(Window.Property(gallery))">noop</onup>
         <ondown condition="!IsEmpty(Window.Property(gallery))">ClearProperty(gallery)</ondown>
         <ondown condition="IsEmpty(Window.Property(gallery))">SetProperty(gallery, true)</ondown>
         <viewtype label="20445">Fanart</viewtype>
@@ -295,6 +296,7 @@
         <onleft>58</onleft>
         <onright>58</onright>
         <onup condition="IsEmpty(Window.Property(gallery))">9000</onup>
+        <onup condition="!IsEmpty(Window.Property(gallery))">noop</onup>
         <ondown condition="!IsEmpty(Window.Property(gallery))">ClearProperty(gallery)</ondown>
         <ondown condition="IsEmpty(Window.Property(gallery))">SetProperty(gallery, true)</ondown>
         <viewtype label="20445">Fanart</viewtype>
@@ -339,6 +341,7 @@
         <onleft>57</onleft>
         <onright>57</onright>
         <onup condition="IsEmpty(Window.Property(gallery))">9000</onup>
+        <onup condition="!IsEmpty(Window.Property(gallery))">noop</onup>
         <ondown condition="!IsEmpty(Window.Property(gallery))">ClearProperty(gallery)</ondown>
         <ondown condition="IsEmpty(Window.Property(gallery))">SetProperty(gallery, true)</ondown>
         <viewtype label="20445">Fanart</viewtype>
