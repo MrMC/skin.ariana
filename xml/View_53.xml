@@ -45,6 +45,7 @@
       <left>90</left>
       <right>90</right>
       <top>108</top>
+      <bottom>0</bottom>
       <onleft>9000</onleft>
       <onright>61</onright>
       <preloaditems>4</preloaditems>
