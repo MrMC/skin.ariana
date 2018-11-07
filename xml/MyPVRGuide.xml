@@ -16,7 +16,7 @@
           <height>840</height>
           <timeblocks>28</timeblocks>
           <rulerunit>6</rulerunit>
-          <onback>9000</onback>
+          <onleft>9000</onleft>
           <viewtype label="19032">EPG Grid</viewtype>
           <progresstexture colordiffuse="$VAR[LabelFOColor]">dot/White20.png</progresstexture>
           <rulerlayout height="40" width="1300" description="Date and time epg header">
