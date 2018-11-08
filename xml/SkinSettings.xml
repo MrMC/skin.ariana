@@ -87,18 +87,6 @@
             <label2>$LOCALIZE[31024]</label2>
             <onclick>Skin.Reset(LightInterface)</onclick>
           </item>
-          <item id="3" description="List Fanart">
-            <visible>Skin.HasSetting(FanartInList)</visible>
-            <label>$LOCALIZE[31032]</label>
-            <label2>$LOCALIZE[107]</label2>
-            <onclick>Skin.ToggleSetting(FanartInList)</onclick>
-          </item>
-          <item id="4" description="List Fanart">
-            <visible>!Skin.HasSetting(FanartInList)</visible>
-            <label>$LOCALIZE[31032]</label>
-            <label2>$LOCALIZE[106]</label2>
-            <onclick>Skin.ToggleSetting(FanartInList)</onclick>
-          </item>
           <item id="5" description="OLED black">
             <visible>Skin.HasSetting(OLED)</visible>
             <label>$LOCALIZE[31020]</label>
@@ -110,6 +98,18 @@
             <label>$LOCALIZE[31020]</label>
             <label2>$LOCALIZE[106]</label2>
             <onclick>Skin.ToggleSetting(OLED)</onclick>
+          </item>
+          <item id="3" description="List Fanart">
+            <visible>Skin.HasSetting(FanartInList)</visible>
+            <label>$LOCALIZE[31032]</label>
+            <label2>$LOCALIZE[107]</label2>
+            <onclick>Skin.ToggleSetting(FanartInList)</onclick>
+          </item>
+          <item id="4" description="List Fanart">
+            <visible>!Skin.HasSetting(FanartInList)</visible>
+            <label>$LOCALIZE[31032]</label>
+            <label2>$LOCALIZE[106]</label2>
+            <onclick>Skin.ToggleSetting(FanartInList)</onclick>
           </item>
           <item id="7" description="InfoPoster">
             <visible>Skin.HasSetting(InfoPosterHide)</visible>
