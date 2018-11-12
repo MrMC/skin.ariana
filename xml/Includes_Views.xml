@@ -25,6 +25,16 @@
     </control>
   </include>
   <include name="Menu9000">
+    <control type="image" description="Dim">
+      <animation condition="ControlGroup(9000).HasFocus()" effect="fade" start="0" end="50" time="300" delay="0" reversible="false">Conditional</animation>
+      <animation condition="!ControlGroup(9000).HasFocus()" effect="fade" start="50" end="0" time="200" reversible="false">Conditional</animation>
+      <left>0</left>
+      <top>0</top>
+      <width>100%</width>
+      <height>100%</height>
+      <aspectratio>stretch</aspectratio>
+      <texture>dot/Black50.png</texture>
+    </control>
     <control type="image" description="Background">
       <animation condition="ControlGroup(9000).HasFocus()" effect="slide" start="0,0" end="540,0" time="200" reversible="false">Conditional</animation>
       <animation condition="!ControlGroup(9000).HasFocus()" effect="slide" start="540,0" end="0,0" time="300" reversible="false">Conditional</animation>
@@ -66,7 +76,7 @@
     <height>800</height>
     <itemgap>21</itemgap>
     <onright>50</onright>
-    <onleft>50</onleft>
+    <onleft>noop</onleft>
     <onback>50</onback>
     <align>left</align>
     <aligny>center</aligny>
@@ -151,7 +161,7 @@
         <onup>pageup(60)</onup>
         <ondown>pagedown(60)</ondown>
         <onleft>50</onleft>
-        <onright>50</onright>
+        <onright>noop</onright>
         <onback>50</onback>
       </control>
     </control>
