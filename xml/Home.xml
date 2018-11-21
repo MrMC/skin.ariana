@@ -183,6 +183,10 @@
           <onback>9000</onback>
           <itemlayout width="580" height="326">
             <include>RectangleShelfFO</include>
+            <control type="label">
+              <include>RectangleLabelCommons</include>
+              <textcolor>$VAR[Label2Color]</textcolor>
+            </control>
           </itemlayout>
           <focusedlayout width="580" height="326">
             <include>RectangleShelfFO</include>
@@ -210,6 +214,10 @@
           <onback>9000</onback>
           <itemlayout width="580" height="326">
             <include>RectangleShelfFO</include>
+            <control type="label">
+              <include>RectangleLabelCommons</include>
+              <textcolor>$VAR[Label2Color]</textcolor>
+            </control>
           </itemlayout>
           <focusedlayout width="580" height="326">
             <include>RectangleShelfFO</include>
