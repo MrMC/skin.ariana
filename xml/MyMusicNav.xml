@@ -226,10 +226,13 @@
             <include>9000Buttons</include>
             <texture colordiffuse="$VAR[LabelNFColor]">img/LineST.png</texture>
           </control>
-          <control type="button" id="99" description="Update library">
-            <visible>Library.HasContent(music)</visible>
+          <control type="togglebutton" id="99" description="Update library">
+            <visible>Library.HasContent(music) + !Container.Content(addons)</visible>
             <include>9000Buttons</include>
-            <label>653</label>
+            <label>$LOCALIZE[653]</label>
+						<altlabel>$LOCALIZE[13353]</altlabel>
+            <onclick>UpdateLibrary(music)</onclick>
+						<usealttexture>library.isscanningmusic</usealttexture>
           </control>
         </control>
       </control>

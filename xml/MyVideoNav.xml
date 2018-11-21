@@ -41,9 +41,12 @@
             <include>9000Buttons</include>
             <texture colordiffuse="$VAR[LabelNFColor]">img/LineST.png</texture>
           </control>
-          <control type="button" id="99" description="Update library">
+          <control type="togglebutton" id="99" description="Update library">
             <include>9000Buttons</include>
-            <label>653</label>
+            <onclick>UpdateLibrary(video)</onclick>
+						<label>653</label>
+            <altlabel>$LOCALIZE[13353]</altlabel>
+						<usealttexture>library.isscanningvideo</usealttexture>
           </control>
         </control>
       </control>
