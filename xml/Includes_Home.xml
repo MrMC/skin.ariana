@@ -21,8 +21,6 @@
     <height>410</height>
   </include>
   <include name="RectangleLabelCommons">
-    <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
-    <animation effect="fade" start="100" end="0" time="0" delay="0">UnFocus</animation>
     <left>5</left>
     <top>324</top>
     <width>586</width>
