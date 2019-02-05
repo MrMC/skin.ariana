@@ -18,6 +18,12 @@
       <size>20</size>
     </font>
     <font>
+      <name>size14slim</name>
+      <filename>Arimo.ttf</filename>
+      <size>20</size>
+      <aspect>0.9</aspect>
+    </font>
+    <font>
       <name>size15</name>
       <filename>Arimo.ttf</filename>
       <size>22</size>
@@ -202,6 +208,12 @@
       <name>size14</name>
       <filename>Arial.ttf</filename>
       <size>20</size>
+    </font>
+    <font>
+      <name>size14slim</name>
+      <filename>Arial.ttf</filename>
+      <size>20</size>
+      <aspect>0.9</aspect>
     </font>
     <font>
       <name>size15</name>
