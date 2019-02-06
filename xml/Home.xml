@@ -11,14 +11,24 @@
       <animation type="Conditional" condition="ControlGroup(9500).HasFocus()" reversible="true">
         <effect type="slide" end="0,-500" time="300" easing="inout"/>
       </animation>
-      <control type="image">
+      <control type="group">
         <visible>![Control.IsVisible(4004) + !StringCompare(Control.GetLabel(4004).index(1),unknown-user.png)]</visible>
-        <top>84</top>
-        <left>90</left>
-        <width>300</width>
-        <height>90</height>
-        <texture>$VAR[Logo]</texture>
-        <aspectratio align="left">keep</aspectratio>
+        <control type="image">
+          <top>45</top>
+          <left>0</left>
+          <width>400</width>
+          <height>190</height>
+          <texture>$VAR[LogoBackground]</texture>
+          <aspectratio align="left">keep</aspectratio>
+        </control>
+        <control type="image">
+          <top>84</top>
+          <left>90</left>
+          <width>252</width>
+          <height>110</height>
+          <texture>$VAR[Logo]</texture>
+          <aspectratio align="left">keep</aspectratio>
+        </control>
       </control>
       <control type="image" description="Users">
         <visible>Control.IsVisible(4004) + !StringCompare(Control.GetLabel(4004).index(1),unknown-user.png)</visible>

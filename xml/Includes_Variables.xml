@@ -142,4 +142,8 @@
     <value condition="[!System.IsDarkInterface + System.Platform.TVOS] | [!System.Platform.TVOS + Skin.HasSetting(LightInterface)]">Logo_light.png</value>
     <value>Logo_dark.png</value>
   </variable>
+  <variable name="LogoBackground" description="Logo background">
+    <value condition="[!System.IsDarkInterface + System.Platform.TVOS] | [!System.Platform.TVOS + Skin.HasSetting(LightInterface)]">Logo_background.png</value>
+    <value></value>
+  </variable>
 </includes>
