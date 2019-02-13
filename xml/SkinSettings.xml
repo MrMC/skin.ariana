@@ -73,20 +73,6 @@
           </control>
         </focusedlayout>
         <content>
-          <item id="1" description="Theme force dark">
-            <visible>!System.Platform.TVOS</visible>
-            <visible>!Skin.HasSetting(LightInterface)</visible>
-            <label>$LOCALIZE[480]</label>
-            <label2>$LOCALIZE[31021]</label2>
-            <onclick>Skin.ToggleSetting(LightInterface)</onclick>
-          </item>
-          <item id="2" description="Theme reset fallback light">
-            <visible>!System.Platform.TVOS</visible>
-            <visible>Skin.HasSetting(LightInterface)</visible>
-            <label>$LOCALIZE[480]</label>
-            <label2>$LOCALIZE[31024]</label2>
-            <onclick>Skin.Reset(LightInterface)</onclick>
-          </item>
           <item id="5" description="OLED black">
             <visible>Skin.HasSetting(OLED)</visible>
             <label>$LOCALIZE[31020]</label>
