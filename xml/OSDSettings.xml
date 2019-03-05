@@ -244,6 +244,14 @@
           <texturefocus colordiffuse="$VAR[LabelNFColor]">OSD/SkipForward.png</texturefocus>
           <onclick>PlayerControl(Next)</onclick>
         </control>
+        <control type="button" id="7">
+          <width>93</width>
+          <height>57</height>
+          <texturenofocus colordiffuse="grey">OSD/home.png</texturenofocus>
+          <texturefocus colordiffuse="$VAR[LabelNFColor]">OSD/home.png</texturefocus>
+          <onclick>PlayerControl(ShowVideoMenu)</onclick>
+          <visible>VideoPlayer.HasMenu</visible>
+        </control>
       </control>
     </control>
   </controls>
