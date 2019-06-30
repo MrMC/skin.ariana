@@ -86,12 +86,34 @@
       </control>
       <control type="textbox" id="6" description="Settings description">
         <left>560</left>
-        <top>888</top>
+        <top>938</top>
         <width>1230</width>
         <height>126</height>
         <align>justify</align>
         <textcolor>$VAR[LabelNFColor]</textcolor>
         <autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+      </control>
+      <control type="image" description="Pointer D" id="2006">
+        <visible>Container(5).HasNext</visible>
+        <visible>!Control.IsVisible(2007)</visible>
+        <animation effect="fade" time="300">Visible</animation>
+        <width>96</width>
+        <height>96</height>
+        <left>1122</left>
+        <top>845</top>
+        <aspectratio>keep</aspectratio>
+        <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowD.png</texture>
+      </control>
+      <control type="image" description="Pointer U" id="2007">
+        <visible>Container(5).HasPrevious</visible>
+        <visible>!Control.IsVisible(2006)</visible>
+        <animation effect="fade" time="300">Visible</animation>
+        <width>96</width>
+        <height>96</height>
+        <left>1122</left>
+        <top>845</top>
+        <aspectratio>keep</aspectratio>
+        <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowU.png</texture>
       </control>
     </control>
   </controls>

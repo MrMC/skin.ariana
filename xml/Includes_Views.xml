@@ -56,6 +56,16 @@
       <aspectratio>keep</aspectratio>
       <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowR.png</texture>
     </control>
+    <control type="image" description="Pointer L">
+      <animation condition="!ControlGroup(9000).HasFocus()" effect="fade" start="0" end="100" time="300" delay="300" reversible="false">Conditional</animation>
+      <animation condition="ControlGroup(9000).HasFocus()" effect="fade" start="100" end="0" time="0" reversible="false">Conditional</animation>
+      <centertop>50%</centertop>
+      <width>96</width>
+      <height>96</height>
+      <left>5</left>
+      <aspectratio>keep</aspectratio>
+      <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowL.png</texture>
+    </control>
     <control type="label">
       <left>-480</left>
       <top>30</top>
@@ -162,6 +172,16 @@
         <onleft>50</onleft>
         <onright>noop</onright>
         <onback>50</onback>
+      </control>
+      <control type="image" description="Pointer R">
+        <animation condition="!Control.HasFocus(61)" effect="fade" start="0" end="100" time="300" delay="300" reversible="false">Conditional</animation>
+        <animation condition="Control.HasFocus(61)" effect="fade" start="100" end="0" time="0" reversible="false">Conditional</animation>
+        <centertop>50%</centertop>
+        <width>96</width>
+        <height>96</height>
+        <right>5</right>
+        <aspectratio>keep</aspectratio>
+        <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowR.png</texture>
       </control>
     </control>
   </include>
