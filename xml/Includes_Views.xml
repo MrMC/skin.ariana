@@ -68,7 +68,7 @@
       <texture colordiffuse="$VAR[Label2Color]">icons/ArrowL.png</texture>
     </control>
     <control type="image" description="Pointer U">
-      <visible>IsEmpty(Window.Property(gallery)) + [Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)]</visible>
+      <visible>!ControlGroup(9000).HasFocus() + IsEmpty(Window.Property(gallery)) + [Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)]</visible>
       <animation effect="fade" start="0" end="100" time="300" delay="300" reversible="false">Visible</animation>
       <centerleft>50%</centerleft>
       <width>96</width>
