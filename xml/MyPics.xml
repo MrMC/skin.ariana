@@ -9,7 +9,6 @@
       <include>View_53</include>
       <include>Scroller</include>
       <control type="group" description="Side menu 9000 group">
-        <visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
         <include>Menu9000</include>
         <include>VisibleFadeEffect</include>
         <control type="grouplist" id="9000">

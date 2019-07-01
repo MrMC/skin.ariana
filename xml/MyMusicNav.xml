@@ -117,7 +117,7 @@
       <control type="group" description="51 furniture">
         <visible>Control.IsVisible(51)</visible>
         <include>ContainerVisibleFade</include>
-        <control type="image" description="Pointer Left">
+<!--         <control type="image" description="Pointer Left">
           <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(51) + !ControlGroup(9000).HasFocus()">Conditional</animation>
           <width>96</width>
           <height>96</height>
@@ -125,7 +125,7 @@
           <centertop>50%</centertop>
           <aspectratio>keep</aspectratio>
           <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowL.png</texture>
-        </control>
+        </control> -->
         <control type="label" description="Show Label">
           <left>180</left>
           <top>80</top>
@@ -200,7 +200,6 @@
         </control>
       </control>
       <control type="group" description="Side menu 9000 group">
-        <visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
         <include>Menu9000</include>
         <include>VisibleFadeEffect</include>
         <control type="grouplist" id="9000">

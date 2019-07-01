@@ -90,7 +90,7 @@
       <include>ContainerVisibleFade</include>
       <include>FanartBG</include>
       <include>Scroller</include>
-      <control type="image" description="Pointer Left">
+<!--       <control type="image" description="Pointer Left">
         <visible>!ControlGroup(9000).HasFocus()</visible>
         <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(52)">Conditional</animation>
         <width>96</width>
@@ -99,7 +99,7 @@
         <centertop>50%</centertop>
         <aspectratio>keep</aspectratio>
         <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowL.png</texture>
-      </control>
+      </control> -->
       <control type="label" description="MainHeading">
         <right>66</right>
         <top>120</top>

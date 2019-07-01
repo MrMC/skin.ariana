@@ -97,7 +97,7 @@
         <centerleft>50%</centerleft>
         <top>-15</top>
         <aspectratio>keep</aspectratio>
-        <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowU.png</texture>
+        <texture colordiffuse="$VAR[Label2Color]">icons/ArrowU.png</texture>
       </control>
       <control type="image" description="Pointer Dw">
         <animation effect="fade" start="100" end="0" time="300" delay="3000" condition="Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)">Conditional</animation>
@@ -106,7 +106,7 @@
         <centerleft>50%</centerleft>
         <bottom>-15</bottom>
         <aspectratio>keep</aspectratio>
-        <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowD.png</texture>
+        <texture colordiffuse="$VAR[Label2Color]">icons/ArrowD.png</texture>
       </control>
     </control>
     <control type="group" description="Gallery">
@@ -119,7 +119,7 @@
         <centerleft>50%</centerleft>
         <bottom>-15</bottom>
         <aspectratio>keep</aspectratio>
-        <texture colordiffuse="$VAR[LabelNFColor]">icons/ArrowD.png</texture>
+        <texture colordiffuse="$VAR[Label2Color]">icons/ArrowD.png</texture>
       </control>
       <control type="group" description="Media info">
         <left>120</left>
