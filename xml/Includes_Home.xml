@@ -76,16 +76,16 @@
         <bordersize>1</bordersize>
       </control>
       <control type="label" description="Label2">
-        <visible>container.content(TVshows) | container.content(seasons)</visible>
+        <!-- <visible>container.content(TVshows) | container.content(seasons)</visible> -->
         <visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
         <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
-        <right>18</right>
-        <top>332</top>
+        <right>12</right>
+        <top>339</top>
         <height>60</height>
         <width>60</width>
         <font>size14</font>
         <align>center</align>
-        <textcolor>$VAR[LabelNFColor]</textcolor>
+        <textcolor>$VAR[LabelFOColor]</textcolor>
         <label>[B]$INFO[ListItem.Property(UnwatchedEpisodes)][/B]</label>
       </control>
       <control type="progress">
