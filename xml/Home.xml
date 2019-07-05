@@ -209,7 +209,7 @@
         <control type="label" id="80100" description="Heading8010">
           <visible>Control.IsVisible(8010)</visible>
           <include>HeaderLabelShelf</include>
-          <label>$INFO[Container(8010).ListItem.Property(ItemType)]</label>
+          <label>$INFO[Container(8010).ListItem.Property(ItemType)] $LOCALIZE[20342]</label>
         </control>
         <control type="panel" id="8010" description="Continue">
           <visible>IntegerGreaterThan(Container(8010).NumItems,0) + !Control.IsVisible(8020)</visible>
@@ -240,7 +240,7 @@
         <control type="label" id="80110" description="Heading8011">
           <visible>Control.IsVisible(8011)</visible>
           <include>HeaderLabelShelf</include>
-          <label>$INFO[Container(8011).ListItem.Property(ItemType)]</label>
+          <label>$INFO[Container(8011).ListItem.Property(ItemType)] $LOCALIZE[36903]</label>
         </control>
         <control type="panel" id="8011" description="Shows OnDeck">
           <visible>IntegerGreaterThan(Container(8011).NumItems,0)</visible>
@@ -273,7 +273,7 @@
         <control type="label" id="80010" description="Heading8001">
           <visible>Control.IsVisible(8001)</visible>
           <include>HeaderLabelShelf</include>
-          <label>$INFO[Container(8001).ListItem.Property(ItemType)]</label>
+          <label>$INFO[Container(8001).ListItem.Property(ItemType)] $LOCALIZE[36903]</label>
         </control>
         <control type="panel" id="8001" description="Shows RA">
           <visible>IntegerGreaterThan(Container(8001).NumItems,0)</visible>
@@ -306,7 +306,7 @@
         <control type="label" id="80000" description="Heading8000">
           <visible>Control.IsVisible(8000)</visible>
           <include>HeaderLabelShelf</include>
-          <label>$INFO[Container(8000).ListItem.Property(ItemType)]</label>
+          <label>$INFO[Container(8000).ListItem.Property(ItemType)] $LOCALIZE[20342]</label>
         </control>
         <control type="panel" id="8000" description="Movies RA">
           <visible>IntegerGreaterThan(Container(8000).NumItems,0)</visible>
@@ -334,7 +334,7 @@
         <control type="label" id="80020" description="Heading8002">
           <visible>Control.IsVisible(8002)</visible>
           <include>HeaderLabelShelf</include>
-          <label>$INFO[Container(8002).ListItem.Property(ItemType)]</label>
+          <label>$INFO[Container(8002).ListItem.Property(ItemType)] $LOCALIZE[132]</label>
         </control>
         <control type="panel" id="8002" description="Music RA">
           <visible>IntegerGreaterThan(Container(8002).NumItems,0)</visible>
