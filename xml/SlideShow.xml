@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
   <controls>
+    <control type="button">
+      <description>Hidden button to close the keyboard when its focused</description>
+      <left>0</left>
+      <top>0</top>
+      <right>0</right>
+      <bottom>0</bottom>
+      <texturenofocus>-</texturenofocus>
+      <texturefocus>-</texturefocus>
+    </control>
     <control type="group">
       <visible>Slideshow.IsActive</visible>
       <animation condition="Slideshow.IsPaused" effect="fade" start="100" end="0" time="200">conditional</animation>
