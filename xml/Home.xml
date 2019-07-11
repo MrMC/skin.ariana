@@ -182,7 +182,7 @@
         </control>
         <control type="panel" id="8020" description="Continue">
           <visible>IntegerGreaterThan(Container(8020).NumItems,0)</visible>
-          <animation effect="fade" time="200">Visible</animation>
+          <animation effect="fade" delay="500" time="700">Visible</animation>
           <top>0</top>
           <left>90</left>
           <right>0</right>
@@ -213,7 +213,7 @@
         </control>
         <control type="panel" id="8010" description="Continue">
           <visible>IntegerGreaterThan(Container(8010).NumItems,0) + !Control.IsVisible(8020)</visible>
-          <animation effect="fade" time="200">Visible</animation>
+          <animation effect="fade" delay="500" time="700">Visible</animation>
           <top>0</top>
           <left>90</left>
           <right>0</right>
@@ -244,7 +244,7 @@
         </control>
         <control type="panel" id="8011" description="Shows OnDeck">
           <visible>IntegerGreaterThan(Container(8011).NumItems,0)</visible>
-          <animation effect="fade" time="200">Visible</animation>
+          <animation effect="fade" delay="500" time="700">Visible</animation>
           <top>600</top>
           <left>90</left>
           <right>0</right>
@@ -277,7 +277,7 @@
         </control>
         <control type="panel" id="8001" description="Shows RA">
           <visible>IntegerGreaterThan(Container(8001).NumItems,0)</visible>
-          <animation effect="fade" time="200">Visible</animation>
+          <animation effect="fade" delay="500" time="700">Visible</animation>
           <top>176</top>
           <left>90</left>
           <right>0</right>
@@ -310,7 +310,7 @@
         </control>
         <control type="panel" id="8000" description="Movies RA">
           <visible>IntegerGreaterThan(Container(8000).NumItems,0)</visible>
-          <animation effect="fade" time="200">Visible</animation>
+          <animation effect="fade" delay="500" time="700">Visible</animation>
           <top>176</top>
           <left>90</left>
           <right>0</right>
@@ -338,7 +338,7 @@
         </control>
         <control type="panel" id="8002" description="Music RA">
           <visible>IntegerGreaterThan(Container(8002).NumItems,0)</visible>
-          <animation effect="fade" time="200">Visible</animation>
+          <animation effect="fade" delay="500" time="700">Visible</animation>
           <top>366</top>
           <left>90</left>
           <right>0</right>
