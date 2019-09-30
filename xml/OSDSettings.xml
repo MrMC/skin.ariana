@@ -132,6 +132,14 @@
             <label>CMS</label>
             <onclick>ActivateWindow(osdcmssettings)</onclick>
           </control>
+          <control type="button" id="4004">
+            <visible>ControlGroup(9000).HasFocus(104)</visible>
+            <visible>System.Platform.TVOS</visible>
+            <include>VisibleFadeEffect</include>
+            <include>VideoMenuButtons</include>
+            <label>$LOCALIZE[19295]</label>
+            <onclick>ShowAudioRouteSelector()</onclick>
+          </control>
           <control type="button" id="4003">
             <visible>ControlGroup(9000).HasFocus(104)</visible>
             <include>VisibleFadeEffect</include>
