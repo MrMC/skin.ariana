@@ -84,7 +84,7 @@
             <width>60</width>
             <height>54</height>
             <aspectratio>keep</aspectratio>
-            <texture>icon_sync.png</texture>
+            <texture colordiffuse="$VAR[LabelNFColor]">icon_sync.png</texture>
             <visible>ListItem.property(sync)</visible>
           </control>
           <control type="image">
@@ -111,9 +111,8 @@
             <top>4</top>
             <width>120</width>
             <height>54</height>
-            <colordiffuse>Label2</colordiffuse>
             <aspectratio>keep</aspectratio>
-            <texture>badges/$INFO[ListItem.ActualIcon].png</texture>
+            <texture colordiffuse="$VAR[LabelNFColor]">badges/rating$INFO[ListItem.ActualIcon].png</texture>
           </control>
         </itemlayout>
         <focusedlayout width="1365" height="62">
@@ -153,7 +152,7 @@
               <width>60</width>
               <height>54</height>
               <aspectratio>keep</aspectratio>
-              <texture>icon_sync.png</texture>
+              <texture colordiffuse="$VAR[LabelFOColor]">icon_sync.png</texture>
               <visible>ListItem.property(sync)</visible>
             </control>
             <control type="image">
@@ -182,7 +181,7 @@
               <width>120</width>
               <height>54</height>
               <aspectratio>keep</aspectratio>
-              <texture>badges/$INFO[ListItem.ActualIcon].png</texture>
+              <texture colordiffuse="$VAR[LabelFOColor]">badges/rating$INFO[ListItem.ActualIcon].png</texture>
             </control>
           </control>
         </focusedlayout>
