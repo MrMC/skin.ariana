@@ -107,15 +107,26 @@
         <info>Player.Progress</info>
       </control>
       <control type="slider" id="401" description="Seek Scrub Position Vertical Bar">
+        <visible>!System.HasAppleTVSlider</visible>
         <centerleft>50%</centerleft>
+        <top>-6</top>
         <left>60</left>
         <right>60</right>
-        <height>16</height>
-        <onup>9000</onup>
-        <texturesliderbar border="8,0,8,0">OSD/ProgressBackground.png</texturesliderbar>
-        <textureslidernib colordiffuse="white">OSD/SliderNib.png</textureslidernib>
-        <textureslidernibfocus colordiffuse="white">OSD/SliderNib.png</textureslidernibfocus>
-        <action>seek</action>
+        <height>28</height>
+        <texturesliderbar colordiffuse="00FFFFFF">OSD/SliderNibx2.png</texturesliderbar>
+        <textureslidernib colordiffuse="white">OSD/SliderNibx2.png</textureslidernib>
+        <textureslidernibfocus colordiffuse="white">OSD/SliderNibx2.png</textureslidernibfocus>
+      </control>
+      <control type="slider" id="401" description="Seek Scrub Position Vertical Bar">
+        <visible>System.HasAppleTVSlider</visible>
+        <centerleft>50%</centerleft>
+        <top>-6</top>
+        <left>60</left>
+        <right>60</right>
+        <height>28</height>
+        <texturesliderbar colordiffuse="00FFFFFF">OSD/SliderNibx2.png</texturesliderbar>
+        <textureslidernib colordiffuse="white">-</textureslidernib>
+        <textureslidernibfocus colordiffuse="white">OSD/SliderNibx2.png</textureslidernibfocus>
       </control>
     </control>
   </controls>

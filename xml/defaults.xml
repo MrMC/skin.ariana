@@ -163,7 +163,7 @@
   </default>
   <default type="slider" description="Seek Slider">
     <height>60</height>
-    <width>450</width>
+    <!-- <width>450</width> -->
     <aligny>center</aligny>
     <font>size22</font>
     <textcolor>$VAR[LabelNFColor]</textcolor>
@@ -172,7 +172,7 @@
     <disabledcolor>$VAR[DisabledColor]</disabledcolor>
     <texturefocus border="9">img/SettingsButtonFO.png</texturefocus>
     <texturenofocus border="9">img/SettingsButtonNF.png</texturenofocus>
-    <sliderwidth>150</sliderwidth>
+    <!-- <sliderwidth>150</sliderwidth> -->
     <sliderheight>24</sliderheight>
     <texturesliderbar border="3,0,3,0">HUD/SliderBG.png</texturesliderbar>
     <textureslidernib>HUD/SliderNibNF.png</textureslidernib>
