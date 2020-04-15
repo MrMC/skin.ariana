@@ -240,7 +240,7 @@
         <control type="label" id="80110" description="Heading8011">
           <visible>Control.IsVisible(8011)</visible>
           <include>HeaderLabelShelf</include>
-          <label>$INFO[Container(8011).ListItem.Property(ItemType)] $LOCALIZE[36903]</label>
+          <label>$INFO[Container(8011).ListItem.Property(ItemType)] [CAPITALIZE]$LOCALIZE[36903][/CAPITALIZE]</label>
         </control>
         <control type="panel" id="8011" description="Shows OnDeck">
           <visible>IntegerGreaterThan(Container(8011).NumItems,0)</visible>
@@ -273,7 +273,7 @@
         <control type="label" id="80010" description="Heading8001">
           <visible>Control.IsVisible(8001)</visible>
           <include>HeaderLabelShelf</include>
-          <label>$INFO[Container(8001).ListItem.Property(ItemType)] $LOCALIZE[36903]</label>
+          <label>$INFO[Container(8001).ListItem.Property(ItemType)] [CAPITALIZE]$LOCALIZE[36903][/CAPITALIZE]</label>
         </control>
         <control type="panel" id="8001" description="Shows RA">
           <visible>IntegerGreaterThan(Container(8001).NumItems,0)</visible>
