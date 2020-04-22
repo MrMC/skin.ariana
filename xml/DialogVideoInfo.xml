@@ -146,7 +146,7 @@
               <content>
                 <item>
                   <label>$LOCALIZE[544]</label>
-                  <label2>[UPPERCASE]$INFO[ListItem.VideoCodec]$INFO[ListItem.VideoResolution, / ]$INFO[ListItem.AudioCodec, • ]$INFO[ListItem.AudioChannels, / ][/UPPERCASE]</label2>
+                  <label2>[UPPERCASE]$INFO[ListItem.VideoCodec]$INFO[ListItem.VideoResolution, / ]$INFO[ListItem.AudioCodec, • ] / $VAR[AudioChannels][/UPPERCASE]</label2>
                   <onclick>noop</onclick>
                   <visible>!IsEmpty(ListItem.VideoCodec)</visible>
                 </item>
@@ -314,7 +314,7 @@
             <font>size16</font>
             <textcolor>$VAR[Label2Color]</textcolor>
             <align>left</align>
-            <label>[UPPERCASE]$INFO[ListItem.VideoCodec]$INFO[ListItem.VideoResolution, / ]$INFO[ListItem.AudioCodec, • ]$INFO[ListItem.AudioChannels, / ][/UPPERCASE]</label>
+            <label>[UPPERCASE]$INFO[ListItem.VideoCodec]$INFO[ListItem.VideoResolution, / ]$INFO[ListItem.AudioCodec, • ] / $VAR[AudioChannels][/UPPERCASE]</label>
           </control>
           <control type="textbox" description="Plot">
             <left>0</left>

@@ -190,7 +190,7 @@
           <width>100%</width>
           <align>center</align>
           <scroll>false</scroll>
-          <label>[B]$INFO[ListItem.Label][/B]$VAR[ShowcaseListLabel,  |  ][COLOR=grey][UPPERCASE]$INFO[ListItem.VideoCodec,    ]$INFO[ListItem.VideoResolution, / ]$INFO[ListItem.AudioCodec, • ]$INFO[ListItem.AudioChannels, / ][/UPPERCASE][/COLOR]</label>
+          <label>[B]$INFO[ListItem.Label][/B]$VAR[ShowcaseListLabel,  |  ][COLOR=grey][UPPERCASE]$INFO[ListItem.VideoCodec,    ]$INFO[ListItem.VideoResolution, / ]$INFO[ListItem.AudioCodec, • ] / $VAR[AudioChannels][/UPPERCASE][/COLOR]</label>
         </control>
       </control>
     </control>

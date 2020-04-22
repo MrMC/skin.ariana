@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+  <variable name="AudioChannels" description="AudioChannels">
+    <value condition="StringCompare(ListItem.AudioChannels,3)">2.1</value>
+    <value condition="StringCompare(ListItem.AudioChannels,6)">5.1</value>
+    <value condition="StringCompare(ListItem.AudioChannels,8)">7.1</value>
+    <value>$INFO[ListItem.AudioChannels]</value>
+  </variable>
   <variable name="Background.Art" description="Art backgrounds">
     <value condition="Window.IsActive(MyPics.xml) + !IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
     <value condition="!IsEmpty(ListItem.Art(fanart)) + !Skin.HasSetting(HideFanart)">$INFO[ListItem.Art(fanart)]</value>
@@ -68,8 +74,8 @@
     <value>$INFO[ListItem.Label2]</value>
   </variable>
   <variable name="CodecList-Genre" description="Shown with Plots and descriptions">
-    <value condition="[Container.Content(Episodes) | Container.Content(Movies) | Container.Content(musicvideos)] + !IsEmpty(ListItem.VideoCodec)">[UPPERCASE]$INFO[ListItem.VideoCodec]$INFO[ListItem.VideoResolution, / ]$INFO[ListItem.AudioCodec, • ]$INFO[ListItem.AudioChannels, / ][/UPPERCASE]</value>
-    <value condition="Container.Content(songs) + !IsEmpty(ListItem.AudioCodec)">[UPPERCASE]$INFO[ListItem.AudioCodec, • ]$INFO[ListItem.AudioChannels, • ][/UPPERCASE]</value>
+    <value condition="[Container.Content(Episodes) | Container.Content(Movies) | Container.Content(musicvideos)] + !IsEmpty(ListItem.VideoCodec)">[UPPERCASE]$INFO[ListItem.VideoCodec]$INFO[ListItem.VideoResolution, / ]$INFO[ListItem.AudioCodec, • ] • $VAR[AudioChannels][/UPPERCASE]</value>
+    <value condition="Container.Content(songs) + !IsEmpty(ListItem.AudioCodec)">[UPPERCASE]$INFO[ListItem.AudioCodec, • ] • $VAR[AudioChannels][/UPPERCASE]</value>
     <value condition="!IsEmpty(ListItem.NextTitle)">$INFO[ListItem.NextStartTime] $INFO[ListItem.NextTitle]</value>
     <value>$INFO[ListItem.Genre]</value>
   </variable>
