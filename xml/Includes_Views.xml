@@ -261,7 +261,7 @@
           <top>214</top>
           <font>size16</font>
           <include>FullscreenInfoLabel2</include>
-          <label>[UPPERCASE]$INFO[VideoPlayer.VideoCodec]$INFO[VideoPlayer.VideoResolution, / ]$INFO[VideoPlayer.AudioCodec, • ]$INFO[VideoPlayer.AudioChannels, / ][/UPPERCASE]</label>
+          <label>[UPPERCASE]$INFO[VideoPlayer.VideoCodec]$INFO[VideoPlayer.VideoResolution, / ]$INFO[VideoPlayer.AudioCodec, • ] / $VAR[PlayerAudioChannels][/UPPERCASE]</label>
         </control>
       </control>
     </control>

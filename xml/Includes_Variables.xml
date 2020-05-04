@@ -6,6 +6,12 @@
     <value condition="StringCompare(ListItem.AudioChannels,8)">7.1</value>
     <value>$INFO[ListItem.AudioChannels]</value>
   </variable>
+  <variable name="PlayerAudioChannels" description="PlayerAudioChannels">
+    <value condition="StringCompare(VideoPlayer.AudioChannels,3)">2.1</value>
+    <value condition="StringCompare(VideoPlayer.AudioChannels,6)">5.1</value>
+    <value condition="StringCompare(VideoPlayer.AudioChannels,8)">7.1</value>
+    <value>$INFO[VideoPlayer.AudioChannels]</value>
+  </variable>
   <variable name="Background.Art" description="Art backgrounds">
     <value condition="Window.IsActive(MyPics.xml) + !IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
     <value condition="!IsEmpty(ListItem.Art(fanart)) + !Skin.HasSetting(HideFanart)">$INFO[ListItem.Art(fanart)]</value>
