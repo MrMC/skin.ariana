@@ -158,7 +158,7 @@
         <width>600</width>
         <height>760</height>
         <include>Icon_Fade</include>
-        <texture background="true">$INFO[ListItem.Thumb]</texture>
+        <texture background="true">$VAR[InfoDialogPosterVar]</texture>
         <bordertexture border="12">img/ThumbBorder.png</bordertexture>
         <bordersize>9</bordersize>
         <aspectratio>keep</aspectratio>

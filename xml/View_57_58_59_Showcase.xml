@@ -8,7 +8,7 @@
   </include>
   <include name="MovieShowcaseThumb">
     <include>MovieShowcaseThumbDimensions</include>
-    <texture diffuse="thumbs/PosterDiffuse.png" background="true">$INFO[ListItem.Art(thumb)]</texture>
+    <texture diffuse="thumbs/PosterDiffuse.png" background="true">$VAR[InfoDialogPosterVar]</texture>
     <aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
     <bordersize>6</bordersize>
   </include>

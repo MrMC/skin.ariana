@@ -58,7 +58,7 @@
         </control>
         <control type="image">
           <include>53PosterCommons</include>
-          <texture diffuse="thumbs/PosterDiffuse.png" background="true">$INFO[ListItem.Thumb]</texture>
+          <texture diffuse="thumbs/PosterDiffuse.png" background="true">$VAR[InfoDialogPosterVar]</texture>
           <aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
           <bordersize>22</bordersize>
         </control>
@@ -92,7 +92,7 @@
           </control>
           <control type="image">
             <include>53PosterCommons</include>
-            <texture diffuse="thumbs/PosterDiffuse.png" background="true">$INFO[ListItem.Thumb]</texture>
+            <texture diffuse="thumbs/PosterDiffuse.png" background="true">$VAR[InfoDialogPosterVar]</texture>
             <aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
             <bordersize>22</bordersize>
           </control>
