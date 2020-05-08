@@ -133,7 +133,7 @@
           </control>
         </focusedlayout>
       </control>
-      <control type="panel" id="3">
+      <control type="list" id="3">
         <centerleft>50%</centerleft>
         <top>220</top>
         <width>930</width>
@@ -160,7 +160,7 @@
           </control>
           <control type="image">
             <visible>ListItem.IsSelected</visible>
-            <right>20</right>
+            <right>50</right>
             <top>0</top>
             <width>30</width>
             <height>100%</height>
@@ -190,23 +190,40 @@
             </control>
             <control type="image">
               <visible>ListItem.IsSelected</visible>
-              <right>20</right>
+              <right>50</right>
               <top>0</top>
               <width>30</width>
               <height>100%</height>
               <texture colordiffuse="$VAR[LabelFOColor]">img/RadioON.png</texture>
               <aspectratio aligny="center">keep</aspectratio>
             </control>
+            <control type="image">
+              <right>5</right>
+              <bottom>25</bottom>
+              <width>40</width>
+              <height>20</height>
+              <texture flipx="true" colordiffuse="$VAR[LabelFOColor]">img/Arrow.png</texture>
+              <visible>!IsEmpty(ListItem.Label2) + Control.HasFocus(15)</visible>
+            </control>
           </control>
         </focusedlayout>
       </control>
-      <control type="button" id="5" description="Left buttons template">
-        <centerleft>50%</centerleft>
+      <control type="grouplist" id="9001">
         <top>960</top>
-        <width>350</width>
         <onup>3</onup>
         <onleft>3</onleft>
-        <onright>3</onright>
+        <itemgap>40</itemgap>
+        <centerleft>50%</centerleft>
+        <orientation>horizontal</orientation>
+        <width>740</width>
+        <align>center</align>
+        <control type="button" id="5" description="Left buttons template">
+          <width>350</width>
+        </control>
+        <control type="button" id="15" description="Move button">
+          <width>350</width>
+          <label>$LOCALIZE[116]</label>
+        </control>
       </control>
       <!--<control type="group">
         <visible>Control.IsVisible(6)</visible>
