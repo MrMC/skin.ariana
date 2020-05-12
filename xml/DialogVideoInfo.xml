@@ -176,9 +176,9 @@
                 </item>
                 <item>
                   <label>$LOCALIZE[2050]</label>
-                  <label2>$INFO[ListItem.Duration] $LOCALIZE[12391]</label2>
+                  <label2>$INFO[ListItem.FormatedDuration]</label2>
                   <onclick>noop</onclick>
-                  <visible>!IsEmpty(ListItem.Duration)</visible>
+                  <visible>!IsEmpty(ListItem.FormatedDuration)</visible>
                 </item>
               </content>
             </control>
@@ -285,7 +285,7 @@
               <textcolor>$VAR[LabelNFColor]</textcolor>
               <align>left</align>
               <aligny>center</aligny>
-              <label>$INFO[ListItem.Duration, • , $LOCALIZE[31297]]</label>
+              <label>$INFO[ListItem.FormatedDuration, • ]</label>
             </control>
             <control type="button" description="MPAA">
               <visible>!IsEmpty(ListItem.mpaa)</visible>
