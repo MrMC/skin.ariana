@@ -309,6 +309,7 @@
             <label>$INFO[ListItem.Genre]</label>
           </control>
           <control type="label" description="Codec">
+            <visible>![Container.Content(TVShows) | Container.Content(Seasons)]</visible>
             <top>174</top>
             <height>45</height>
             <font>size16</font>
