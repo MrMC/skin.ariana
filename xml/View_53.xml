@@ -39,6 +39,7 @@
     </control>
   </include>
   <include name="View_53" description="53">
+    <include>FanartBG</include>
     <control type="panel" id="53" description="Grid Container">
       <visible>[Window.IsActive(mypvrchannels.xml) | Window.IsActive(MyPics.xml) | Container.Content(Movies) | Container.content(tvshows) | container.content(seasons) | container.Content(albums) | Container.content(artists)]</visible>
       <viewtype label="536">Thumbnails</viewtype>
