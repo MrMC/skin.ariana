@@ -161,7 +161,7 @@
           <height>80</height>
           <font>plot</font>
           <textcolor>$VAR[Label2Color]</textcolor>
-          <label>$INFO[ListItem.Year,, - ]$INFO[ListItem.RatingAndVotes,, - ]$INFO[ListItem.FormatedDuration][COLOR=$VAR[SelectedColor]]$VAR[WatchedStatus,    ][/COLOR]</label>
+          <label>$INFO[ListItem.Year,, • ]$INFO[ListItem.FormatedDuration,, • ]$INFO[ListItem.RatingAndVotes ][COLOR=$VAR[SelectedColor]]$VAR[WatchedStatus,    ][/COLOR]</label>
         </control>
         <control type="label" description="Details">
           <top>164</top>
