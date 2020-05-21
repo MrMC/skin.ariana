@@ -94,9 +94,9 @@
   </variable>
   <variable name="ShowcaseListLabel" description="Shown Above Plots and descriptions">
     <value condition="Container.content(Albums)">$INFO[ListItem.Artist]$INFO[ListItem.Year,  •  ]</value>
-    <value condition="Container.Content(Episodes)">$INFO[ListItem.Premiered,, • ]$INFO[ListItem.FormatedDuration,, • ]$INFO[ListItem.RatingAndVotes]</value>
+    <value condition="Container.Content(Episodes)">$INFO[ListItem.Premiered,, • ]$INFO[ListItem.FormatedDuration,, • ]$INFO[ListItem.RatingAndVotes,, • ]$INFO[ListItem.MPAA]</value>
     <value condition="Container.Content(MusicVideos)">$INFO[ListItem.Label]</value>
-    <value condition="Container.Content(Movies)">$INFO[ListItem.Year,, • ]$INFO[ListItem.FormatedDuration]$INFO[ListItem.Rating, • ]</value>
+    <value condition="Container.Content(Movies)">$INFO[ListItem.Year,, • ]$INFO[ListItem.FormatedDuration,, • ]$INFO[ListItem.Rating,, • ]$INFO[ListItem.MPAA]</value>
     <value condition="Container.Content(Seasons) | Container.Content(TVShows)">$INFO[ListItem.Year,, • ]$INFO[ListItem.Property(UnWatchedEpisodes),$LOCALIZE[16101] ] $INFO[ListItem.Property(TotalEpisodes),(, $LOCALIZE[20453])]</value>
   </variable>
   <variable name="Plots" description="Plots and descriptions">
