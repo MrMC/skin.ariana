@@ -203,6 +203,37 @@
             <align>left</align>
             <aligny>center</aligny>
             <orientation>horizontal</orientation>
+            <control type="label" description="Labels">
+              <width min="50">auto</width>
+              <height>38</height>
+              <font>size21</font>
+              <textcolor>$VAR[LabelNFColor]</textcolor>
+              <align>left</align>
+              <aligny>center</aligny>
+              <label>$INFO[ListItem.Year,, • ]</label>
+            </control>
+            <control type="label" description="Labels">
+              <visible>!Control.IsVisible(8886) + !Control.IsVisible(8887) + !Control.IsVisible(8888) + !Control.IsVisible(8889) + !Control.IsVisible(8890) + IsEmpty(ListItem.mpaa)</visible>
+              <visible>!IsEmpty(ListItem.FormatedDuration)</visible>
+              <width min="50">auto</width>
+              <height>38</height>
+              <font>size21</font>
+              <textcolor>$VAR[LabelNFColor]</textcolor>
+              <align>left</align>
+              <aligny>center</aligny>
+              <label>$INFO[ListItem.FormatedDuration]</label>
+            </control>
+            <control type="label" description="Labels">
+              <visible>Control.IsVisible(8886) | Control.IsVisible(8887) | Control.IsVisible(8888) | Control.IsVisible(8889) | Control.IsVisible(8890) | !IsEmpty(ListItem.mpaa)</visible>
+              <visible>!IsEmpty(ListItem.FormatedDuration)</visible>
+              <width min="50">auto</width>
+              <height>38</height>
+              <font>size21</font>
+              <textcolor>$VAR[LabelNFColor]</textcolor>
+              <align>left</align>
+              <aligny>center</aligny>
+              <label>$INFO[ListItem.FormatedDuration,, • ]</label>
+            </control>
             <control type="image" id="8886" description="Rotten">
               <visible>!IsEmpty(ListItem.Property(RottenTomatoesRating))</visible>
               <height>38</height>
@@ -250,42 +281,22 @@
               <texture colordiffuse="$VAR[LabelNFColor]">badges/default.rating.png</texture>
             </control>
             <control type="label" id="8890" description="Simple Rating">
-              <visible>![IsEmpty(ListItem.RatingAndVotes)]</visible>
+              <visible>!IsEmpty(ListItem.RatingAndVotes) + !IsEmpty(ListItem.mpaa)</visible>
+              <width min="40">auto</width>
+              <height>38</height>
+              <font>size21</font>
+              <textcolor>$VAR[LabelNFColor]</textcolor>
+              <align>left</align>
+              <label>$INFO[ListItem.RatingAndVotes,, • ]</label>
+            </control>
+            <control type="label" id="8890" description="Simple Rating">
+              <visible>!IsEmpty(ListItem.RatingAndVotes) + IsEmpty(ListItem.mpaa)</visible>
               <width min="40">auto</width>
               <height>38</height>
               <font>size21</font>
               <textcolor>$VAR[LabelNFColor]</textcolor>
               <align>left</align>
               <label>$INFO[ListItem.RatingAndVotes]</label>
-            </control>
-            <control type="label" description="Labels">
-              <visible>Control.IsVisible(8886) | Control.IsVisible(8887) | Control.IsVisible(8888) | Control.IsVisible(8889) | Control.IsVisible(8890)</visible>
-              <width min="50">auto</width>
-              <height>38</height>
-              <font>size21</font>
-              <textcolor>$VAR[LabelNFColor]</textcolor>
-              <align>left</align>
-              <aligny>center</aligny>
-              <label>$INFO[ListItem.Year, • ,]</label>
-            </control>
-            <control type="label" description="Labels">
-              <visible>!Control.IsVisible(8886) + !Control.IsVisible(8887) + !Control.IsVisible(8888) + !Control.IsVisible(8889) + !Control.IsVisible(8890)</visible>
-              <width min="50">auto</width>
-              <height>38</height>
-              <font>size21</font>
-              <textcolor>$VAR[LabelNFColor]</textcolor>
-              <align>left</align>
-              <aligny>center</aligny>
-              <label>$INFO[ListItem.Year]</label>
-            </control>
-            <control type="label" description="Labels">
-              <width min="50">auto</width>
-              <height>38</height>
-              <font>size21</font>
-              <textcolor>$VAR[LabelNFColor]</textcolor>
-              <align>left</align>
-              <aligny>center</aligny>
-              <label>$INFO[ListItem.FormatedDuration, • ]</label>
             </control>
             <control type="button" description="MPAA">
               <visible>!IsEmpty(ListItem.mpaa)</visible>
