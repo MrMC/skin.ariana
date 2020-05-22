@@ -175,6 +175,7 @@
         <aligny>top</aligny>
         <align>left</align>
         <itemgap>10</itemgap>
+        <scrolltime>300</scrolltime>
         <control type="label" id="80200" description="Heading8020">
           <visible>Control.IsVisible(8020)</visible>
           <include>HeaderLabelShelf</include>
