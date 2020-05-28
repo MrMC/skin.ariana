@@ -101,11 +101,20 @@
     <align>left</align>
     <aligny>center</aligny>
     <control type="label" id="2000" description="Views">
+      <visible>!Window.IsVisible(AddonBrowser)</visible>
       <font>size22B</font>
       <align>center</align>
       <textcolor>$VAR[SelectedColor]</textcolor>
       <include>9000Buttons</include>
       <label>$LOCALIZE[14018]</label>
+    </control>
+    <control type="label" id="2000" description="Views">
+      <visible>Window.IsVisible(AddonBrowser)</visible>
+      <font>size22B</font>
+      <align>center</align>
+      <textcolor>$VAR[SelectedColor]</textcolor>
+      <include>9000Buttons</include>
+      <label>$LOCALIZE[10510]</label>
     </control>
     <control type="image" description="separator" id="2001">
       <height>3</height>

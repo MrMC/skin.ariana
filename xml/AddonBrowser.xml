@@ -4,5 +4,42 @@
   <controls>
     <include>DialogFullBG</include>
     <include>View_50</include>
+    <control type="group" description="Side menu 9000 group">
+        <include>Menu9000</include>
+        <control type="grouplist" id="9000">
+          <include>9000GrouplistParameters</include>
+          <control type="label" description="Main Label">
+            <font>size22</font>
+            <scroll>false</scroll>
+            <textcolor>$VAR[LabelFOColor]</textcolor>
+            <label>$LOCALIZE[31069]</label>
+          </control>
+          <control type="label" description="Main Label">
+            <font>size22</font>
+            <scroll>false</scroll>
+            <textcolor>$VAR[LabelFOColor]</textcolor>
+            <label>$INFO[Window(AddonBrowser).Property(Updated)]</label>
+          </control>
+          <control type="radiobutton" id="7">
+            <align>left</align>
+            <include>9000Buttons</include>
+            <label>$LOCALIZE[25001]</label>
+            <visible>Control.IsEnabled(7)</visible>
+          </control>
+          <control type="radiobutton" id="8">
+            <include>9000Buttons</include>
+            <label>$LOCALIZE[24999]</label>
+            <visible>Control.IsEnabled(8)</visible>
+          </control>
+          <control type="button" id="9">
+            <include>9000Buttons</include>
+            <label>$LOCALIZE[24034]</label>
+          </control>
+          <control type="button" id="5">
+            <include>9000Buttons</include>
+			<label>$LOCALIZE[10004]</label>
+          </control>
+        </control>
+      </control>
   </controls>
 </window>
