@@ -13,9 +13,9 @@
         <texture border="60">img/HomeMenuBarV.png</texture>
       </control>
       <control type="image" id="110" description="Service Logo">
-        <centerleft>50%</centerleft>
+        <left>10</left>
         <top>30</top>
-        <width>500</width>
+        <width>400</width>
         <height>80</height>
         <aspectratio align="center">keep</aspectratio>
       </control>
@@ -30,7 +30,7 @@
         <aligny>center</aligny>
         <wrapmultiline>true</wrapmultiline>
       </control>
-      <control type="label" description="Video File name">
+      <control type="label" id="180" description="Video File name">
         <left>450</left>
         <top>120</top>
         <width>1320</width>
@@ -38,7 +38,6 @@
         <align>left</align>
         <aligny>center</aligny>
         <font>size28</font>
-        <label>[B]$INFO[Player.Filename][/B]</label>
         <wrapmultiline>true</wrapmultiline>
       </control>
       <control type="label" id="140" description="Number of available/Searching...">
