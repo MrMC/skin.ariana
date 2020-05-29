@@ -36,6 +36,7 @@
           <width>800</width>
           <height>750</height>
           <onleft>9000</onleft>
+          <onright>61</onright>
           <pagecontrol>60</pagecontrol>
           <viewtype label="535">List 50</viewtype>
           <preloaditems>4</preloaditems>
@@ -213,6 +214,7 @@
       <control type="group" description="50 furniture">
         <visible>Control.IsVisible(50)</visible>
         <include>ContainerVisibleFade</include>
+        <include>Scroller</include>
         <control type="label" description="MainHeading">
           <visible>!Player.HasVideo</visible>
           <right>66</right>
