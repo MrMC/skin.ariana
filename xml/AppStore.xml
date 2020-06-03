@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">94</defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	<!-- <views>50</views> -->
+	<menucontrol>9000</menucontrol>
+	<controls>
+		<include>DialogFullBG</include>
+		<control type="group">
+			<include>OpenClose</include>
+			<control type="image" description="Sidebar">
+				<left>-150</left>
+				<top>0</top>
+				<width>660</width>
+				<height>100%</height>
+				<aspectratio>stretch</aspectratio>
+				<texture border="60">img/HomeMenuBarV.png</texture>
+			</control>
+			<control type="label" description="Heading">
+				<include>CenterHeading</include>
+				<label>$LOCALIZE[10004] / $LOCALIZE[33107]</label>
+			</control>
+			<control type="grouplist" id="9000">
+				<left>45</left>
+				<top>165</top>
+				<width>420</width>
+				<height>864</height>
+				<itemgap>2</itemgap>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<onright condition="Control.HasFocus(95)">940</onright>
+				<orientation>vertical</orientation>
+				<control type="button" id="94" description="Button">
+					<width>1260</width>
+					<align>left</align>
+					<label>$LOCALIZE[29915]</label>
+				</control>
+				<control type="button" id="95" description="Button">
+					<width>1260</width>
+					<align>left</align>
+					<label>$LOCALIZE[33105]</label>
+				</control>
+				<control type="button" id="96" description="Button">
+					<width>1260</width>
+					<align>left</align>
+					<label>$LOCALIZE[33106]</label>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<include>OpenClose</include>
+			<control type="list" id="940">
+				<top>165</top>
+				<left>520</left>
+				<right>90</right>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<itemlayout height="80">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<height>100%</height>
+						<texture border="10">focus/FrameNF.png</texture>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="label" description="Main Label">
+						<left>20</left>
+						<right>20</right>
+						<height>100%</height>
+						<font>size22</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="80">
+					<include>FocusButtonsAnimation</include>
+					<control type="image">
+						<animation effect="fade" time="100">VisibleChange</animation>
+						<left>0</left>
+						<top>0</top>
+						<height>100%</height>
+						<texture border="10">focus/FrameFO.png</texture>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="label" description="Main Label">
+						<left>20</left>
+						<right>20</right>
+						<height>100%</height>
+						<font>size22</font>
+						<textcolor>$VAR[LabelFOColor]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+        </control>
+	</controls>
+</window>
