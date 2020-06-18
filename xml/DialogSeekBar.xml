@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window type="dialog">
-  <zorder>2</zorder>
+<window>
+  <zorder>0</zorder>
   <onunload>Dialog.Close(osdsettings)</onunload>
   <visible>[[Player.Seeking | Player.DisplayAfterSeek | [Player.Paused + !Player.Caching] | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(fullscreeninfo) | Window.IsActive(videoosd) | [Window.IsActive(OSDSettings.xml) + !System.HasAppleTVSlider]] + Window.IsActive(fullscreenvideo)] | [Window.IsActive(visualisation) + [Player.Showinfo | Window.IsActive(musicosd)]] | !IsEmpty(Player.SeekNumeric) | Window.IsActive(playercontrols)</visible>
 	<visible>![Window.IsActive(sliderdialog) | Window.IsActive(locksettings) | Window.IsActive(dialogsubtitles.xml) | Window.IsActive(videoosdsettings.xml) | Window.IsActive(PVROSDGuide)]</visible>
   <include>VisibleFadeEffect</include>
+  <animation type="WindowOpen" reversible="False">
+    <effect type="fade" start="0" end="100" time="300"/>
+    <!-- <effect type="slide" start="0,200" end="0,0" time="300" tween="cubic" easing="out" /> -->
+  </animation>
+  <animation type="WindowClose" reversible="False">
+    <effect type="fade" start="100" end="0" time="300"/>
+    <!-- <effect type="slide" start="0,0" end="0,200" time="300" tween="cubic" easing="out" /> -->
+  </animation>
   <controls>
     <control type="group">
       <animation effect="slide" start="0,0" end="0,-75" time="150" reversible="true" condition="Player.HasVideo + [Window.IsActive(videoOSD) | Window.IsActive(osdsettings)]">Conditional</animation>
@@ -127,6 +135,32 @@
         <texturesliderbar colordiffuse="00FFFFFF">OSD/SliderNibx2.png</texturesliderbar>
         <textureslidernib colordiffuse="white">-</textureslidernib>
         <textureslidernibfocus colordiffuse="white">OSD/SliderNibx2.png</textureslidernibfocus>
+      </control>
+      <control type="group">
+        <visible>System.Platform.TVOS + !Player.Paused</visible>
+        <control type="image" description="Siri Touch Direction">
+          <animation effect="fade" time="100">VisibleChange</animation>
+          <visible>!IsEmpty(Player.SiriTouch)</visible>
+          <visible>IntegerGreaterThan(Player.ChapterCount,0) | [!IntegerGreaterThan(Player.ChapterCount,0) + [StringCompare(Player.SiriTouch,right) | StringCompare(Player.SiriTouch,left)]]</visible>
+          <visible>!VideoPlayer.Content(livetv)</visible>
+          <centerleft>50%</centerleft>
+          <top>35</top>
+          <width>93</width>
+          <height>57</height>
+          <texture>siri/video/$INFO[Player.SiriTouch].png</texture>
+        </control>
+        <control type="image" description="Siri Touch Direction">
+          <animation effect="fade" time="100">VisibleChange</animation>
+          <visible>!IsEmpty(Player.SiriTouch)</visible>
+          <visible>Player.SeekEnabled | [!Player.SeekEnabled + [StringCompare(Player.SiriTouch,up) | StringCompare(Player.SiriTouch,down)]]</visible>
+          <visible>VideoPlayer.Content(livetv)</visible>
+          <visible>false</visible>
+          <centerleft>50%</centerleft>
+          <top>35</top>
+          <width>93</width>
+          <height>57</height>
+          <texture>siri/livetv/$INFO[Player.SiriTouch].png</texture>
+        </control>
       </control>
     </control>
   </controls>
