@@ -2,7 +2,12 @@
 <window>
   <defaultcontrol always="true">9000</defaultcontrol>
   <zorder>1</zorder>
-  <include>OpenClose</include>
+  <animation type="WindowOpen" reversible="False">
+    <effect type="fade" start="0" end="100" time="300"/>
+  </animation>
+  <animation type="WindowClose" reversible="False">
+    <effect type="fade" start="100" end="0" time="300"/>
+  </animation>
   <onload>Dialog.Close(videoosd)</onload>
   <!--<onload>Dialog.Close(fullscreeninfo)</onload>-->
   <controls>
